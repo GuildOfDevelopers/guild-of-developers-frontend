@@ -1,3 +1,5 @@
 import styled from 'styled-components';
 
-export const Div = styled.div``;
+export const Section = styled.section`
+  background-color: var(--color-white);
+`;

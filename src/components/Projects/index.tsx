@@ -1,13 +1,14 @@
 import React, { FC } from 'react';
 import { Container } from '../../lib/styled/container';
+import { Section } from './style';
 
 const Projects: FC = () => {
   return (
-    <section>
+    <Section>
       <Container>
         <p>Projects</p>
       </Container>
-    </section>
+    </Section>
   );
 };
 

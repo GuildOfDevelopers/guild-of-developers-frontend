@@ -5,13 +5,12 @@ export const Section = styled.section`
 `;
 
 export const Wrapper = styled.div`
-  margin: 0 0 0 auto;
   padding: 145px 104px 40px;
 `;
 
 export const Greetings = styled.div`
+  margin: 0 0 145px auto;
   max-width: 381px;
-  margin-bottom: 145px;
 `;
 
 export const Title = styled.h1`
@@ -38,14 +37,14 @@ export const DescrSpan = styled.span`
 export const Members = styled.ul`
   max-width: 792px;
   margin: 0 auto;
-  padding: 30px 81px 27px 95px;
+  padding: 30px 86px;
   background-color: var(--color-white-2);
   border-radius: 70px;
   display: flex;
   flex-wrap: wrap;
 `;
 
-export const MembersItem = styled.ul`
+export const MembersItem = styled.li`
   display: flex;
   flex-wrap: wrap;
   align-items: center;

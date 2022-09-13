@@ -50,8 +50,8 @@ const Hero: FC = () => {
           </Greetings>
 
           <Members>
-            {members.map((item) => (
-              <MembersItem>
+            {members.map((item, index) => (
+              <MembersItem key={index}>
                 <MembersIcon />
 
                 <MembersDescr>

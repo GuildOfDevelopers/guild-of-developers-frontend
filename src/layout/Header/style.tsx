@@ -5,15 +5,11 @@ export const StyledHeader = styled.header`
   background-color: var(--color-white-2);
 `;
 
-export const StyledNavbarContainer = styled.nav`
-  width: 100%;
-`;
-
-export const StyledNavLinkContainer = styled.div`
+export const Navbar = styled.nav`
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 20px 0 18px;
-  gap: 48px;
+  padding: 20px 0;
 `;
 
 export const NavBarLink = styled(Link)`

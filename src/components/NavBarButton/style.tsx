@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledButton = styled.button`
-  width: 179px;
+  min-width: 179px;
   padding: 9px 19px;
   border-radius: 25px;
   background-color: var(--color-grey);

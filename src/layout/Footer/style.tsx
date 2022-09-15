@@ -18,6 +18,7 @@ export const Social = styled.div`
   align-items: center;
   gap: 25px;
   height: 18px;
+  z-index: 2;
 `;
 
 export const FooterLink = styled(Link)`

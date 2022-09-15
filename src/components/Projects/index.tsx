@@ -1,6 +1,6 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { Container } from '../../lib/styled/container';
-import { Card, Grid, Section } from './style';
+import { CardButton, Card, Grid, Section, Title, Wrapper } from './style';
 
 const mockCards = [
   {
@@ -22,6 +22,16 @@ const mockCards = [
     project: 'project',
     descr: 'descr',
     id: 4
+  },
+  {
+    project: 'project',
+    descr: 'descr',
+    id: 5
+  },
+  {
+    project: 'project',
+    descr: 'descr',
+    id: 6
   }
 ];
 
@@ -37,19 +47,27 @@ const Project: FC<ProjectProps> = ({ project, descr, id }) => {
       <div>{project}</div>
       <div>{descr}</div>
       <div>{id}</div>
+      <CardButton>Записаться</CardButton>
     </Card>
   );
 };
 
 const Projects: FC = () => {
+  const [page] = useState('home');
+
   return (
     <Section>
       <Container>
-        <Grid>
-          {mockCards.map((card) => (
-            <Project project={card.project} descr={card.descr} id={card.id} key={card.id} />
-          ))}
-        </Grid>
+        {page === 'home' && (
+          <Wrapper>
+            <Title>Наши проекты</Title>
+            <Grid>
+              {mockCards.map((el) => (
+                <Project project={el.project} descr={el.descr} id={el.id} key={el.id} />
+              ))}
+            </Grid>
+          </Wrapper>
+        )}
       </Container>
     </Section>
   );

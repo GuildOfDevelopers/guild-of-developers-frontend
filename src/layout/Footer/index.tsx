@@ -1,27 +1,19 @@
 import React, { FC } from 'react';
 import { Container } from '../../lib/styled/container';
 import { Telegram, VK } from './Icon';
-import {
-  FooterA,
-  FooterContent,
-  FooterDiv,
-  FooterLink,
-  FooterText,
-  Logo,
-  StyledFooter
-} from './style';
+import { FooterA, Wrapper, Social, FooterLink, FooterText, Logo, StyledFooter } from './style';
 
 const Footer: FC = () => {
   return (
     <StyledFooter>
       <Container>
-        <FooterContent>
-          <FooterDiv>
+        <Wrapper>
+          <Social>
             <FooterLink to={'#'}>Политика конфиденциальности</FooterLink>
             <FooterText>@2022, Guild of Developers</FooterText>
-          </FooterDiv>
+          </Social>
           <Logo>GoD</Logo>
-          <FooterDiv>
+          <Social>
             <FooterA href="mailto:guild.of.developers@gmail.com">
               guild.of.developers@gmail.com
             </FooterA>
@@ -31,8 +23,8 @@ const Footer: FC = () => {
             <FooterA href="#">
               <VK />
             </FooterA>
-          </FooterDiv>
-        </FooterContent>
+          </Social>
+        </Wrapper>
       </Container>
     </StyledFooter>
   );

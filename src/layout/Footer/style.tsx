@@ -5,7 +5,7 @@ export const StyledFooter = styled.footer`
   background-color: var(--color-white-2);
 `;
 
-export const FooterContent = styled.div`
+export const Wrapper = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -13,7 +13,7 @@ export const FooterContent = styled.div`
   padding: 31px 0;
 `;
 
-export const FooterDiv = styled.div`
+export const Social = styled.div`
   display: flex;
   align-items: center;
   gap: 25px;

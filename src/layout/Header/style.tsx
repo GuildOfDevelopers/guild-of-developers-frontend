@@ -9,11 +9,24 @@ export const Navbar = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
+  padding-block: 20px;
 `;
 
 export const NavBarLink = styled(Link)`
-  font-size: var(--fs-400);
+  font-size: var(--fs-350);
+  font-weight: var(--fw-400);
+  line-height: var(--line-height-350);
+
+  min-width: 130px;
+  text-align: center;
+
+  &:first-child {
+    text-align: start;
+  }
+
+  &:last-child {
+    text-align: end;
+  }
 `;
 
 export const NavBarLogo = styled.p`

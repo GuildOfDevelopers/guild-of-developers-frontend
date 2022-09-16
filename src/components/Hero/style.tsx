@@ -42,23 +42,18 @@ export const Members = styled.ul`
   border-radius: 70px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 `;
 
 export const MembersItem = styled.li`
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-
-  :not(:last-child) {
-    margin-right: 26px;
-  }
+  gap: 26px;
 `;
 
 export const MembersIcon = styled.div`
-  flex-shrink: 0;
   width: 69px;
   height: 69px;
-  margin-right: 26px;
   background-color: var(--color-grey-3);
   border-radius: 50%;
 `;

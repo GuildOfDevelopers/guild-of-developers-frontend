@@ -29,6 +29,7 @@ const Global = createGlobalStyle`
 
     // font-size
     --fs-300: 12px;
+    --fs-350: 14px;
     --fs-400: 18px;
     --fs-500: 20px;
     --fs-600: 30px;
@@ -36,6 +37,7 @@ const Global = createGlobalStyle`
 
     // line-height
     --line-height-300: 14px;
+    --line-height-350: 16px;
     --line-height-400: 21px;
     --line-height-500: 23px;
     --line-height-600: 35px;

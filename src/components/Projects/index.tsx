@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useState, useId } from 'react';
 import { Container } from '../../lib/styled/container';
 import { CardButton, Card, Grid, Section, Title, Wrapper } from './style';
 
@@ -46,15 +46,13 @@ const mockCards = [
 ];
 
 interface ProjectProps {
-  id: number;
   date: string;
   project: string;
   departments: { name: string; stack: string[] }[];
 }
 
-const Project: FC<ProjectProps> = ({ id, date, project, departments }) => {
+const Project: FC<ProjectProps> = ({ date, project, departments }) => {
   const [hover, setHover] = useState('');
-  console.log(hover);
 
   return (
     <Card>
@@ -63,10 +61,11 @@ const Project: FC<ProjectProps> = ({ id, date, project, departments }) => {
       <div>
         {departments.map((department) => (
           <div
-            onMouseEnter={() => setHover(department.name.toLowerCase())}
+            key={department.name}
+            onMouseEnter={() => setHover(department.name)}
             onMouseLeave={() => setHover('')}
           >
-            {hover === department.name.toLowerCase()
+            {hover === department.name
               ? department.stack.map((stack) => <p>{stack}</p>)
               : department.name}
           </div>
@@ -92,7 +91,6 @@ const Projects: FC = () => {
                   project={el.project}
                   departments={el.departments}
                   date={el.date}
-                  id={el.id}
                   key={el.id}
                 />
               ))}

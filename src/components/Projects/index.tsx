@@ -1,6 +1,17 @@
 import React, { FC, useState, useId } from 'react';
 import { Container } from '../../lib/styled/container';
-import { CardButton, Card, Grid, Section, Title, Wrapper } from './style';
+import {
+  CardButton,
+  Card,
+  Grid,
+  Section,
+  Title,
+  Wrapper,
+  CardTitle,
+  CardDate,
+  CardDepartments,
+  CardDepartment
+} from './style';
 
 const mockCards = [
   {
@@ -8,6 +19,12 @@ const mockCards = [
     date: '29.08.2022',
     project: '«Инкубатор Фондов»',
     departments: [
+      { name: 'Frontend', stack: ['React', 'Redux', 'Sass', 'Axios'] },
+      { name: 'Backend', stack: ['Python', 'FastAPI', 'Django'] },
+      { name: 'Design', stack: ['Figma', 'Photoshop', 'Blender'] },
+      { name: 'Frontend', stack: ['React', 'Redux', 'Sass', 'Axios'] },
+      { name: 'Backend', stack: ['Python', 'FastAPI', 'Django'] },
+      { name: 'Design', stack: ['Figma', 'Photoshop', 'Blender'] },
       { name: 'Frontend', stack: ['React', 'Redux', 'Sass', 'Axios'] },
       { name: 'Backend', stack: ['Python', 'FastAPI', 'Django'] },
       { name: 'Design', stack: ['Figma', 'Photoshop', 'Blender'] }
@@ -20,6 +37,12 @@ const mockCards = [
     departments: [
       { name: 'Frontend', stack: ['React', 'Redux', 'Sass', 'Axios'] },
       { name: 'Backend', stack: ['Python', 'FastAPI', 'Django'] },
+      { name: 'Design', stack: ['Figma', 'Photoshop', 'Blender'] },
+      { name: 'Frontend', stack: ['React', 'Redux', 'Sass', 'Axios'] },
+      { name: 'Backend', stack: ['Python', 'FastAPI', 'Django'] },
+      { name: 'Design', stack: ['Figma', 'Photoshop', 'Blender'] },
+      { name: 'Frontend', stack: ['React', 'Redux', 'Sass', 'Axios'] },
+      { name: 'Backend', stack: ['Python', 'FastAPI', 'Django'] },
       { name: 'Design', stack: ['Figma', 'Photoshop', 'Blender'] }
     ]
   },
@@ -30,6 +53,12 @@ const mockCards = [
     departments: [
       { name: 'Frontend', stack: ['React', 'Redux', 'Sass', 'Axios'] },
       { name: 'Backend', stack: ['Python', 'FastAPI', 'Django'] },
+      { name: 'Design', stack: ['Figma', 'Photoshop', 'Blender'] },
+      { name: 'Frontend', stack: ['React', 'Redux', 'Sass', 'Axios'] },
+      { name: 'Backend', stack: ['Python', 'FastAPI', 'Django'] },
+      { name: 'Design', stack: ['Figma', 'Photoshop', 'Blender'] },
+      { name: 'Frontend', stack: ['React', 'Redux', 'Sass', 'Axios'] },
+      { name: 'Backend', stack: ['Python', 'FastAPI', 'Django'] },
       { name: 'Design', stack: ['Figma', 'Photoshop', 'Blender'] }
     ]
   },
@@ -38,6 +67,12 @@ const mockCards = [
     date: '29.08.2022',
     project: '«Инкубатор Фондов»',
     departments: [
+      { name: 'Frontend', stack: ['React', 'Redux', 'Sass', 'Axios'] },
+      { name: 'Backend', stack: ['Python', 'FastAPI', 'Django'] },
+      { name: 'Design', stack: ['Figma', 'Photoshop', 'Blender'] },
+      { name: 'Frontend', stack: ['React', 'Redux', 'Sass', 'Axios'] },
+      { name: 'Backend', stack: ['Python', 'FastAPI', 'Django'] },
+      { name: 'Design', stack: ['Figma', 'Photoshop', 'Blender'] },
       { name: 'Frontend', stack: ['React', 'Redux', 'Sass', 'Axios'] },
       { name: 'Backend', stack: ['Python', 'FastAPI', 'Django'] },
       { name: 'Design', stack: ['Figma', 'Photoshop', 'Blender'] }
@@ -56,21 +91,23 @@ const Project: FC<ProjectProps> = ({ date, project, departments }) => {
 
   return (
     <Card>
-      <span>{date}</span>
-      <h3>{project}</h3>
-      <div>
+      <CardDate>{date}</CardDate>
+      <CardTitle>{project}</CardTitle>
+      <CardDepartments>
         {departments.map((department) => (
-          <div
+          <CardDepartment
             key={department.name}
             onMouseEnter={() => setHover(department.name)}
             onMouseLeave={() => setHover('')}
           >
-            {hover === department.name
-              ? department.stack.map((stack) => <p>{stack}</p>)
-              : department.name}
-          </div>
+            {hover === department.name ? (
+              department.stack.map((stack) => <p>{stack}&nbsp;</p>)
+            ) : (
+              <p>{department.name}</p>
+            )}
+          </CardDepartment>
         ))}
-      </div>
+      </CardDepartments>
       <CardButton>Записаться</CardButton>
     </Card>
   );

@@ -26,18 +26,77 @@ export const Grid = styled.ul`
 `;
 
 export const Card = styled.li`
+  min-height: 374px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   border-radius: 20px;
   padding: 24px;
 
   background-color: var(--color-white-2);
 `;
 
-export const CardButton = styled.button`
-  margin-top: 15px; // TODO: временно
+export const CardTitle = styled.h3`
+  color: var(--color-black);
 
+  font-weight: var(--fw-600);
+  font-size: var(--fs-500);
+  line-height: var(--line-height-500);
+`;
+
+export const CardDate = styled.span`
+  font-weight: var(--fw-400);
+  font-size: var(--fs-300);
+  line-height: var(--line-height-300);
+  font-feature-settings: 'pnum' on, 'lnum' on;
+
+  margin-block-end: 25px;
+`;
+
+export const CardDepartments = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-block: 21px 15px;
+
+  position: relative;
+`;
+
+export const CardDepartment = styled.li`
+  padding: 8px 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  border: 2px solid var(--color-black);
+  border-radius: 20px;
+
+  font-weight: var(--fw-600);
+  font-size: var(--fs-300);
+  line-height: var(--line-height-300);
+
+  transition: all 0.3s ease-in;
+
+  &:hover {
+    width: 100%;
+    padding-block: 27px;
+    border-radius: 15px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    p {
+    }
+
+    font-weight: var(--fw-700);
+    color: var(--color-white);
+    background-color: var(--color-grey);
+  }
+`;
+
+export const CardButton = styled.button`
+  margin-block-start: auto;
   width: 179px;
   height: 42px;
 

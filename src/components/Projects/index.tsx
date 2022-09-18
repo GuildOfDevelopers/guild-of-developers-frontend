@@ -19,15 +19,15 @@ const mockCards = [
     date: '29.08.2022',
     project: '«Инкубатор Фондов»',
     departments: [
-      { name: 'Frontend', stack: ['React', 'Redux', 'Sass', 'Axios'] },
-      { name: 'Backend', stack: ['Python', 'FastAPI', 'Django'] },
-      { name: 'Design', stack: ['Figma', 'Photoshop', 'Blender'] },
-      { name: 'Frontend', stack: ['React', 'Redux', 'Sass', 'Axios'] },
-      { name: 'Backend', stack: ['Python', 'FastAPI', 'Django'] },
-      { name: 'Design', stack: ['Figma', 'Photoshop', 'Blender'] },
-      { name: 'Frontend', stack: ['React', 'Redux', 'Sass', 'Axios'] },
-      { name: 'Backend', stack: ['Python', 'FastAPI', 'Django'] },
-      { name: 'Design', stack: ['Figma', 'Photoshop', 'Blender'] }
+      { name: 'Frontend', stack: 'React, Redux, Sass, Axios' },
+      { name: 'Backend', stack: 'Python, FastAPI, Django' },
+      { name: 'Design', stack: 'Figma, Photoshop, Blender' },
+      { name: 'Frontend2', stack: 'React, Redux, Sass, Axios' },
+      { name: 'Backend2', stack: 'Python, FastAPI, Django' },
+      { name: 'Design2', stack: 'Figma, Photoshop, Blender' },
+      { name: 'Frontend3', stack: 'React, Redux, Sass, Axios' },
+      { name: 'Backend3', stack: 'Python, FastAPI, Django' },
+      { name: 'Design3', stack: 'Figma, Photoshop, Blender' }
     ]
   },
   {
@@ -35,15 +35,15 @@ const mockCards = [
     date: '29.08.2022',
     project: '«Инкубатор Фондов»',
     departments: [
-      { name: 'Frontend', stack: ['React', 'Redux', 'Sass', 'Axios'] },
-      { name: 'Backend', stack: ['Python', 'FastAPI', 'Django'] },
-      { name: 'Design', stack: ['Figma', 'Photoshop', 'Blender'] },
-      { name: 'Frontend', stack: ['React', 'Redux', 'Sass', 'Axios'] },
-      { name: 'Backend', stack: ['Python', 'FastAPI', 'Django'] },
-      { name: 'Design', stack: ['Figma', 'Photoshop', 'Blender'] },
-      { name: 'Frontend', stack: ['React', 'Redux', 'Sass', 'Axios'] },
-      { name: 'Backend', stack: ['Python', 'FastAPI', 'Django'] },
-      { name: 'Design', stack: ['Figma', 'Photoshop', 'Blender'] }
+      { name: 'Frontend', stack: 'React, Redux, Sass, Axios' },
+      { name: 'Backend', stack: 'Python, FastAPI, Django' },
+      { name: 'Design', stack: 'Figma, Photoshop, Blender' },
+      { name: 'Frontend2', stack: 'React, Redux, Sass, Axios' },
+      { name: 'Backend2', stack: 'Python, FastAPI, Django' },
+      { name: 'Design2', stack: 'Figma, Photoshop, Blender' },
+      { name: 'Frontend3', stack: 'React, Redux, Sass, Axios' },
+      { name: 'Backend3', stack: 'Python, FastAPI, Django' },
+      { name: 'Design3', stack: 'Figma, Photoshop, Blender' }
     ]
   },
   {
@@ -51,15 +51,15 @@ const mockCards = [
     date: '29.08.2022',
     project: '«Инкубатор Фондов»',
     departments: [
-      { name: 'Frontend', stack: ['React', 'Redux', 'Sass', 'Axios'] },
-      { name: 'Backend', stack: ['Python', 'FastAPI', 'Django'] },
-      { name: 'Design', stack: ['Figma', 'Photoshop', 'Blender'] },
-      { name: 'Frontend', stack: ['React', 'Redux', 'Sass', 'Axios'] },
-      { name: 'Backend', stack: ['Python', 'FastAPI', 'Django'] },
-      { name: 'Design', stack: ['Figma', 'Photoshop', 'Blender'] },
-      { name: 'Frontend', stack: ['React', 'Redux', 'Sass', 'Axios'] },
-      { name: 'Backend', stack: ['Python', 'FastAPI', 'Django'] },
-      { name: 'Design', stack: ['Figma', 'Photoshop', 'Blender'] }
+      { name: 'Frontend', stack: 'React, Redux, Sass, Axios' },
+      { name: 'Backend', stack: 'Python, FastAPI, Django' },
+      { name: 'Design', stack: 'Figma, Photoshop, Blender' },
+      { name: 'Frontend2', stack: 'React, Redux, Sass, Axios' },
+      { name: 'Backend2', stack: 'Python, FastAPI, Django' },
+      { name: 'Design2', stack: 'Figma, Photoshop, Blender' },
+      { name: 'Frontend3', stack: 'React, Redux, Sass, Axios' },
+      { name: 'Backend3', stack: 'Python, FastAPI, Django' },
+      { name: 'Design3', stack: 'Figma, Photoshop, Blender' }
     ]
   },
   {
@@ -67,15 +67,47 @@ const mockCards = [
     date: '29.08.2022',
     project: '«Инкубатор Фондов»',
     departments: [
-      { name: 'Frontend', stack: ['React', 'Redux', 'Sass', 'Axios'] },
-      { name: 'Backend', stack: ['Python', 'FastAPI', 'Django'] },
-      { name: 'Design', stack: ['Figma', 'Photoshop', 'Blender'] },
-      { name: 'Frontend', stack: ['React', 'Redux', 'Sass', 'Axios'] },
-      { name: 'Backend', stack: ['Python', 'FastAPI', 'Django'] },
-      { name: 'Design', stack: ['Figma', 'Photoshop', 'Blender'] },
-      { name: 'Frontend', stack: ['React', 'Redux', 'Sass', 'Axios'] },
-      { name: 'Backend', stack: ['Python', 'FastAPI', 'Django'] },
-      { name: 'Design', stack: ['Figma', 'Photoshop', 'Blender'] }
+      { name: 'Frontend', stack: 'React, Redux, Sass, Axios' },
+      { name: 'Backend', stack: 'Python, FastAPI, Django' },
+      { name: 'Design', stack: 'Figma, Photoshop, Blender' },
+      { name: 'Frontend2', stack: 'React, Redux, Sass, Axios' },
+      { name: 'Backend2', stack: 'Python, FastAPI, Django' },
+      { name: 'Design2', stack: 'Figma, Photoshop, Blender' },
+      { name: 'Frontend3', stack: 'React, Redux, Sass, Axios' },
+      { name: 'Backend3', stack: 'Python, FastAPI, Django' },
+      { name: 'Design3', stack: 'Figma, Photoshop, Blender' }
+    ]
+  },
+  {
+    id: 5,
+    date: '29.08.2022',
+    project: '«Инкубатор Фондов»',
+    departments: [
+      { name: 'Frontend', stack: 'React, Redux, Sass, Axios' },
+      { name: 'Backend', stack: 'Python, FastAPI, Django' },
+      { name: 'Design', stack: 'Figma, Photoshop, Blender' },
+      { name: 'Frontend2', stack: 'React, Redux, Sass, Axios' },
+      { name: 'Backend2', stack: 'Python, FastAPI, Django' },
+      { name: 'Design2', stack: 'Figma, Photoshop, Blender' },
+      { name: 'Frontend3', stack: 'React, Redux, Sass, Axios' },
+      { name: 'Backend3', stack: 'Python, FastAPI, Django' },
+      { name: 'Design3', stack: 'Figma, Photoshop, Blender' }
+    ]
+  },
+  {
+    id: 6,
+    date: '29.08.2022',
+    project: '«Инкубатор Фондов»',
+    departments: [
+      { name: 'Frontend', stack: 'React, Redux, Sass, Axios' },
+      { name: 'Backend', stack: 'Python, FastAPI, Django' },
+      { name: 'Design', stack: 'Figma, Photoshop, Blender' },
+      { name: 'Frontend2', stack: 'React, Redux, Sass, Axios' },
+      { name: 'Backend2', stack: 'Python, FastAPI, Django' },
+      { name: 'Design2', stack: 'Figma, Photoshop, Blender' },
+      { name: 'Frontend3', stack: 'React, Redux, Sass, Axios' },
+      { name: 'Backend3', stack: 'Python, FastAPI, Django' },
+      { name: 'Design3', stack: 'Figma, Photoshop, Blender' }
     ]
   }
 ];
@@ -83,11 +115,11 @@ const mockCards = [
 interface ProjectProps {
   date: string;
   project: string;
-  departments: { name: string; stack: string[] }[];
+  departments: { name: string; stack: string }[];
 }
 
 const Project: FC<ProjectProps> = ({ date, project, departments }) => {
-  const [hover, setHover] = useState('');
+  const [toggle, setToggle] = useState('');
 
   return (
     <Card>
@@ -96,15 +128,18 @@ const Project: FC<ProjectProps> = ({ date, project, departments }) => {
       <CardDepartments>
         {departments.map((department) => (
           <CardDepartment
+            toggle={toggle}
+            dep={department.name}
             key={department.name}
-            onMouseEnter={() => setHover(department.name)}
-            onMouseLeave={() => setHover('')}
+            onClick={() => {
+              if (toggle === department.name) {
+                setToggle('');
+              } else {
+                setToggle(department.name);
+              }
+            }}
           >
-            {hover === department.name ? (
-              department.stack.map((stack) => <p>{stack}&nbsp;</p>)
-            ) : (
-              <p>{department.name}</p>
-            )}
+            <p>{toggle === department.name ? `${department.stack}` : `${department.name}`}</p>
           </CardDepartment>
         ))}
       </CardDepartments>

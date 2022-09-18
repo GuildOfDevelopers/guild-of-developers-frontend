@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import Projects from '../../components/Projects';
+import Projects from '../components/Projects';
 
 const CurrentProjects: FC = () => {
   return (

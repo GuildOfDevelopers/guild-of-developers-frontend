@@ -41,7 +41,7 @@ export const NavBarLink = styled(Link)`
   }
 `;
 
-export const NavBarLogo = styled.p`
+export const NavBarLogo = styled(Link)`
   font-size: var(--fs-700);
   font-weight: var(--fw-700);
   line-height: var(--line-height-700);

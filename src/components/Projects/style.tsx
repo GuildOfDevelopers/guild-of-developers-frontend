@@ -5,7 +5,7 @@ export const Section = styled.section`
 `;
 
 export const Wrapper = styled.div`
-  padding-block: 105px 173px;
+  padding-block: 105px 133px;
 `;
 
 export const Title = styled.h2`

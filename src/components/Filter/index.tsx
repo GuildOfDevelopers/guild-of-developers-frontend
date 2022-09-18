@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
-import { Container } from '../../lib/styled/container';
-import { Section, Wrapper, LeftFilter, FilterButtons } from './style';
+import { Wrapper, LeftFilter, FilterButtons } from './style';
 import { IconFilter } from './Icon';
 
 const Filter: FC = () => {
@@ -17,27 +16,23 @@ const Filter: FC = () => {
   ];
 
   return (
-    <Section>
-      <Container>
-        <Wrapper>
-          <LeftFilter>
-            {menu.map((item) => (
-              <FilterButtons
-                key={item.id}
-                className={currentMenu === item.id ? 'active' : ''}
-                onClick={() => setCurrentMenu(item.id)}
-              >
-                {item.title}
-              </FilterButtons>
-            ))}
-          </LeftFilter>
-
-          <FilterButtons>
-            <IconFilter />
+    <Wrapper>
+      <LeftFilter>
+        {menu.map((item) => (
+          <FilterButtons
+            key={item.id}
+            className={currentMenu === item.id ? 'active' : ''}
+            onClick={() => setCurrentMenu(item.id)}
+          >
+            {item.title}
           </FilterButtons>
-        </Wrapper>
-      </Container>
-    </Section>
+        ))}
+      </LeftFilter>
+
+      <FilterButtons>
+        <IconFilter />
+      </FilterButtons>
+    </Wrapper>
   );
 };
 

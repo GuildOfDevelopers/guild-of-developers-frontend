@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Home from '../../pages/Home';
-import CurrentProjects from '../../pages/currentProjects';
+import CurrentProjects from '../../pages/CurrentProjects';
 
 const Main: FC = () => {
   return (

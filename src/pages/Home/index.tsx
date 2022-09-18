@@ -6,7 +6,7 @@ const Home: FC = () => {
   return (
     <>
       <Hero />
-      <Projects />
+      <Projects page={'home'} />
     </>
   );
 };

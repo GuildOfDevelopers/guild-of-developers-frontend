@@ -1,5 +1,6 @@
 import React, { FC, useState } from 'react';
 import { Container } from '../../lib/styled/container';
+import Filter from '../Filter';
 import Project from './Project';
 import { Grid, Section, Title, Wrapper } from './style';
 
@@ -102,15 +103,34 @@ const mockCards = [
   }
 ];
 
-const Projects: FC = () => {
-  const [page] = useState('home');
+interface ProjectsProps {
+  page: string;
+}
 
+const Projects: FC<ProjectsProps> = ({ page }) => {
   return (
     <Section>
       <Container>
         {page === 'home' && (
           <Wrapper>
             <Title>Наши проекты</Title>
+            <Grid>
+              {mockCards.map((el) => (
+                <Project
+                  project={el.project}
+                  departments={el.departments}
+                  date={el.date}
+                  key={el.id}
+                />
+              ))}
+            </Grid>
+          </Wrapper>
+        )}
+
+        {page === 'projectsPage' && (
+          <Wrapper>
+            <Title>Наши проекты</Title>
+            <Filter />
             <Grid>
               {mockCards.map((el) => (
                 <Project

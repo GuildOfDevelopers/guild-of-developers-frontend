@@ -13,11 +13,11 @@ export const Navbar = styled.nav`
 `;
 
 export const NavBarLink = styled(Link)`
+  min-width: 130px;
+
   font-size: var(--fs-350);
   font-weight: var(--fw-400);
   line-height: var(--line-height-350);
-
-  min-width: 130px;
   text-align: center;
 
   &:first-child {
@@ -26,6 +26,18 @@ export const NavBarLink = styled(Link)`
 
   &:last-child {
     text-align: end;
+  }
+
+  transition: transform 0.3s ease-out;
+
+  &:hover,
+  &:focus-visible {
+    font-weight: var(--fw-500);
+    transform: scale(1.02);
+  }
+
+  &:active {
+    transform: scale(1.05);
   }
 `;
 

@@ -13,4 +13,15 @@ export const StyledButton = styled.button`
   font-weight: var(--fw-700);
   line-height: var(--line-height-350);
   text-align: center;
+
+  transition: transform 0.3s ease-out;
+
+  &:hover,
+  &:focus-visible {
+    transform: scale(1.02);
+  }
+
+  &:active {
+    transform: scale(1.05);
+  }
 `;

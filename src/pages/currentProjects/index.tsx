@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
-import Filter from '../../components/Filter';
+import Projects from '../../components/Projects';
 
 const CurrentProjects: FC = () => {
   return (
     <>
-      <Filter />
+      <Projects page={'projects'} />
     </>
   );
 };

@@ -88,7 +88,7 @@ export const Stack = styled.ul`
   flex-wrap: wrap;
   text-align: center;
 
-  gap: 16px;
+  gap: 3ch;
 `;
 
 export const Test = styled.li`

@@ -74,10 +74,11 @@ export const CardDepartment = styled.li`
     return (
       toggle === dep &&
       css`
+        gap: 8px;
         font-weight: var(--fw-700);
         color: var(--color-white);
         background-color: var(--color-grey);
-        padding: 30px 8px;
+        padding: 22px 8px;
         border-radius: 15px;
         width: 100%;
       `

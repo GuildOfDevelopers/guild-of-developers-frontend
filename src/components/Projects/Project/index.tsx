@@ -25,7 +25,11 @@ const Project: FC<ProjectProps> = ({ date, project, departments }) => {
   );
 
   return (
-    <Card>
+    <Card
+      onClick={() => {
+        setToggle('');
+      }}
+    >
       <CardDate>{date}</CardDate>
       <CardTitle>{project}</CardTitle>
       <CardDepartments>
@@ -34,14 +38,16 @@ const Project: FC<ProjectProps> = ({ date, project, departments }) => {
             key={department.name}
             dep={department.name}
             toggle={toggle}
-            onClick={() => test(department.name)}
+            onClick={(e) => {
+              e.stopPropagation();
+              test(department.name);
+            }}
           >
+            <p>{department.name}</p>
             <Stack>
-              {toggle === department.name ? (
-                department.stack.map((stack) => <Test>{stack}</Test>)
-              ) : (
-                <p>{department.name}</p>
-              )}
+              {toggle === department.name
+                ? department.stack.map((stack) => <Test>{stack}</Test>)
+                : ''}
             </Stack>
           </CardDepartment>
         ))}

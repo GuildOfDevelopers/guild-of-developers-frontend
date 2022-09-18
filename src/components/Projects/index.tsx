@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import { Container } from '../../lib/styled/container';
 import Filter from '../Filter';
 import Project from './Project';
@@ -107,42 +107,39 @@ interface ProjectsProps {
   page: string;
 }
 
+const ProjectsWithoutFilter: FC = () => {
+  return (
+    <Wrapper>
+      <Title>Наши проекты</Title>
+      <Grid>
+        {mockCards.map((el) => (
+          <Project project={el.project} departments={el.departments} date={el.date} key={el.id} />
+        ))}
+      </Grid>
+    </Wrapper>
+  );
+};
+
+const ProjectsWithFilter: FC = () => {
+  return (
+    <Wrapper>
+      <Title>Проекты</Title>
+      <Filter />
+      <Grid>
+        {mockCards.map((el) => (
+          <Project project={el.project} departments={el.departments} date={el.date} key={el.id} />
+        ))}
+      </Grid>
+    </Wrapper>
+  );
+};
+
 const Projects: FC<ProjectsProps> = ({ page }) => {
   return (
     <Section>
       <Container>
-        {page === 'home' && (
-          <Wrapper>
-            <Title>Наши проекты</Title>
-            <Grid>
-              {mockCards.map((el) => (
-                <Project
-                  project={el.project}
-                  departments={el.departments}
-                  date={el.date}
-                  key={el.id}
-                />
-              ))}
-            </Grid>
-          </Wrapper>
-        )}
-
-        {page === 'projectsPage' && (
-          <Wrapper>
-            <Title>Наши проекты</Title>
-            <Filter />
-            <Grid>
-              {mockCards.map((el) => (
-                <Project
-                  project={el.project}
-                  departments={el.departments}
-                  date={el.date}
-                  key={el.id}
-                />
-              ))}
-            </Grid>
-          </Wrapper>
-        )}
+        {page === 'home' && <ProjectsWithoutFilter />}
+        {page === 'projects' && <ProjectsWithFilter />}
       </Container>
     </Section>
   );

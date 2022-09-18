@@ -12,6 +12,8 @@ export const Card = styled.li`
   background-color: var(--color-white-2);
 
   transition: all 0.3s;
+
+  /* position: relative; */
 `;
 
 export const CardDate = styled.span`
@@ -38,12 +40,17 @@ export const CardDepartments = styled.ul`
   flex-wrap: wrap;
   gap: 8px;
 
-  position: relative;
+  /* position: relative; */
 `;
 
 export const CardDepartment = styled.li`
   padding: 8px 20px;
   width: max-content;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   border: 2px solid var(--color-black);
   border-radius: 20px;
@@ -67,13 +74,12 @@ export const CardDepartment = styled.li`
     return (
       toggle === dep &&
       css`
-        padding-block: 30px;
-        width: 100%;
-        border-radius: 15px;
-
         font-weight: var(--fw-700);
         color: var(--color-white);
         background-color: var(--color-grey);
+        padding: 30px 8px;
+        border-radius: 15px;
+        width: 100%;
       `
     );
   }}

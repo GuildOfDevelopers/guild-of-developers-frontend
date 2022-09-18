@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   padding-bottom: 40px;
+  position: relative;
 `;
 
 export const LeftFilter = styled.div``;

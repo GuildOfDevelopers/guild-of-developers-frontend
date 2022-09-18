@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { Wrapper, LeftFilter, FilterButtons } from './style';
+import FilterOpen from './FilterOpen';
 import { IconFilter } from './Icon';
 
 const Filter: FC = () => {
@@ -15,6 +16,8 @@ const Filter: FC = () => {
     }
   ];
 
+  const [isOpen, setIsOpen] = React.useState(false);
+
   return (
     <Wrapper>
       <LeftFilter>
@@ -29,9 +32,11 @@ const Filter: FC = () => {
         ))}
       </LeftFilter>
 
-      <FilterButtons>
+      <FilterButtons onClick={() => setIsOpen(!isOpen)}>
         <IconFilter />
       </FilterButtons>
+
+      {isOpen && <FilterOpen />}
     </Wrapper>
   );
 };

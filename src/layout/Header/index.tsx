@@ -8,17 +8,17 @@ const Header: FC = () => {
     <StyledHeader>
       <Container>
         <Navbar>
-          <NavBarLink to="#">Как это устроено?</NavBarLink>
-          <NavBarLink to="/about">О Гильдии</NavBarLink>
+          <NavBarLink to="/howItWorks">Как это устроено?</NavBarLink>
+          <NavBarLink to="/aboutGuild">О Гильдии</NavBarLink>
           <NavBarLink to="/currentProjects">
             <Button>Найти проект</Button>
           </NavBarLink>
-          <NavBarLogo>GoD</NavBarLogo>
+          <NavBarLogo to="/">GoD</NavBarLogo>
           <NavBarLink to="/login">
             <Button>Войти</Button>
           </NavBarLink>
           <NavBarLink to="/doneProjects">Архив проектов</NavBarLink>
-          <NavBarLink to="#">Гильдийцы</NavBarLink>
+          <NavBarLink to="/guildMembers">Гильдийцы</NavBarLink>
         </Navbar>
       </Container>
     </StyledHeader>

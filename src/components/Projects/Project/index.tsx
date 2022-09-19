@@ -8,7 +8,7 @@ import {
   CardDepartments,
   CardDepartment,
   Stack,
-  Test
+  StackItem
 } from './style';
 
 interface ProjectProps {
@@ -21,7 +21,7 @@ interface ProjectProps {
 const Project: FC<ProjectProps> = ({ date, title, departments, regFormUrl }) => {
   const [toggle, setToggle] = useState('');
 
-  const test = useCallback(
+  const handleSetToggle = useCallback(
     (name: string) => (toggle === name ? setToggle('') : setToggle(name)),
     [setToggle, toggle]
   );
@@ -42,7 +42,7 @@ const Project: FC<ProjectProps> = ({ date, title, departments, regFormUrl }) => 
             toggle={toggle}
             onClick={(e) => {
               e.stopPropagation();
-              test(department.name);
+              handleSetToggle(department.name);
             }}
           >
             <p>
@@ -52,12 +52,13 @@ const Project: FC<ProjectProps> = ({ date, title, departments, regFormUrl }) => 
 
             <Stack>
               {toggle === department.name
-                ? department.stack.map((stack) => <Test key={stack}>{stack}</Test>)
+                ? department.stack.map((stack) => <StackItem key={stack}>{stack}</StackItem>)
                 : ''}
             </Stack>
           </CardDepartment>
         ))}
       </CardDepartments>
+      {/* TODO: ниже веременный костыль т.к. не у всех карточек есть ссылки на форму регистрации */}
       {regFormUrl !== '' ? (
         <CardButton href={regFormUrl} target="_blank">
           Записаться

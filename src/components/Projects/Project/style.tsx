@@ -115,7 +115,10 @@ export const Stack = styled.ul`
   gap: 3ch;
 `;
 
-export const Test = styled.li`
+// TODO:
+// если > чем на 1 строку, то в начале второй строки тоже есть пагинация
+// позже подумать над тем как это исправить
+export const StackItem = styled.li`
   &:first-of-type {
     list-style: none;
   }

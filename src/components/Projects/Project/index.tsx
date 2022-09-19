@@ -13,11 +13,12 @@ import {
 
 interface ProjectProps {
   date: string;
-  project: string;
+  title: string;
   departments: { name: string; stack: string[] }[];
+  regFormUrl: string;
 }
 
-const Project: FC<ProjectProps> = ({ date, project, departments }) => {
+const Project: FC<ProjectProps> = ({ date, title, departments, regFormUrl }) => {
   const [toggle, setToggle] = useState('');
 
   const test = useCallback(
@@ -32,7 +33,7 @@ const Project: FC<ProjectProps> = ({ date, project, departments }) => {
       }}
     >
       <CardDate>{date}</CardDate>
-      <CardTitle>{project}</CardTitle>
+      <CardTitle>«{title}»</CardTitle>
       <CardDepartments>
         {departments.map((department) => (
           <CardDepartment
@@ -57,7 +58,9 @@ const Project: FC<ProjectProps> = ({ date, project, departments }) => {
           </CardDepartment>
         ))}
       </CardDepartments>
-      <CardButton>Записаться</CardButton>
+      <CardButton href={regFormUrl} target="_blank">
+        Записаться
+      </CardButton>
     </Card>
   );
 };

@@ -40,7 +40,7 @@ export const CardDepartments = styled.ul`
 `;
 
 export const CardDepartment = styled.li`
-  padding: 8px 13px 8px 20px;
+  padding: 2px 13px 2px 20px;
   width: max-content;
 
   display: flex;
@@ -121,8 +121,9 @@ export const Test = styled.li`
   }
 `;
 
-export const CardButton = styled.button`
+export const CardButton = styled.a`
   margin-block-start: auto;
+
   width: 179px;
   height: 42px;
 

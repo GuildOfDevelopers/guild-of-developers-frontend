@@ -1,4 +1,5 @@
 import React, { FC, useState, useCallback } from 'react';
+import { ArrowDown, ArrowUp } from './Icon';
 import {
   CardButton,
   Card,
@@ -43,10 +44,14 @@ const Project: FC<ProjectProps> = ({ date, project, departments }) => {
               test(department.name);
             }}
           >
-            <p>{department.name}</p>
+            <p>
+              {department.name}
+              {toggle === department.name ? <ArrowUp /> : <ArrowDown />}
+            </p>
+
             <Stack>
               {toggle === department.name
-                ? department.stack.map((stack) => <Test>{stack}</Test>)
+                ? department.stack.map((stack) => <Test key={stack}>{stack}</Test>)
                 : ''}
             </Stack>
           </CardDepartment>

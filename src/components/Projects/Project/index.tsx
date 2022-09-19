@@ -58,9 +58,13 @@ const Project: FC<ProjectProps> = ({ date, title, departments, regFormUrl }) => 
           </CardDepartment>
         ))}
       </CardDepartments>
-      <CardButton href={regFormUrl} target="_blank">
-        Записаться
-      </CardButton>
+      {regFormUrl !== '' ? (
+        <CardButton href={regFormUrl} target="_blank">
+          Записаться
+        </CardButton>
+      ) : (
+        <CardButton href="#">Записаться</CardButton>
+      )}
     </Card>
   );
 };

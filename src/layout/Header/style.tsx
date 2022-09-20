@@ -47,11 +47,6 @@ export const NavBarLink = styled(Link)`
     return (
       workInProgress &&
       css`
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
         &:hover,
         &:focus-visible {
           &::after {
@@ -63,8 +58,7 @@ export const NavBarLink = styled(Link)`
             right: 0;
             bottom: 0;
 
-            min-width: 160px;
-            height: 30px;
+            min-width: 130px;
             display: flex;
             align-items: center;
             justify-content: center;

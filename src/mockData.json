@@ -467,7 +467,7 @@
     "registrationFormUrl": "https://gifted-base-520.notion.site/Guild-of-Developers-a6a7cd25ae344ea888a0636ba94532d1",
     "departments": [
       { "name": "Frontend", "stack": ["React", "Redux", "styled-components"] },
-      { "name": "Backend", "stack": [""] },
+      { "name": "Backend", "stack": ["FastApi", "Django", "Postgres", "Docker", "protobuf"] },
       { "name": "UI/UX", "stack": [""] },
       { "name": "Тестировщик ПО", "stack": [""] },
       { "name": "Отдел безопасности", "stack": [""] },

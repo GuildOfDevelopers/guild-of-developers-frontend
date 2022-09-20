@@ -12,8 +12,6 @@ export const Card = styled.li`
   background-color: var(--color-white-2);
 
   transition: all 0.3s;
-
-  /* position: relative; */
 `;
 
 export const CardDate = styled.span`
@@ -39,12 +37,10 @@ export const CardDepartments = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-
-  /* position: relative; */
 `;
 
 export const CardDepartment = styled.li`
-  padding: 8px 20px;
+  padding: 2px 13px 2px 20px;
   width: max-content;
 
   display: flex;
@@ -63,11 +59,24 @@ export const CardDepartment = styled.li`
 
   transition: all 0.3s;
 
+  p {
+    display: flex;
+    align-items: center;
+  }
+
   &:hover,
   &:focus-visible {
     font-weight: var(--fw-700);
     color: var(--color-white);
     background-color: var(--color-grey);
+
+    p {
+      svg {
+        path {
+          fill: var(--color-white);
+        }
+      }
+    }
   }
 
   ${({ toggle, dep }: { toggle: string; dep: string }) => {
@@ -81,6 +90,14 @@ export const CardDepartment = styled.li`
         padding: 22px 8px;
         border-radius: 15px;
         width: 100%;
+
+        p {
+          svg {
+            path {
+              fill: var(--color-white);
+            }
+          }
+        }
       `
     );
   }}
@@ -98,14 +115,18 @@ export const Stack = styled.ul`
   gap: 3ch;
 `;
 
-export const Test = styled.li`
+// TODO:
+// если > чем на 1 строку, то в начале второй строки тоже есть пагинация
+// позже подумать над тем как это исправить
+export const StackItem = styled.li`
   &:first-of-type {
     list-style: none;
   }
 `;
 
-export const CardButton = styled.button`
+export const CardButton = styled.a`
   margin-block-start: auto;
+
   width: 179px;
   height: 42px;
 

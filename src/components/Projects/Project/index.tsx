@@ -1,4 +1,5 @@
 import React, { FC, useState, useCallback } from 'react';
+import { ArrowDown, ArrowUp } from './Icon';
 import {
   CardButton,
   Card,
@@ -7,19 +8,20 @@ import {
   CardDepartments,
   CardDepartment,
   Stack,
-  Test
+  StackItem
 } from './style';
 
 interface ProjectProps {
   date: string;
-  project: string;
+  title: string;
   departments: { name: string; stack: string[] }[];
+  regFormUrl: string;
 }
 
-const Project: FC<ProjectProps> = ({ date, project, departments }) => {
+const Project: FC<ProjectProps> = ({ date, title, departments, regFormUrl }) => {
   const [toggle, setToggle] = useState('');
 
-  const test = useCallback(
+  const handleSetToggle = useCallback(
     (name: string) => (toggle === name ? setToggle('') : setToggle(name)),
     [setToggle, toggle]
   );
@@ -31,7 +33,7 @@ const Project: FC<ProjectProps> = ({ date, project, departments }) => {
       }}
     >
       <CardDate>{date}</CardDate>
-      <CardTitle>{project}</CardTitle>
+      <CardTitle>«{title}»</CardTitle>
       <CardDepartments>
         {departments.map((department) => (
           <CardDepartment
@@ -40,19 +42,30 @@ const Project: FC<ProjectProps> = ({ date, project, departments }) => {
             toggle={toggle}
             onClick={(e) => {
               e.stopPropagation();
-              test(department.name);
+              handleSetToggle(department.name);
             }}
           >
-            <p>{department.name}</p>
+            <p>
+              {department.name}
+              {toggle === department.name ? <ArrowUp /> : <ArrowDown />}
+            </p>
+
             <Stack>
               {toggle === department.name
-                ? department.stack.map((stack) => <Test>{stack}</Test>)
+                ? department.stack.map((stack) => <StackItem key={stack}>{stack}</StackItem>)
                 : ''}
             </Stack>
           </CardDepartment>
         ))}
       </CardDepartments>
-      <CardButton>Записаться</CardButton>
+      {/* TODO: ниже веременный костыль т.к. не у всех карточек есть ссылки на форму регистрации */}
+      {regFormUrl !== '' ? (
+        <CardButton href={regFormUrl} target="_blank">
+          Записаться
+        </CardButton>
+      ) : (
+        <CardButton href="#">Записаться</CardButton>
+      )}
     </Card>
   );
 };

@@ -5,7 +5,7 @@ export const Section = styled.section`
 `;
 
 export const Wrapper = styled.div`
-  padding-block: 105px 133px;
+  padding-block: 105px 135px;
 `;
 
 export const Title = styled.h2`
@@ -20,7 +20,6 @@ export const Title = styled.h2`
 export const Grid = styled.ul`
   display: grid;
   justify-content: center;
-  align-items: flex-start;
   grid-template-columns: repeat(auto-fill, min(377px, 100%));
   gap: 34.5px;
 `;

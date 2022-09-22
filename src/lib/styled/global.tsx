@@ -27,21 +27,44 @@ const Global = createGlobalStyle`
     --fw-700: 700; 
     --fw-800: 800;
 
-    // font-size
-    --fs-300: 12px;
-    --fs-350: 14px;
-    --fs-400: 18px;
-    --fs-500: 20px;
-    --fs-600: 30px;
-    --fs-700: 35px;
+    // font-size (MOBILE)
+    --fs-250: 16px; // напрвления в карточках
+    --fs-300: 12px; // дата в карточках + footer ссылки
+    --fs-350: 14px; // header кнопки + ссылки
+    --fs-400: 14px; // текст в hero
+    --fs-500: 17px; // заголовок + кнопка в карточке
+    --fs-600: 26px; // заголовки секций + в hero цифр в овале
+    --fs-700: 30px; // логотип
 
-    // line-height
-    --line-height-300: 14px;
-    --line-height-350: 16px;
-    --line-height-400: 21px;
-    --line-height-500: 23px;
-    --line-height-600: 35px;
-    --line-height-700: 41px;
+    // line-height (MOBILE)
+    --line-height-250: 18px; // напрвления в карточках
+    --line-height-300: 14px; // дата в карточках + footer ссылки
+    --line-height-350: 16px; // header кнопки + ссылки
+    --line-height-400: 20px; // мелкий текст в hero
+    --line-height-500: 20px; // заголовок + кнопка в карточке
+    --line-height-600: 32px; // заголовки секций + в hero цифр в овале
+    --line-height-700: 35px; // логотип
+
+
+    @media (min-width: 768px) {
+      // font-size (DESKTOP)
+      --fs-250: 12px; // напрвления в карточках
+      --fs-300: 12px; // дата в карточках + footer ссылки
+      --fs-350: 14px; // header кнопки + ссылки
+      --fs-400: 18px; // текст в hero
+      --fs-500: 20px; // заголовок + кнопка в карточке
+      --fs-600: 30px; // заголовки секций + в hero цифр в овале
+      --fs-700: 35px; // логотип
+
+      // line-height (DESKTOP)
+      --line-height-250: 14px; // напрвления в карточках
+      --line-height-300: 14px; // дата в карточках + footer ссылки
+      --line-height-350: 16px; // header кнопки + ссылки
+      --line-height-400: 21px; // текст в hero
+      --line-height-500: 23px; // заголовок + кнопка в карточке
+      --line-height-600: 35px; // заголовки секций + в hero цифр в овале
+      --line-height-700: 41px; // логотип
+    }
 
   }
 

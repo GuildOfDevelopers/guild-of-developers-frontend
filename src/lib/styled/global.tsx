@@ -73,6 +73,7 @@ const Global = createGlobalStyle`
     font-weight: var(--fw-400);
     background-color: var(--color-white);
     color: var(--color-black);
+    min-width: 320px;
   }
 `;
 

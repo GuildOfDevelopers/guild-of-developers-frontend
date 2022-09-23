@@ -23,16 +23,16 @@ interface Member {
 const Hero: FC = () => {
   const members: Member[] = [
     {
-      amount: 123,
-      name: 'участника Гильдии'
+      amount: 187,
+      name: 'участников Гильдии'
     },
     {
-      amount: 123,
-      name: 'участника Гильдии'
+      amount: 8,
+      name: 'проектов в разработке'
     },
     {
-      amount: 123,
-      name: 'участника Гильдии'
+      amount: 6,
+      name: 'месяцев на рынке'
     }
   ];
 

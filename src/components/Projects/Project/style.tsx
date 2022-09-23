@@ -52,8 +52,8 @@ export const CardDepartment = styled.li`
   border-radius: 20px;
 
   font-weight: var(--fw-600);
-  font-size: var(--fs-300);
-  line-height: var(--line-height-300);
+  font-size: var(--fs-250);
+  line-height: var(--line-height-250);
 
   cursor: pointer;
 

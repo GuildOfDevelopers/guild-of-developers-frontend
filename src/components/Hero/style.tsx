@@ -37,12 +37,13 @@ export const DescrSpan = styled.span`
 export const Members = styled.ul`
   max-width: 792px;
   margin: 0 auto;
-  padding: 30px 86px;
+  padding: 30px 70px;
   background-color: var(--color-white-2);
   border-radius: 70px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
 `;
 
 export const MembersItem = styled.li`
@@ -59,7 +60,7 @@ export const MembersIcon = styled.div`
 `;
 
 export const MembersDescr = styled.div`
-  width: 93px;
+  width: 100px;
 `;
 
 export const MembersAmount = styled.p`

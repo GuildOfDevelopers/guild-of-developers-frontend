@@ -13,9 +13,9 @@ export const Navbar = styled.nav`
 `;
 
 export const NavBarLink = styled(Link)`
-  position: relative;
+  /* position: relative;
 
-  min-width: 130px;
+  min-width: 130px; */
 
   font-size: var(--fs-350);
   font-weight: var(--fw-400);

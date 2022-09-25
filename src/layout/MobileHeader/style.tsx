@@ -23,10 +23,6 @@ export const Navbar = styled(motion.nav)`
 `;
 
 export const NavBarLink = styled(Link)`
-  position: relative;
-
-  min-width: 130px;
-
   font-size: var(--fs-350);
   font-weight: var(--fw-400);
   line-height: var(--line-height-350);

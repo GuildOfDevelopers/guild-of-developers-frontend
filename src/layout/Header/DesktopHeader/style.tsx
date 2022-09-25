@@ -46,12 +46,12 @@ export const NavBarLink = styled(Link)`
   // TODO: временно - только для еще не готовых ссылок
   ${({ wip }: { wip: string }) => {
     return (
-      wip &&
+      wip === 'true' &&
       css`
         &:hover,
         &:focus-visible {
           &::after {
-            content: 'WIP';
+            content: 'Скоро';
 
             position: absolute;
             top: 0;

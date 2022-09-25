@@ -1,13 +1,19 @@
-import { motion } from 'framer-motion';
+import { motion, SVGMotionProps } from 'framer-motion';
+import { MouseEventHandler } from 'react';
 import { Button } from './style';
 
-const Path = (props: any) => (
+type MenuToggleTypes = {
+  isOpen: boolean;
+  toggle: MouseEventHandler<HTMLButtonElement>;
+};
+
+const Path = (props: SVGMotionProps<SVGPathElement>) => (
   <motion.path fill="transparent" strokeLinecap="round" strokeWidth="3" {...props} />
 );
 
 const transition = { duration: 0.33 };
 
-const MenuToggle: React.FC<any> = ({ isOpen, toggle }) => {
+const MenuToggle: React.FC<MenuToggleTypes> = ({ isOpen, toggle }) => {
   return (
     <Button onClick={toggle}>
       <svg width="23" height="23" viewBox="0 0 23 23">

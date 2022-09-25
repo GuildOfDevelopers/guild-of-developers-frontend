@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 
 export const StyledHeader = styled.header`
   background-color: var(--color-white-2);
-  padding: 22px 16px;
+  padding: 20px 16px;
 `;
 
 export const MenuHeader = styled.div`
@@ -15,7 +15,7 @@ export const MenuHeader = styled.div`
 
 export const Navbar = styled(motion.nav)`
   position: absolute;
-  top: 57px;
+  top: 55px;
   left: 0;
   bottom: 0;
   right: 0;

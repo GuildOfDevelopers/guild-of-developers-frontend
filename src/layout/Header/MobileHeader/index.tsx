@@ -9,11 +9,11 @@ const MobileHeader: FC = () => {
   const [isOpen, setOpen] = useState(false);
   return (
     <StyledHeader>
-      <MenuHeader>
-        <MenuToggle isOpen={isOpen} toggle={() => setOpen(!isOpen)} />
-        <NavBarLogo to="/">GoD</NavBarLogo>
-      </MenuHeader>
       <Container>
+        <MenuHeader>
+          <MenuToggle isOpen={isOpen} toggle={() => setOpen(!isOpen)} />
+          <NavBarLogo to="/">GoD</NavBarLogo>
+        </MenuHeader>
         <AnimatePresence>
           {isOpen && (
             <Navbar initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>

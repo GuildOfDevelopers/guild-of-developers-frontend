@@ -1,16 +1,25 @@
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
 export const StyledHeader = styled.header`
   background-color: var(--color-white-2);
+  padding: 34px 16px;
 `;
 
-export const Navbar = styled.nav`
+export const MenuHeader = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+`;
+
+export const Navbar = styled(motion.nav)`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  padding-block: 20px;
+  gap: 16px;
+  margin-top: 37px;
+  transition: all 0.3s linear;
 `;
 
 export const NavBarLink = styled(Link)`
@@ -90,6 +99,6 @@ export const NavBarLogo = styled(Link)`
     border-radius: 50px;
     background-color: var(--color-black);
     bottom: 0;
-    left: 28px;
+    left: 23px;
   }
 `;

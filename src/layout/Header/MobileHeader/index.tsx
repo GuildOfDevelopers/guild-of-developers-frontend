@@ -17,22 +17,22 @@ const MobileHeader: FC = () => {
         <AnimatePresence>
           {isOpen && (
             <Navbar initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-              <NavBarLink workInProgress={true} to="#">
+              <NavBarLink wip="true" to="#">
                 <Button>Войти</Button>
               </NavBarLink>
-              <NavBarLink workInProgress={false} to="/currentProjects">
+              <NavBarLink wip="false" to="/currentProjects">
                 <Button>Найти проект</Button>
               </NavBarLink>
-              <NavBarLink workInProgress={true} to="#">
+              <NavBarLink wip="true" to="#">
                 Как это устроено?
               </NavBarLink>
-              <NavBarLink workInProgress={true} to="#">
+              <NavBarLink wip="true" to="#">
                 О Гильдии
               </NavBarLink>
-              <NavBarLink workInProgress={true} to="#">
+              <NavBarLink wip="true" to="#">
                 Архив проектов
               </NavBarLink>
-              <NavBarLink workInProgress={true} to="#">
+              <NavBarLink wip="true" to="#">
                 Гильдийцы
               </NavBarLink>
             </Navbar>

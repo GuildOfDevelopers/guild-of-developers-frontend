@@ -8,23 +8,23 @@ const DesktopHeader: FC = () => {
     <StyledHeader>
       <Container>
         <Navbar>
-          <NavBarLink workInProgress={true} to="#">
+          <NavBarLink wip="true" to="#">
             Как это устроено?
           </NavBarLink>
-          <NavBarLink workInProgress={true} to="#">
+          <NavBarLink wip="true" to="#">
             О Гильдии
           </NavBarLink>
-          <NavBarLink workInProgress={false} to="/currentProjects">
+          <NavBarLink wip="false" to="/currentProjects">
             <Button>Найти проект</Button>
           </NavBarLink>
           <NavBarLogo to="/">GoD</NavBarLogo>
-          <NavBarLink workInProgress={true} to="#">
+          <NavBarLink wip="true" to="#">
             <Button>Войти</Button>
           </NavBarLink>
-          <NavBarLink workInProgress={true} to="#">
+          <NavBarLink wip="true" to="#">
             Архив проектов
           </NavBarLink>
-          <NavBarLink workInProgress={true} to="#">
+          <NavBarLink wip="true" to="#">
             Гильдийцы
           </NavBarLink>
         </Navbar>

@@ -25,7 +25,7 @@ export const Navbar = styled(motion.nav)`
   gap: 16px;
   padding-top: 37px;
   background-color: var(--color-white-2);
-  transition: all 0.3s linear;
+  transition: all 0.3s ease-in-out;
 `;
 
 export const NavBarLink = styled(Link)`
@@ -55,9 +55,9 @@ export const NavBarLink = styled(Link)`
   }
 
   // TODO: временно - только для еще не готовых ссылок
-  ${({ workInProgress }: { workInProgress: boolean }) => {
+  ${({ wip }: { wip: string }) => {
     return (
-      workInProgress &&
+      wip &&
       css`
         &:hover,
         &:focus-visible {

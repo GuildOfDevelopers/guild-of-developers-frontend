@@ -44,9 +44,9 @@ export const NavBarLink = styled(Link)`
   }
 
   // TODO: временно - только для еще не готовых ссылок
-  ${({ workInProgress }: { workInProgress: boolean }) => {
+  ${({ wip }: { wip: string }) => {
     return (
-      workInProgress &&
+      wip &&
       css`
         &:hover,
         &:focus-visible {

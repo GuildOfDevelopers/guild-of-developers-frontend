@@ -50,7 +50,7 @@ export const DescrSpan = styled.span`
 `;
 
 export const Members = styled.ul`
-  max-width: 280px;
+  max-width: 288px;
   margin: 0 auto;
   padding: 40px 22px;
   background-color: var(--color-white-2);
@@ -70,6 +70,7 @@ export const MembersItem = styled.li`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 6px;
   align-items: center;
   width: 72px;
 

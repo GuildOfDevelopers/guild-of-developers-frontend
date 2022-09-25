@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import Button from '../NavBarButton';
+import NavBarButton from '../NavBarButton';
 import { Container } from '../../../lib/styled/container';
 import { NavBarLink, NavBarLogo, StyledHeader, Navbar } from './style';
 
@@ -15,11 +15,11 @@ const DesktopHeader: FC = () => {
             О Гильдии
           </NavBarLink>
           <NavBarLink wip="false" to="/currentProjects">
-            <Button>Найти проект</Button>
+            <NavBarButton>Найти проект</NavBarButton>
           </NavBarLink>
           <NavBarLogo to="/">GoD</NavBarLogo>
           <NavBarLink wip="true" to="#">
-            <Button>Войти</Button>
+            <NavBarButton>Войти</NavBarButton>
           </NavBarLink>
           <NavBarLink wip="true" to="#">
             Архив проектов

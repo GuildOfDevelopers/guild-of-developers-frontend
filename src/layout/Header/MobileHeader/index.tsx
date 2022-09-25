@@ -1,7 +1,7 @@
 import { AnimatePresence } from 'framer-motion';
 import React, { FC, useState } from 'react';
 import MenuToggle from '../MenuToggle';
-import Button from '../NavBarButton';
+import NavBarButton from '../NavBarButton';
 import { Container } from '../../../lib/styled/container';
 import { NavBarLink, NavBarLogo, StyledHeader, Navbar, MenuHeader } from './style';
 
@@ -18,10 +18,10 @@ const MobileHeader: FC = () => {
           {isOpen && (
             <Navbar initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
               <NavBarLink wip="true" to="#">
-                <Button>Войти</Button>
+                <NavBarButton>Войти</NavBarButton>
               </NavBarLink>
               <NavBarLink wip="false" to="/currentProjects">
-                <Button>Найти проект</Button>
+                <NavBarButton>Найти проект</NavBarButton>
               </NavBarLink>
               <NavBarLink wip="true" to="#">
                 Как это устроено?

@@ -14,11 +14,17 @@ export const MenuHeader = styled.div`
 `;
 
 export const Navbar = styled(motion.nav)`
+  position: absolute;
+  top: 57px;
+  left: 0;
+  bottom: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  margin-top: 37px;
+  padding-top: 37px;
+  background-color: var(--color-white-2);
   transition: all 0.3s linear;
 `;
 

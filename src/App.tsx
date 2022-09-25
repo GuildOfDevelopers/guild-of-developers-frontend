@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import Footer from './layout/Footer';
 import Header from './layout/Header';
 import Main from './layout/Main';

@@ -20,11 +20,11 @@ const Global = createGlobalStyle`
     --color-grey-3: #d9d9d9;
 
     // font-weight
-    --fw-300: 300; 
-    --fw-400: 400; 
-    --fw-500: 500; 
-    --fw-600: 600; 
-    --fw-700: 700; 
+    --fw-300: 300;
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-600: 600;
+    --fw-700: 700;
     --fw-800: 800;
 
     // font-size (MOBILE)
@@ -48,7 +48,7 @@ const Global = createGlobalStyle`
 
     @media (min-width: 768px) {
       // font-size (DESKTOP)
-      --fs-250: 12px; // напрвления в карточках
+      --fs-250: 16px; // напрвления в карточках
       --fs-300: 12px; // дата в карточках + footer ссылки
       --fs-350: 14px; // header кнопки + ссылки
       --fs-400: 18px; // текст в hero
@@ -57,7 +57,7 @@ const Global = createGlobalStyle`
       --fs-700: 35px; // логотип
 
       // line-height (DESKTOP)
-      --line-height-250: 14px; // напрвления в карточках
+      --line-height-250: 18px; // напрвления в карточках
       --line-height-300: 14px; // дата в карточках + footer ссылки
       --line-height-350: 16px; // header кнопки + ссылки
       --line-height-400: 21px; // текст в hero

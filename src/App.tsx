@@ -6,9 +6,9 @@ import Main from './layout/Main';
 const App: FC = () => {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <Main />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

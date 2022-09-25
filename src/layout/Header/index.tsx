@@ -6,7 +6,7 @@ import { NavBarLink, NavBarLogo, StyledHeader, Navbar } from './style';
 import MobileHeader from '../MobileHeader';
 
 const Header: FC = () => {
-  const isDesktop = useMediaQuery('(min-width: 769px)');
+  const isDesktop = useMediaQuery('(min-width: 768px)');
   return (
     <>
       {isDesktop && (

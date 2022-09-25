@@ -56,7 +56,7 @@ export const NavBarLink = styled(Link)`
         &:hover,
         &:focus-visible {
           &::after {
-            content: 'work in progress';
+            content: 'WIP';
 
             position: absolute;
             top: 0;
@@ -64,7 +64,7 @@ export const NavBarLink = styled(Link)`
             right: 0;
             bottom: 0;
 
-            min-width: 130px;
+            /* min-width: 130px; */
             display: flex;
             align-items: center;
             justify-content: center;

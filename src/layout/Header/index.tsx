@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
-import Button from '../../components/NavBarButton';
+import Button from './NavBarButton';
 import { Container } from '../../lib/styled/container';
 import { useMediaQuery } from '../../services/hooks';
 import { NavBarLink, NavBarLogo, StyledHeader, Navbar } from './style';
-import MobileHeader from '../MobileHeader';
+import MobileHeader from './MobileHeader';
 
 const Header: FC = () => {
   const isDesktop = useMediaQuery('(min-width: 768px)');

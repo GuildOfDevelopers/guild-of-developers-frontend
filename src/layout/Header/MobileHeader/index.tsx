@@ -1,8 +1,8 @@
 import { AnimatePresence } from 'framer-motion';
 import React, { FC, useState } from 'react';
-import MenuToggle from '../../components/MenuToggle';
-import Button from '../../components/NavBarButton';
-import { Container } from '../../lib/styled/container';
+import MenuToggle from '../MenuToggle';
+import Button from '../NavBarButton';
+import { Container } from '../../../lib/styled/container';
 import { NavBarLink, NavBarLogo, StyledHeader, Navbar, MenuHeader } from './style';
 
 const MobileHeader: FC = () => {

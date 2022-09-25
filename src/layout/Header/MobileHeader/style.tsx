@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 
 export const StyledHeader = styled.header`
   background-color: var(--color-white-2);
-  padding: 20px 0;
+  padding-block: 20px;
 `;
 
 export const MenuHeader = styled.div`

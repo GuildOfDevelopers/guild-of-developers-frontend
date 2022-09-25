@@ -11,7 +11,6 @@ const Global = createGlobalStyle`
 
     // colors
     --color-black: #000000;
-    --color-black-menu: #333333;
 
     --color-white: #ffffff;
     --color-white-2: #efefef;

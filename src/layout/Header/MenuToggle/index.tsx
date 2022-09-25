@@ -21,14 +21,14 @@ const MenuToggle: React.FC<MenuToggleTypes> = ({ isOpen, toggle }) => {
           animate={isOpen ? 'open' : 'closed'}
           initial={false}
           variants={{
-            closed: { d: 'M 2 2.5 L 20 2.5', stroke: '#333333' },
-            open: { d: 'M 3 16.5 L 17 2.5', stroke: '#333333' }
+            closed: { d: 'M 2 2.5 L 20 2.5', stroke: '#000' },
+            open: { d: 'M 3 16.5 L 17 2.5', stroke: '#000' }
           }}
           transition={transition}
         />
         <Path
           d="M 2 9.423 L 20 9.423"
-          stroke="#333333"
+          stroke="#000"
           animate={isOpen ? 'open' : 'closed'}
           initial={false}
           variants={{
@@ -41,8 +41,8 @@ const MenuToggle: React.FC<MenuToggleTypes> = ({ isOpen, toggle }) => {
           animate={isOpen ? 'open' : 'closed'}
           initial={false}
           variants={{
-            closed: { d: 'M 2 16.346 L 20 16.346', stroke: '#333333' },
-            open: { d: 'M 3 2.5 L 17 16.346', stroke: '#333333' }
+            closed: { d: 'M 2 16.346 L 20 16.346', stroke: '#000' },
+            open: { d: 'M 3 2.5 L 17 16.346', stroke: '#000' }
           }}
           transition={transition}
         />

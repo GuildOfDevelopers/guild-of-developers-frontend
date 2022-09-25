@@ -1,16 +1,16 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
+import MenuToggle from '../../components/MenuToggle';
 import Button from '../../components/NavBarButton';
 import { Container } from '../../lib/styled/container';
-import { useMediaQuery } from '../../services/hooks';
 import { NavBarLink, NavBarLogo, StyledHeader, Navbar } from './style';
-import MobileHeader from '../MobileHeader';
 
-const Header: FC = () => {
-  const isDesktop = useMediaQuery('(min-width: 768px)');
+const MobileHeader: FC = () => {
+  const [isOpen, setOpen] = useState(false);
   return (
     <StyledHeader>
+      <MenuToggle isOpen={isOpen} toggle={() => setOpen(!isOpen)} />
       <Container>
-        {isDesktop && (
+        {isOpen && (
           <Navbar>
             {/* <NavBarLink to="/howItWorks">Как это устроено?</NavBarLink> */}
             <NavBarLink workInProgress={true} to="#">
@@ -38,10 +38,9 @@ const Header: FC = () => {
             </NavBarLink>
           </Navbar>
         )}
-        {!isDesktop && <MobileHeader />}
       </Container>
     </StyledHeader>
   );
 };
 
-export default Header;
+export default MobileHeader;

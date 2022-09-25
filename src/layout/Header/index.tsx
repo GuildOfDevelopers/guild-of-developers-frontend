@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { useMediaQuery } from '../../services/hooks';
+import { useMediaQuery } from '../../services/useMediaQuery';
 import MobileHeader from './MobileHeader';
 import DesktopHeader from './DesktopHeader';
 

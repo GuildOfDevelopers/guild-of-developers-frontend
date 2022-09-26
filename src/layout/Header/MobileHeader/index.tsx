@@ -16,7 +16,11 @@ const MobileHeader: FC = () => {
         </MenuHeader>
         <AnimatePresence>
           {isOpen && (
-            <Navbar initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <Navbar
+              initial={{ maxHeight: 0, opacity: 0 }}
+              animate={{ maxHeight: '274px', opacity: 1 }}
+              exit={{ maxHeight: 0, opacity: 0 }}
+            >
               <NavBarLink wip="true" to="#">
                 <NavBarButton>Войти</NavBarButton>
               </NavBarLink>

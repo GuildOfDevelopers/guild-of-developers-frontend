@@ -15,7 +15,8 @@ export const Navbar = styled.nav`
 export const NavBarLink = styled(Link)`
   position: relative;
 
-  min-width: 130px;
+  // TODO: Решить проблему с центрированеим лого
+  /* min-width: 130px; */
 
   font-size: var(--fs-350);
   font-weight: var(--fw-400);
@@ -43,14 +44,14 @@ export const NavBarLink = styled(Link)`
   }
 
   // TODO: временно - только для еще не готовых ссылок
-  ${({ workInProgress }: { workInProgress: boolean }) => {
+  ${({ wip }: { wip: string }) => {
     return (
-      workInProgress &&
+      wip === 'true' &&
       css`
         &:hover,
         &:focus-visible {
           &::after {
-            content: 'work in progress';
+            content: 'Скоро';
 
             position: absolute;
             top: 0;
@@ -58,7 +59,7 @@ export const NavBarLink = styled(Link)`
             right: 0;
             bottom: 0;
 
-            min-width: 130px;
+            /* min-width: 130px; */
             display: flex;
             align-items: center;
             justify-content: center;

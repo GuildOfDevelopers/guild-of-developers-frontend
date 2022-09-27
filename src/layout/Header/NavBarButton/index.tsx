@@ -5,8 +5,8 @@ interface ButtonProps {
   children: string;
 }
 
-const Button: FC<ButtonProps> = ({ children }) => {
+const NavBarButton: FC<ButtonProps> = ({ children }) => {
   return <StyledButton>{children}</StyledButton>;
 };
 
-export default Button;
+export default NavBarButton;

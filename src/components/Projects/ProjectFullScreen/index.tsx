@@ -30,7 +30,7 @@ const ProjectFullScreen: FC = () => {
   const [project, setProject] = useState<ProjectProps['project']>();
 
   useEffect(() => {
-    const data = mockCards.find((card) => card.id === projectId);
+    const data = mockCards.find((card) => card.id === Number(projectId));
     setProject(data);
   }, [projectId]);
 

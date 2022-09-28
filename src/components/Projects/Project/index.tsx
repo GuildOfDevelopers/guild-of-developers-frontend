@@ -13,7 +13,7 @@ import {
 
 export interface ProjectProps {
   project: {
-    id: string;
+    id: number;
     title: string;
     description: string;
     finished: boolean; // не используется

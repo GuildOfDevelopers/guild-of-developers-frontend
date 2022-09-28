@@ -27,7 +27,7 @@ import { ProjectProps } from '../Project';
 
 const ProjectFullScreen: FC = () => {
   const { projectId } = useParams<{ projectId?: string }>();
-  const [project, setProject] = useState<ProjectProps['el']>();
+  const [project, setProject] = useState<ProjectProps['project']>();
 
   useEffect(() => {
     const data = mockCards.find((card) => card.id === projectId);

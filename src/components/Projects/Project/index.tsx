@@ -12,7 +12,7 @@ import {
 } from './style';
 
 export interface ProjectProps {
-  el: {
+  project: {
     id: string;
     title: string;
     description: string;
@@ -33,7 +33,7 @@ export interface ProjectProps {
   };
 }
 
-const Project: FC<ProjectProps> = ({ el }) => {
+const Project: FC<ProjectProps> = ({ project }) => {
   const [toggle, setToggle] = useState('');
 
   const handleSetToggle = useCallback(
@@ -47,10 +47,10 @@ const Project: FC<ProjectProps> = ({ el }) => {
         setToggle('');
       }}
     >
-      <CardDate>{el.startDate}</CardDate>
-      <CardTitle>«{el.title}»</CardTitle>
+      <CardDate>{project.startDate}</CardDate>
+      <CardTitle>«{project.title}»</CardTitle>
       <CardDepartments>
-        {el.departments.map((department) => (
+        {project.departments.map((department) => (
           <CardDepartment
             key={department.name}
             dep={department.name}
@@ -73,7 +73,7 @@ const Project: FC<ProjectProps> = ({ el }) => {
           </CardDepartment>
         ))}
       </CardDepartments>
-      <CardButton to={`/projects/${el.id}`}>Записаться</CardButton>
+      <CardButton to={`/projects/${project.id}`}>Записаться</CardButton>
     </Card>
   );
 };

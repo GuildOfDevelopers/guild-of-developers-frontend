@@ -34,6 +34,7 @@ const ProjectFullScreen: FC = () => {
     setProject(data);
   }, [projectId]);
 
+  // Как перейдём на redux и добавим бэк, можно будет добавить нормальный лоудер
   if (!project) {
     return <div>Загрузка...</div>;
   }
@@ -91,7 +92,7 @@ const ProjectFullScreen: FC = () => {
                   <Button href="#">Записаться</Button>
                 )}
               </AsideBlock>
-              {/* TODO: Решить какую логику сделать для пагинации */}
+              {/* TODO: Решить какую логику сделать дляи пагинации. Предлагаю пока так */}
               <Pagination>
                 {Number(projectId) > 1 && (
                   <PaginationControl to={`/projects/${Number(projectId) - 1}`}>

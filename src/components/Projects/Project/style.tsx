@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
 export const Card = styled.li`
@@ -23,7 +24,7 @@ export const CardDate = styled.span`
   font-feature-settings: 'pnum' on, 'lnum' on;
 `;
 
-export const CardTitle = styled.h3`
+export const CardTitle = styled(Link)`
   font-weight: var(--fw-600);
   font-size: var(--fs-500);
   line-height: var(--line-height-500);

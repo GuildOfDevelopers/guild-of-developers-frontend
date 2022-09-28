@@ -11,7 +11,7 @@ import {
   StackItem
 } from './style';
 
-interface ProjectProps {
+export interface ProjectProps {
   el: {
     id: string;
     title: string;
@@ -28,6 +28,8 @@ interface ProjectProps {
     imageUrl: string; // не используется
     fond: string; // не используется
     participants: string; // не используется
+    todo: string[]; // не используется
+    WhatYouGet: string[]; // не используется
   };
 }
 
@@ -46,7 +48,7 @@ const Project: FC<ProjectProps> = ({ el }) => {
       }}
     >
       <CardDate>{el.startDate}</CardDate>
-      <CardTitle>«{el.title}»</CardTitle>
+      <CardTitle to={`/projects/${el.id}`}>«{el.title}»</CardTitle>
       <CardDepartments>
         {el.departments.map((department) => (
           <CardDepartment

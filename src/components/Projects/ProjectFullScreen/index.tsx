@@ -1,14 +1,111 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { Container } from '../../../lib/styled/container';
-import { Section, Title, Wrapper, Button } from './style';
+import { Arrow, Back, Forward } from './icon';
+import {
+  ArrowDiv,
+  AsideBlock,
+  AsideContent,
+  Button,
+  Content,
+  Description,
+  List,
+  ListItem,
+  MainBlock,
+  MainContent,
+  Pagination,
+  PaginationControl,
+  PaginationLeft,
+  PaginationRight,
+  Section,
+  SubTitle,
+  Title,
+  Wrapper
+} from './style';
+import mockCards from '../../../mockCards.json';
+import { ProjectProps } from '../Project';
 
 const ProjectFullScreen: FC = () => {
+  const { projectId } = useParams<{ projectId?: string }>();
+  const [project, setProject] = useState<ProjectProps['el']>();
+
+  useEffect(() => {
+    const data = mockCards.find((card) => card.id === projectId);
+    setProject(data);
+  }, [projectId]);
+
+  if (!project) {
+    return <div>Загрузка...</div>;
+  }
+
   return (
     <Section>
       <Container>
         <Wrapper>
+          <ArrowDiv to="/currentProjects">
+            <Arrow /> Все проекты
+          </ArrowDiv>
           <Title>Подробное описание проекта</Title>
-          <Button>Ссылка</Button>
+          <Content>
+            <MainContent>
+              <MainBlock>
+                <SubTitle>{project.title}</SubTitle>
+                <Description>{project.description}</Description>
+              </MainBlock>
+              <MainBlock>
+                <SubTitle>Чем предстоит заниматься:</SubTitle>
+                <List>
+                  {project.todo.map((item) => (
+                    <ListItem>{item}</ListItem>
+                  ))}
+                </List>
+              </MainBlock>
+              <MainBlock>
+                <SubTitle>Тебе к нам в проект, если ты:</SubTitle>
+                <List>
+                  {project.departments.map((item) => (
+                    <ListItem>{item.name}</ListItem>
+                  ))}
+                </List>
+              </MainBlock>
+              <MainBlock>
+                <SubTitle>Что ты получишь:</SubTitle>
+                <List>
+                  {project.WhatYouGet.map((item) => (
+                    <ListItem>{item}</ListItem>
+                  ))}
+                </List>
+              </MainBlock>
+            </MainContent>
+            <AsideContent>
+              <AsideBlock>
+                <SubTitle>
+                  Прочитать требования для каждого из направлений и откликнуться на проект
+                </SubTitle>
+                {/* TODO: ниже веременный костыль т.к. не у всех карточек есть ссылки на форму регистрации */}
+                {project.registrationFormUrl !== '' ? (
+                  <Button href={project.registrationFormUrl} target="_blank">
+                    Записаться
+                  </Button>
+                ) : (
+                  <Button href="#">Записаться</Button>
+                )}
+              </AsideBlock>
+              {/* TODO: Решить какую логику сделать для пагинации */}
+              <Pagination>
+                {Number(projectId) > 1 && (
+                  <PaginationControl to={`/projects/${Number(projectId) - 1}`}>
+                    <Back /> <PaginationLeft> К предыдущему проекту </PaginationLeft>
+                  </PaginationControl>
+                )}
+                {Number(projectId) < mockCards.length && (
+                  <PaginationControl to={`/projects/${Number(projectId) + 1}`}>
+                    <PaginationRight>К следующему проекту</PaginationRight> <Forward />
+                  </PaginationControl>
+                )}
+              </Pagination>
+            </AsideContent>
+          </Content>
         </Wrapper>
       </Container>
     </Section>

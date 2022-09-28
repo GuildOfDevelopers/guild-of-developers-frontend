@@ -12,13 +12,26 @@ import {
 } from './style';
 
 interface ProjectProps {
-  date: string;
-  title: string;
-  departments: { name: string; stack: string[] }[];
-  regFormUrl: string;
+  el: {
+    id: string;
+    title: string;
+    description: string;
+    finished: boolean;
+    startDate: string;
+    finishedDate: string;
+    url: string;
+    registrationFormUrl: string;
+    departments: {
+      name: string;
+      stack: string[];
+    }[];
+    imageUrl: string;
+    fond: string; // хз
+    participants: string;
+  };
 }
 
-const Project: FC<ProjectProps> = ({ date, title, departments, regFormUrl }) => {
+const Project: FC<ProjectProps> = ({ el }) => {
   const [toggle, setToggle] = useState('');
 
   const handleSetToggle = useCallback(
@@ -32,10 +45,10 @@ const Project: FC<ProjectProps> = ({ date, title, departments, regFormUrl }) => 
         setToggle('');
       }}
     >
-      <CardDate>{date}</CardDate>
-      <CardTitle>«{title}»</CardTitle>
+      <CardDate>{el.startDate}</CardDate>
+      <CardTitle>«{el.title}»</CardTitle>
       <CardDepartments>
-        {departments.map((department) => (
+        {el.departments.map((department) => (
           <CardDepartment
             key={department.name}
             dep={department.name}
@@ -59,8 +72,8 @@ const Project: FC<ProjectProps> = ({ date, title, departments, regFormUrl }) => 
         ))}
       </CardDepartments>
       {/* TODO: ниже веременный костыль т.к. не у всех карточек есть ссылки на форму регистрации */}
-      {regFormUrl !== '' ? (
-        <CardButton href={regFormUrl} target="_blank">
+      {el.registrationFormUrl !== '' ? (
+        <CardButton href={el.registrationFormUrl} target="_blank">
           Записаться
         </CardButton>
       ) : (

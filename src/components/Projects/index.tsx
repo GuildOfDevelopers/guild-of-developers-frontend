@@ -4,7 +4,7 @@ import Filter from '../Filter';
 import Project from './Project';
 import { Grid, Section, Title, Wrapper } from './style';
 // TODO: mockData перенести в ReduxToolkit
-import mockData from '../../mockData.json';
+import mockCards from '../../mockCards.json';
 
 interface ProjectsProps {
   page: string;
@@ -15,14 +15,8 @@ const ProjectsWithoutFilter: FC = () => {
     <Wrapper>
       <Title>Наши проекты</Title>
       <Grid>
-        {mockData.map((el) => (
-          <Project
-            key={el.id}
-            title={el.title}
-            departments={el.departments}
-            date={el.startDate}
-            regFormUrl={el.registrationFormUrl}
-          />
+        {mockCards.map((el) => (
+          <Project key={el.id} el={el} />
         ))}
       </Grid>
     </Wrapper>
@@ -35,14 +29,8 @@ const ProjectsWithFilter: FC = () => {
       <Title>Проекты</Title>
       <Filter />
       <Grid>
-        {mockData.map((el) => (
-          <Project
-            key={el.id}
-            title={el.title}
-            departments={el.departments}
-            date={el.startDate}
-            regFormUrl={el.registrationFormUrl}
-          />
+        {mockCards.map((el) => (
+          <Project key={el.id} el={el} />
         ))}
       </Grid>
     </Wrapper>

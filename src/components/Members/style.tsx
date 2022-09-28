@@ -24,6 +24,6 @@ export const Title = styled.h2`
 export const Grid = styled.ul`
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(auto-fill, min(377px, 100%));
-  gap: 34.5px;
+  grid-template-columns: repeat(auto-fill, min(588px, 100%));
+  gap: 24px;
 `;

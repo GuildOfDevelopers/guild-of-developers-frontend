@@ -55,24 +55,24 @@ const ProjectFullScreen: FC = () => {
               <MainBlock>
                 <SubTitle>Чем предстоит заниматься:</SubTitle>
                 <List>
-                  {project.todo.map((item) => (
-                    <ListItem>{item}</ListItem>
+                  {project.todo.map((item, idx) => (
+                    <ListItem key={idx}>{item}</ListItem>
                   ))}
                 </List>
               </MainBlock>
               <MainBlock>
                 <SubTitle>Тебе к нам в проект, если ты:</SubTitle>
                 <List>
-                  {project.departments.map((item) => (
-                    <ListItem>{item.name}</ListItem>
+                  {project.departments.map((item, idx) => (
+                    <ListItem key={idx}>{item.name}</ListItem>
                   ))}
                 </List>
               </MainBlock>
               <MainBlock>
                 <SubTitle>Что ты получишь:</SubTitle>
                 <List>
-                  {project.WhatYouGet.map((item) => (
-                    <ListItem>{item}</ListItem>
+                  {project.WhatYouGet.map((item, idx) => (
+                    <ListItem key={idx}>{item}</ListItem>
                   ))}
                 </List>
               </MainBlock>

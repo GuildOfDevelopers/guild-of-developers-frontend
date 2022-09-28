@@ -16,18 +16,18 @@ interface ProjectProps {
     id: string;
     title: string;
     description: string;
-    finished: boolean;
+    finished: boolean; // не используется
     startDate: string;
-    finishedDate: string;
-    url: string;
+    finishedDate: string; // не используется
+    url: string; // не используется
     registrationFormUrl: string;
     departments: {
       name: string;
       stack: string[];
     }[];
-    imageUrl: string;
-    fond: string; // хз
-    participants: string;
+    imageUrl: string; // не используется
+    fond: string; // не используется
+    participants: string; // не используется
   };
 }
 

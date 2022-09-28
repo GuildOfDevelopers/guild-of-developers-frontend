@@ -24,7 +24,7 @@ export const CardDate = styled.span`
   font-feature-settings: 'pnum' on, 'lnum' on;
 `;
 
-export const CardTitle = styled(Link)`
+export const CardTitle = styled.h2`
   font-weight: var(--fw-600);
   font-size: var(--fs-500);
   line-height: var(--line-height-500);
@@ -125,7 +125,7 @@ export const StackItem = styled.li`
   }
 `;
 
-export const CardButton = styled.a`
+export const CardButton = styled(Link)`
   margin-block-start: auto;
 
   width: 179px;

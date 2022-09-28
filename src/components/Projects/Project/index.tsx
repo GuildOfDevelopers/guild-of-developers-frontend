@@ -48,7 +48,7 @@ const Project: FC<ProjectProps> = ({ el }) => {
       }}
     >
       <CardDate>{el.startDate}</CardDate>
-      <CardTitle to={`/projects/${el.id}`}>«{el.title}»</CardTitle>
+      <CardTitle>«{el.title}»</CardTitle>
       <CardDepartments>
         {el.departments.map((department) => (
           <CardDepartment
@@ -73,14 +73,7 @@ const Project: FC<ProjectProps> = ({ el }) => {
           </CardDepartment>
         ))}
       </CardDepartments>
-      {/* TODO: ниже веременный костыль т.к. не у всех карточек есть ссылки на форму регистрации */}
-      {el.registrationFormUrl !== '' ? (
-        <CardButton href={el.registrationFormUrl} target="_blank">
-          Записаться
-        </CardButton>
-      ) : (
-        <CardButton href="#">Записаться</CardButton>
-      )}
+      <CardButton to={`/projects/${el.id}`}>Записаться</CardButton>
     </Card>
   );
 };

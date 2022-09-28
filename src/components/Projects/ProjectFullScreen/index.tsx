@@ -3,24 +3,24 @@ import { useParams } from 'react-router-dom';
 import { Container } from '../../../lib/styled/container';
 import { Arrow, Back, Forward } from './icon';
 import {
-  ArrowDiv,
-  AsideBlock,
-  AsideContent,
-  Button,
+  Section,
+  Wrapper,
+  GoBack,
+  Title,
+  SubTitle,
   Content,
+  MainContent,
+  MainBlock,
   Description,
   List,
   ListItem,
-  MainBlock,
-  MainContent,
+  AsideContent,
+  AsideBlock,
+  Button,
   Pagination,
   PaginationControl,
   PaginationLeft,
-  PaginationRight,
-  Section,
-  SubTitle,
-  Title,
-  Wrapper
+  PaginationRight
 } from './style';
 import mockCards from '../../../mockCards.json';
 import { ProjectProps } from '../Project';
@@ -43,14 +43,14 @@ const ProjectFullScreen: FC = () => {
     <Section>
       <Container>
         <Wrapper>
-          <ArrowDiv to="/currentProjects">
+          <GoBack to="/currentProjects">
             <Arrow /> Все проекты
-          </ArrowDiv>
+          </GoBack>
           <Title>Подробное описание проекта</Title>
           <Content>
             <MainContent>
               <MainBlock>
-                <SubTitle>{project.title}</SubTitle>
+                <SubTitle>«{project.title}»</SubTitle>
                 <Description>{project.description}</Description>
               </MainBlock>
               <MainBlock>
@@ -96,7 +96,7 @@ const ProjectFullScreen: FC = () => {
               <Pagination>
                 {Number(projectId) > 1 && (
                   <PaginationControl to={`/projects/${Number(projectId) - 1}`}>
-                    <Back /> <PaginationLeft> К предыдущему проекту </PaginationLeft>
+                    <Back /> <PaginationLeft>К предыдущему проекту</PaginationLeft>
                   </PaginationControl>
                 )}
                 {Number(projectId) < mockCards.length && (

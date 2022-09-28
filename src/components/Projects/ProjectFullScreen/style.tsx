@@ -23,7 +23,7 @@ export const Title = styled.h2`
   line-height: var(--line-height-600);
 `;
 
-export const ArrowDiv = styled(Link)`
+export const GoBack = styled(Link)`
   position: absolute;
   top: 115px;
 
@@ -56,7 +56,7 @@ export const ArrowDiv = styled(Link)`
   }
 `;
 
-export const Content = styled.section`
+export const Content = styled.div`
   display: flex;
   justify-content: center;
   gap: 25px;
@@ -67,9 +67,9 @@ export const Content = styled.section`
   }
 `;
 
-export const MainBlock = styled.div``;
+export const MainBlock = styled.li``;
 
-export const MainContent = styled.main`
+export const MainContent = styled.ul`
   background-color: var(--color-white-2);
   border-radius: 20px;
 
@@ -98,6 +98,11 @@ export const SubTitle = styled.h3`
   line-height: var(--line-height-500);
 
   margin-bottom: 25px;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    text-align: start;
+  }
 `;
 
 export const Description = styled.p`
@@ -139,7 +144,7 @@ export const AsideBlock = styled.div`
   }
 `;
 
-export const Pagination = styled.div`
+export const Pagination = styled.nav`
   display: flex;
   justify-content: space-between;
 `;
@@ -176,6 +181,8 @@ export const PaginationRight = styled.span`
 `;
 
 export const Button = styled.a`
+  margin-inline: auto;
+
   width: 179px;
   height: 42px;
 
@@ -202,5 +209,9 @@ export const Button = styled.a`
 
   &:active {
     transform: scale(1.05);
+  }
+
+  @media (min-width: 768px) {
+    margin-inline: 0;
   }
 `;

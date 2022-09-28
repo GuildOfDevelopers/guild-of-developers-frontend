@@ -113,7 +113,8 @@ export const Stack = styled.ul`
   flex-wrap: wrap;
   text-align: center;
 
-  gap: 3ch;
+  column-gap: 3ch;
+  row-gap: 1ch;
 `;
 
 // TODO:

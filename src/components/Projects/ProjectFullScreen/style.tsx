@@ -47,7 +47,7 @@ export const GoBack = styled(Link)`
     transform: scale(1.05);
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     top: 63px;
   }
 
@@ -61,7 +61,7 @@ export const Content = styled.div`
   justify-content: center;
   gap: 25px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
   }
@@ -87,7 +87,7 @@ export const MainContent = styled.ul`
     }
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     padding: 16px;
   }
 `;
@@ -127,7 +127,7 @@ export const AsideContent = styled.aside`
   flex-direction: column;
   max-width: 331px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     max-width: 434px;
   }
 `;
@@ -139,7 +139,7 @@ export const AsideBlock = styled.div`
   padding: 25px;
   margin-bottom: 25px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     padding: 16px;
   }
 `;

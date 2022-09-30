@@ -25,7 +25,7 @@ export const Title = styled.h2`
 
 export const GoBack = styled(Link)`
   position: absolute;
-  top: 115px;
+  top: 22px;
 
   display: flex;
   align-items: center;
@@ -47,34 +47,32 @@ export const GoBack = styled(Link)`
     transform: scale(1.05);
   }
 
-  @media (max-width: 768px) {
-    top: 63px;
-  }
-
-  @media (max-width: 700px) {
-    top: 22px;
+  @media (min-width: 768px) {
+    top: 115px;
   }
 `;
 
 export const Content = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 25px;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: stretch;
   }
 `;
 
 export const MainBlock = styled.li``;
 
 export const MainContent = styled.ul`
-  background-color: var(--color-white-2);
-  border-radius: 20px;
-
+  padding: 16px;
   max-width: 434px;
-  padding: 25px;
+
+  border-radius: 20px;
+  background-color: var(--color-white-2);
 
   & ${MainBlock}:nth-child(-n + 3) {
     &::after {
@@ -87,17 +85,18 @@ export const MainContent = styled.ul`
     }
   }
 
-  @media (max-width: 768px) {
-    padding: 16px;
+  @media (min-width: 768px) {
+    padding: 25px;
   }
 `;
 
 export const SubTitle = styled.h3`
+  margin-bottom: 25px;
+
   font-size: var(--fs-500);
   font-weight: var(--fw-600);
   line-height: var(--line-height-500);
 
-  margin-bottom: 25px;
   text-align: center;
 
   @media (min-width: 768px) {
@@ -123,24 +122,25 @@ export const ListItem = styled.li`
 `;
 
 export const AsideContent = styled.aside`
+  max-width: 434px;
+
   display: flex;
   flex-direction: column;
-  max-width: 331px;
 
-  @media (max-width: 768px) {
-    max-width: 434px;
+  @media (min-width: 768px) {
+    max-width: 331px;
   }
 `;
 
 export const AsideBlock = styled.div`
-  background-color: var(--color-white-2);
-  border-radius: 20px;
-
-  padding: 25px;
+  padding: 16px;
   margin-bottom: 25px;
 
-  @media (max-width: 768px) {
-    padding: 16px;
+  border-radius: 20px;
+  background-color: var(--color-white-2);
+
+  @media (min-width: 768px) {
+    padding: 25px;
   }
 `;
 

@@ -94,12 +94,12 @@ const ProjectFullScreen: FC = () => {
               </AsideBlock>
               {/* TODO: Решить какую логику сделать дляи пагинации. Предлагаю пока так */}
               <Pagination>
-                {Number(projectId) > 1 && (
+                {Number(projectId) > 0 && (
                   <PaginationControl to={`/projects/${Number(projectId) - 1}`}>
                     <Back /> <PaginationLeft>К предыдущему проекту</PaginationLeft>
                   </PaginationControl>
                 )}
-                {Number(projectId) < mockCards.length && (
+                {Number(projectId) < mockCards.length - 1 && (
                   <PaginationControl to={`/projects/${Number(projectId) + 1}`}>
                     <PaginationRight>К следующему проекту</PaginationRight> <Forward />
                   </PaginationControl>

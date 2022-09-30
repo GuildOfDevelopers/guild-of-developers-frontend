@@ -15,8 +15,8 @@ const ProjectsWithoutFilter: FC = () => {
     <Wrapper>
       <Title>Наши проекты</Title>
       <Grid>
-        {mockCards.map((el) => (
-          <Project key={el.id} el={el} />
+        {mockCards.map((project) => (
+          <Project key={project.id} project={project} />
         ))}
       </Grid>
     </Wrapper>
@@ -29,8 +29,8 @@ const ProjectsWithFilter: FC = () => {
       <Title>Проекты</Title>
       <Filter />
       <Grid>
-        {mockCards.map((el) => (
-          <Project key={el.id} el={el} />
+        {mockCards.map((project) => (
+          <Project key={project.id} project={project} />
         ))}
       </Grid>
     </Wrapper>

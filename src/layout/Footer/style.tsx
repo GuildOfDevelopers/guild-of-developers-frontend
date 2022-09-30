@@ -35,6 +35,10 @@ export const Social = styled.div`
     flex-direction: row;
     gap: 25px;
     height: 18px;
+
+    &:not(:last-child) {
+      margin: 0;
+    }
   }
 `;
 

@@ -11,9 +11,9 @@ import {
   StackItem
 } from './style';
 
-interface ProjectProps {
-  el: {
-    id: string;
+export interface ProjectProps {
+  project: {
+    id: number;
     title: string;
     description: string;
     finished: boolean; // не используется
@@ -28,10 +28,12 @@ interface ProjectProps {
     imageUrl: string; // не используется
     fond: string; // не используется
     participants: string; // не используется
+    todo: string[]; // не используется
+    WhatYouGet: string[]; // не используется
   };
 }
 
-const Project: FC<ProjectProps> = ({ el }) => {
+const Project: FC<ProjectProps> = ({ project }) => {
   const [toggle, setToggle] = useState('');
 
   const handleSetToggle = useCallback(
@@ -45,10 +47,10 @@ const Project: FC<ProjectProps> = ({ el }) => {
         setToggle('');
       }}
     >
-      <CardDate>{el.startDate}</CardDate>
-      <CardTitle>«{el.title}»</CardTitle>
+      <CardDate>{project.startDate}</CardDate>
+      <CardTitle>«{project.title}»</CardTitle>
       <CardDepartments>
-        {el.departments.map((department) => (
+        {project.departments.map((department) => (
           <CardDepartment
             key={department.name}
             dep={department.name}
@@ -71,14 +73,7 @@ const Project: FC<ProjectProps> = ({ el }) => {
           </CardDepartment>
         ))}
       </CardDepartments>
-      {/* TODO: ниже веременный костыль т.к. не у всех карточек есть ссылки на форму регистрации */}
-      {el.registrationFormUrl !== '' ? (
-        <CardButton href={el.registrationFormUrl} target="_blank">
-          Записаться
-        </CardButton>
-      ) : (
-        <CardButton href="#">Записаться</CardButton>
-      )}
+      <CardButton to={`/projects/${project.id}`}>Записаться</CardButton>
     </Card>
   );
 };

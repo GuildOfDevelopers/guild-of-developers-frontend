@@ -26,6 +26,7 @@ export const Navbar = styled(motion.nav)`
   padding-top: 37px;
   background-color: var(--color-white-2);
   transition: max-height 0.1s ease-out;
+  z-index: 100;
 `;
 
 export const NavBarLink = styled(Link)`

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Form, FormName, FormWrapper, Submit, Label } from './styleFilterOpen';
+import { Form, FormName, FormWrapper, Submit, Label } from './style';
 import { Menu } from '@headlessui/react';
 
 const FilterOpen: FC = () => {

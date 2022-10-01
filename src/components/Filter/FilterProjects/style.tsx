@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -20,6 +20,7 @@ export const Wrapper = styled.div`
     border-radius: 15px;
     border-top-right-radius: 0;
     background-color: var(--color-white-2);
+    z-index: 100;
 
     &::before {
       content: '';
@@ -54,5 +55,3 @@ export const FilterButtons = styled.button`
     background-color: var(--color-grey);
   }
 `;
-
-export const CustomDropdown = createGlobalStyle``;

@@ -124,7 +124,7 @@ const ProjectsWithFilter: FC = () => {
   return (
     <Wrapper>
       <Title>Проекты</Title>
-      <Filter />
+      <Filter page="projects" />
       <Grid>
         {mockCards.map((el) => (
           <Project project={el.project} departments={el.departments} date={el.date} key={el.id} />

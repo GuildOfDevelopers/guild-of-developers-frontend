@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Menu } from '@headlessui/react';
-import { Wrapper, LeftFilter, FilterButtons, CustomDropdown } from './style';
+import { Wrapper, LeftFilter, FilterButtons } from './style';
 import FilterOpen from './FilterOpen';
 import { IconFilter } from './Icon';
 
@@ -32,8 +32,6 @@ const Filter: FC = () => {
       </LeftFilter>
 
       <Menu>
-        <CustomDropdown />
-
         <Menu.Button>
           <IconFilter />
         </Menu.Button>

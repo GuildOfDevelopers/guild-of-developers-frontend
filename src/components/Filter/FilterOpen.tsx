@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { Form, FormName, FormWrapper, Submit, CustomDropdown, Label } from './styleFilterOpen';
-import { Menu, Transition } from '@headlessui/react';
+import { Form, FormName, FormWrapper, Submit, Label } from './styleFilterOpen';
+import { Menu } from '@headlessui/react';
 
 const FilterOpen: FC = () => {
   const selects = [
@@ -124,7 +124,6 @@ const FilterOpen: FC = () => {
       <FormWrapper>
         {selects.map((item) => (
           <Menu key={item.id} as="div" className="filter">
-            <CustomDropdown />
             <Menu.Button>{item.title}</Menu.Button>
 
             <Menu.Items>

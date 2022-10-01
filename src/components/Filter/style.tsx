@@ -5,34 +5,13 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   padding-bottom: 40px;
   position: relative;
-`;
 
-export const LeftFilter = styled.div``;
-
-export const FilterButtons = styled.button`
-  padding: 5px 22px;
-  border-radius: 15px;
-  font-weight: var(--fw-400);
-  font-size: var(--fs-500);
-  line-height: var(--line-height-500);
-
-  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
-    font-weight 0.3s ease-in-out;
-
-  &.active {
-    font-weight: var(--fw-700);
-    color: var(--color-white);
-    background-color: var(--color-grey);
-  }
-`;
-
-export const CustomDropdown = createGlobalStyle`
-  [id^="headlessui-menu-button"] {
+  [id^='headlessui-menu-button'] {
     padding: 5px 22px;
     border-radius: 15px;
   }
 
-  .filter-open[id^="headlessui-menu-items"] {
+  .filter-open[id^='headlessui-menu-items'] {
     position: absolute;
     left: 0;
     bottom: -140px;
@@ -56,3 +35,24 @@ export const CustomDropdown = createGlobalStyle`
     }
   }
 `;
+
+export const LeftFilter = styled.div``;
+
+export const FilterButtons = styled.button`
+  padding: 5px 22px;
+  border-radius: 15px;
+  font-weight: var(--fw-400);
+  font-size: var(--fs-500);
+  line-height: var(--line-height-500);
+
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
+    font-weight 0.3s ease-in-out;
+
+  &.active {
+    font-weight: var(--fw-700);
+    color: var(--color-white);
+    background-color: var(--color-grey);
+  }
+`;
+
+export const CustomDropdown = createGlobalStyle``;

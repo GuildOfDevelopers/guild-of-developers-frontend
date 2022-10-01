@@ -1,39 +1,12 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
-export const Form = styled.form``;
-
-export const FormName = styled.h3`
-  margin: 0;
-  margin-bottom: 28px;
-
-  font-size: var(--fs-400);
-  font-weight: var(--fw-700);
-  line-height: var(--line-height-400);
-`;
-
-export const FormWrapper = styled.div`
-  position: relative;
-  display: flex;
-  gap: 25px;
-`;
-
-export const Submit = styled.button`
-  padding: 10px 46px;
-  color: var(--color-white);
-  font-size: var(--fs-400);
-  font-weight: var(--fw-700);
-  line-height: var(--line-height-400);
-  background-color: var(--color-grey);
-  border-radius: 25px;
-`;
-
-export const CustomDropdown = createGlobalStyle`
+export const Form = styled.form`
   .filter {
     position: relative;
-    width: 256px;    
+    width: 256px;
   }
 
-  .filter [id^="headlessui-menu-button"] {
+  .filter [id^='headlessui-menu-button'] {
     position: relative;
     width: 256px;
     padding: 9px 19px;
@@ -62,17 +35,17 @@ export const CustomDropdown = createGlobalStyle`
       transition: all 0.3s ease-in-out;
     }
 
-    &[data-headlessui-state="open"] {
+    &[data-headlessui-state='open'] {
       font-weight: var(--fw-600);
     }
 
-    &[data-headlessui-state="open"]::before {
+    &[data-headlessui-state='open']::before {
       border-top: none;
       border-bottom: 9px solid var(--color-black);
     }
   }
 
-  .filter [id^="headlessui-menu-items"] {
+  .filter [id^='headlessui-menu-items'] {
     position: absolute;
     padding: 30px 32px;
     width: 100%;
@@ -80,10 +53,35 @@ export const CustomDropdown = createGlobalStyle`
     top: 50px;
     display: flex;
     flex-direction: column;
-    gap: 17px;    
+    gap: 17px;
     background-color: var(--color-grey-3);
-    border-radius: 7px;   
-  }  
+    border-radius: 7px;
+  }
+`;
+
+export const FormName = styled.h3`
+  margin: 0;
+  margin-bottom: 28px;
+
+  font-size: var(--fs-400);
+  font-weight: var(--fw-700);
+  line-height: var(--line-height-400);
+`;
+
+export const FormWrapper = styled.div`
+  position: relative;
+  display: flex;
+  gap: 25px;
+`;
+
+export const Submit = styled.button`
+  padding: 10px 46px;
+  color: var(--color-white);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-700);
+  line-height: var(--line-height-400);
+  background-color: var(--color-grey);
+  border-radius: 25px;
 `;
 
 export const Label = styled.label`

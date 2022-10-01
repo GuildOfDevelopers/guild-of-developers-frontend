@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
-import { Wrapper, LeftFilter, FilterButtons } from './style';
+import { Menu } from '@headlessui/react';
+import { Wrapper, LeftFilter, FilterButtons, CustomDropdown } from './style';
 import FilterOpen from './FilterOpen';
 import { IconFilter } from './Icon';
 
@@ -16,8 +17,6 @@ const Filter: FC = () => {
     }
   ];
 
-  const [isOpen, setIsOpen] = React.useState(false);
-
   return (
     <Wrapper>
       <LeftFilter>
@@ -32,11 +31,17 @@ const Filter: FC = () => {
         ))}
       </LeftFilter>
 
-      <FilterButtons onClick={() => setIsOpen(!isOpen)}>
-        <IconFilter />
-      </FilterButtons>
+      <Menu>
+        <CustomDropdown />
 
-      {isOpen && <FilterOpen />}
+        <Menu.Button>
+          <IconFilter />
+        </Menu.Button>
+
+        <Menu.Items className="filter-open">
+          <FilterOpen />
+        </Menu.Items>
+      </Menu>
     </Wrapper>
   );
 };

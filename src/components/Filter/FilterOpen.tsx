@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { Form, FormName, FormWrapper, Submit } from './styleFilterOpen';
-import Dropdown from './Dropdown';
+import { Form, FormName, FormWrapper, Submit, CustomDropdown, Label } from './styleFilterOpen';
+import { Menu, Transition } from '@headlessui/react';
 
 const FilterOpen: FC = () => {
   const selects = [
@@ -117,15 +117,25 @@ const FilterOpen: FC = () => {
     }
   ];
 
-  const [currentSelect, setCurrentSelect] = React.useState(-1);
-
   return (
     <Form>
       <FormName>Фильтр</FormName>
 
       <FormWrapper>
         {selects.map((item) => (
-          <Dropdown item={{ ...item, currentSelect, setCurrentSelect }} key={item.id} />
+          <Menu key={item.id} as="div" className="filter">
+            <CustomDropdown />
+            <Menu.Button>{item.title}</Menu.Button>
+
+            <Menu.Items>
+              {item.list.map((i, index) => (
+                <Label key={index}>
+                  <input type={item.type} name={i.name} value={i.value} />
+                  <span>{i.value}</span>
+                </Label>
+              ))}
+            </Menu.Items>
+          </Menu>
         ))}
 
         <Submit onClick={(e) => e.preventDefault()}>Показать</Submit>

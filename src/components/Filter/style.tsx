@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -23,5 +23,36 @@ export const FilterButtons = styled.button`
     font-weight: var(--fw-700);
     color: var(--color-white);
     background-color: var(--color-grey);
+  }
+`;
+
+export const CustomDropdown = createGlobalStyle`
+  [id^="headlessui-menu-button"] {
+    padding: 5px 22px;
+    border-radius: 15px;
+  }
+
+  .filter-open[id^="headlessui-menu-items"] {
+    position: absolute;
+    left: 0;
+    bottom: -140px;
+    width: 100%;
+    padding: 30px 25px;
+    border-radius: 15px;
+    border-top-right-radius: 0;
+    background-color: var(--color-white-2);
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -25px;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      border-bottom: 25px solid var(--color-white-2);
+    }
   }
 `;

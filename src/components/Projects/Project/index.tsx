@@ -11,14 +11,29 @@ import {
   StackItem
 } from './style';
 
-interface ProjectProps {
-  date: string;
-  title: string;
-  departments: { name: string; stack: string[] }[];
-  regFormUrl: string;
+export interface ProjectProps {
+  project: {
+    id: number;
+    title: string;
+    description: string;
+    finished: boolean; // не используется
+    startDate: string;
+    finishedDate: string; // не используется
+    url: string; // не используется
+    registrationFormUrl: string;
+    departments: {
+      name: string;
+      stack: string[];
+    }[];
+    imageUrl: string; // не используется
+    fond: string; // не используется
+    participants: string; // не используется
+    todo: string[]; // не используется
+    WhatYouGet: string[]; // не используется
+  };
 }
 
-const Project: FC<ProjectProps> = ({ date, title, departments, regFormUrl }) => {
+const Project: FC<ProjectProps> = ({ project }) => {
   const [toggle, setToggle] = useState('');
 
   const handleSetToggle = useCallback(
@@ -32,10 +47,10 @@ const Project: FC<ProjectProps> = ({ date, title, departments, regFormUrl }) => 
         setToggle('');
       }}
     >
-      <CardDate>{date}</CardDate>
-      <CardTitle>«{title}»</CardTitle>
+      <CardDate>{project.startDate}</CardDate>
+      <CardTitle>«{project.title}»</CardTitle>
       <CardDepartments>
-        {departments.map((department) => (
+        {project.departments.map((department) => (
           <CardDepartment
             key={department.name}
             dep={department.name}
@@ -58,14 +73,7 @@ const Project: FC<ProjectProps> = ({ date, title, departments, regFormUrl }) => 
           </CardDepartment>
         ))}
       </CardDepartments>
-      {/* TODO: ниже веременный костыль т.к. не у всех карточек есть ссылки на форму регистрации */}
-      {regFormUrl !== '' ? (
-        <CardButton href={regFormUrl} target="_blank">
-          Записаться
-        </CardButton>
-      ) : (
-        <CardButton href="#">Записаться</CardButton>
-      )}
+      <CardButton to={`/projects/${project.id}`}>Записаться</CardButton>
     </Card>
   );
 };

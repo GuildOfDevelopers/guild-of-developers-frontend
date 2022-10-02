@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import ProjectFullScreen from '../../components/Projects/ProjectFullScreen';
 import AboutGuild from '../../pages/aboutGuild';
 import CurrentProjects from '../../pages/currentProjects';
 import DoneProjects from '../../pages/doneProjects';
@@ -20,6 +21,7 @@ const Main: FC = () => {
         <Route path="/aboutGuild" element={<AboutGuild />} />
         <Route path="/guildMembers" element={<GuildMembers />} />
         <Route path="/howItWorks" element={<HowItWorks />} />
+        <Route path="/projects/:projectId" element={<ProjectFullScreen />} />
 
         <Route path="*" element={<NotFound404 />} />
       </Routes>

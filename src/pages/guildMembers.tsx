@@ -1,7 +1,12 @@
 import React, { FC } from 'react';
+import Members from '../components/GuildMembers';
 
 const GuildMembers: FC = () => {
-  return <p style={{ textAlign: 'center' }}>GuildMembers</p>;
+  return (
+    <>
+      <Members />
+    </>
+  );
 };
 
 export default GuildMembers;

@@ -37,7 +37,7 @@ const Global = createGlobalStyle`
     --fs-700: 30px; // логотип
 
     // line-height (MOBILE)
-    --line-height-250: 18px; // напрвления в карточках
+    --line-height-250: 19px; // напрвления в карточках
     --line-height-300: 14px; // дата в карточках + footer ссылки
     --line-height-350: 16px; // header кнопки + ссылки
     --line-height-400: 20px; // мелкий текст в hero
@@ -57,7 +57,7 @@ const Global = createGlobalStyle`
       --fs-700: 35px; // логотип
 
       // line-height (DESKTOP)
-      --line-height-250: 18px; // напрвления в карточках
+      --line-height-250: 19px; // напрвления в карточках
       --line-height-300: 14px; // дата в карточках + footer ссылки
       --line-height-350: 16px; // header кнопки + ссылки
       --line-height-400: 21px; // текст в hero

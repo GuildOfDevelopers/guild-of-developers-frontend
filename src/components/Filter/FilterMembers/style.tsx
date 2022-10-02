@@ -57,8 +57,9 @@ export const BottomFilterButton = styled.button`
   background-color: var(--color-white-2);
   border-radius: 15px;
   text-align: center;
-  font-size: 16px;
+  font-size: var(--fs-250);
   font-weight: var(--fw-600);
+  line-height: var(--line-height-250);
   line-break: 19px;
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 

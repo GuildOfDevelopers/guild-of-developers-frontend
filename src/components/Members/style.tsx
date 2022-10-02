@@ -16,6 +16,7 @@ export const Title = styled.h2`
   margin-bottom: 40px;
 
   text-align: center;
+  color: var(--color-black);
   font-weight: var(--fw-700);
   font-size: var(--fs-600);
   line-height: var(--line-height-600);

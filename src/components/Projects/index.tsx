@@ -27,7 +27,7 @@ const ProjectsWithFilter: FC = () => {
   return (
     <Wrapper>
       <Title>Проекты</Title>
-      <Filter />
+      <Filter page="projects" />
       <Grid>
         {mockCards.map((project) => (
           <Project key={project.id} project={project} />

@@ -11,7 +11,7 @@ const Members: FC = () => {
       <Container>
         <Wrapper>
           <Title>Наши гильдийцы</Title>
-          <Filter />
+          <Filter page="guildMembers" />
           <Grid>
             {mockMembers.map((member) => (
               <Member key={member.id} member={member} />

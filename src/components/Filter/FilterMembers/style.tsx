@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
   padding-bottom: 40px;
@@ -57,8 +57,9 @@ export const BottomFilterButton = styled.button`
   background-color: var(--color-white-2);
   border-radius: 15px;
   text-align: center;
-  font-size: 16px;
+  font-size: var(--fs-250);
   font-weight: var(--fw-600);
+  line-height: var(--line-height-250);
   line-break: 19px;
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 
@@ -69,6 +70,8 @@ export const BottomFilterButton = styled.button`
 `;
 
 export const FilterButtons = styled.button`
+  position: relative;
+
   padding: 5px 22px;
   border-radius: 15px;
   font-weight: var(--fw-400);
@@ -83,4 +86,37 @@ export const FilterButtons = styled.button`
     color: var(--color-white);
     background-color: var(--color-grey);
   }
+
+  // TODO: временно - только для еще не готовых ссылок
+  ${({ wip }: { wip: string }) => {
+    return (
+      wip === 'true' &&
+      css`
+        &:hover,
+        &:focus-visible {
+          &::after {
+            content: 'Скоро';
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            /* min-width: 130px; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            background-color: var(--color-grey-2);
+            color: var(--color-black);
+            font-size: var(--fs-350);
+            font-weight: var(--fw-700);
+            line-height: var(--line-height-350);
+            text-align: center;
+          }
+        }
+      `
+    );
+  }}
 `;

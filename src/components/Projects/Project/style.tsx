@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
 export const Card = styled.li`
@@ -12,8 +13,6 @@ export const Card = styled.li`
   background-color: var(--color-white-2);
 
   transition: all 0.3s;
-
-  /* position: relative; */
 `;
 
 export const CardDate = styled.span`
@@ -25,7 +24,7 @@ export const CardDate = styled.span`
   font-feature-settings: 'pnum' on, 'lnum' on;
 `;
 
-export const CardTitle = styled.h3`
+export const CardTitle = styled.h2`
   font-weight: var(--fw-600);
   font-size: var(--fs-500);
   line-height: var(--line-height-500);
@@ -39,12 +38,10 @@ export const CardDepartments = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-
-  /* position: relative; */
 `;
 
 export const CardDepartment = styled.li`
-  padding: 8px 20px;
+  padding: 2px 13px 2px 20px;
   width: max-content;
 
   display: flex;
@@ -56,18 +53,31 @@ export const CardDepartment = styled.li`
   border-radius: 20px;
 
   font-weight: var(--fw-600);
-  font-size: var(--fs-300);
-  line-height: var(--line-height-300);
+  font-size: var(--fs-250);
+  line-height: var(--line-height-250);
 
   cursor: pointer;
 
   transition: all 0.3s;
+
+  p {
+    display: flex;
+    align-items: center;
+  }
 
   &:hover,
   &:focus-visible {
     font-weight: var(--fw-700);
     color: var(--color-white);
     background-color: var(--color-grey);
+
+    p {
+      svg {
+        path {
+          fill: var(--color-white);
+        }
+      }
+    }
   }
 
   ${({ toggle, dep }: { toggle: string; dep: string }) => {
@@ -81,6 +91,14 @@ export const CardDepartment = styled.li`
         padding: 22px 8px;
         border-radius: 15px;
         width: 100%;
+
+        p {
+          svg {
+            path {
+              fill: var(--color-white);
+            }
+          }
+        }
       `
     );
   }}
@@ -95,17 +113,22 @@ export const Stack = styled.ul`
   flex-wrap: wrap;
   text-align: center;
 
-  gap: 3ch;
+  column-gap: 3ch;
+  row-gap: 1ch;
 `;
 
-export const Test = styled.li`
+// TODO:
+// если > чем на 1 строку, то в начале второй строки тоже есть пагинация
+// позже подумать над тем как это исправить
+export const StackItem = styled.li`
   &:first-of-type {
     list-style: none;
   }
 `;
 
-export const CardButton = styled.button`
+export const CardButton = styled(Link)`
   margin-block-start: auto;
+
   width: 179px;
   height: 42px;
 

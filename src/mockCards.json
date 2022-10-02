@@ -1,0 +1,273 @@
+[
+  {
+    "id": 0,
+    "title": "FindFriend",
+    "description": "Сайт помогает найти домашнего любимца в питомниках Москвы и Московской области.",
+    "finished": false,
+    "startDate": "04.05.2022",
+    "finishedDate": "",
+    "url": "https://find-friend.site/",
+    "registrationFormUrl": "",
+    "departments": [
+      { "name": "Frontend", "stack": ["React", "Mobx", "MUI"] },
+      { "name": "Backend", "stack": [""] },
+      { "name": "UI/UX", "stack": [""] },
+      { "name": "Отдел контроля", "stack": [""] },
+      { "name": "Data Scientist", "stack": [""] }
+    ],
+    "imageUrl": "",
+    "fond": "",
+    "participants": "",
+    "todo": [
+      "Разработка дизайна веб-сайта",
+      "Frontend разработка",
+      "Backend разработка",
+      "Деплой сервисов"
+    ],
+    "WhatYouGet": [
+      "Опыт работы в команде",
+      "Прокачка хардов и софтов",
+      "Опыт создания продукта от прототипа до реализации и выката в продакшен",
+      "Крутой проект в своё портфолио"
+    ]
+  },
+  {
+    "id": 1,
+    "title": "Guild of Developers",
+    "description": "Это платформа, которая помогает начинающим IT специалистам, получить коммерческий опыт. Платформа GoD является абсолютно бесплатной. Она позволяет любому желающему прокачать как харды, так и софты во множестве направлений.",
+    "finished": false,
+    "startDate": "20.08.2022",
+    "finishedDate": "",
+    "url": "",
+    "registrationFormUrl": "https://gifted-base-520.notion.site/Guild-of-Developers-a6a7cd25ae344ea888a0636ba94532d1",
+    "departments": [
+      { "name": "Frontend", "stack": ["React", "Redux", "styled-components"] },
+      { "name": "Backend", "stack": ["FastApi", "Django", "Postgres", "Docker", "protobuf"] },
+      { "name": "UI/UX", "stack": [""] },
+      { "name": "Тестировщик ПО", "stack": [""] },
+      { "name": "Отдел безопасности", "stack": [""] },
+      { "name": "Отдел контроля", "stack": [""] },
+      { "name": "Project manager", "stack": [""] },
+      { "name": "DevOps", "stack": [""] },
+      { "name": "Data Scientist", "stack": [""] }
+    ],
+    "imageUrl": "",
+    "fond": "",
+    "participants": "",
+    "todo": [
+      "Разработка дизайна веб-сайта",
+      "Frontend разработка",
+      "Backend разработка",
+      "Деплой сервисов"
+    ],
+    "WhatYouGet": [
+      "Опыт работы в команде",
+      "Прокачка хардов и софтов",
+      "Опыт создания продукта от прототипа до реализации и выката в продакшен",
+      "Крутой проект в своё портфолио"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Автоматизированная система найма",
+    "description": "Школа – это коммьюнити, где важен каждый участник и его комфорт. Мы собираем команду для помощи в развитии самой Школе и всем участникам. АСН – это разработка различных телеграм ботов, с помощью которых можно будет выявить трудности, с которыми сталкиваются участники, а также улучшить и автоматизировать процессы.",
+    "finished": false,
+    "startDate": "09.08.2022",
+    "finishedDate": "",
+    "url": "",
+    "registrationFormUrl": "https://gifted-base-520.notion.site/c70bddbd53d7484386b4ed8a4528d1ad",
+    "departments": [
+      { "name": "Backend", "stack": ["Python", "aiogram", "PostgreSQL", "Gitlab"] },
+      { "name": "Тестировщик ПО", "stack": [""] },
+      { "name": "Отдел безопасности", "stack": [""] },
+      { "name": "Отдел контроля", "stack": [""] }
+    ],
+    "imageUrl": "",
+    "fond": "",
+    "participants": "",
+    "todo": ["Backend разработка", "Деплой сервисов"],
+    "WhatYouGet": [
+      "Опыт работы в команде",
+      "Прокачка хардов и софтов",
+      "Опыт создания продукта от прототипа до реализации и выката в продакшен",
+      "Крутой проект в своё портфолио"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Одаренные сердца",
+    "description": "Главная цель нашей организации - создать условия для поддержки и развития творчески одаренных детей, в том числе для детей с ОВЗ.",
+    "finished": false,
+    "startDate": "02.08.2022",
+    "finishedDate": "",
+    "url": "",
+    "registrationFormUrl": "https://gifted-base-520.notion.site/edbba6eaecae415887995b9d101252d7",
+    "departments": [
+      { "name": "Frontend", "stack": ["Vue"] },
+      { "name": "Backend", "stack": ["Python", "FastApi", "PostgreSQL", "pydantic"] },
+      { "name": "UI/UX", "stack": [""] },
+      { "name": "Тестировщик ПО", "stack": [""] },
+      { "name": "Project manager", "stack": [""] },
+      { "name": "DevOps", "stack": [""] }
+    ],
+    "imageUrl": "",
+    "fond": "",
+    "participants": "",
+    "todo": [
+      "Разработка дизайна веб-сайта",
+      "Frontend разработка",
+      "Backend разработка",
+      "Деплой сервисов"
+    ],
+    "WhatYouGet": [
+      "Опыт работы в команде",
+      "Прокачка хардов и софтов",
+      "Опыт создания продукта от прототипа до реализации и выката в продакшен",
+      "Крутой проект в своё портфолио"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Инкубатор фондов",
+    "description": "Проект, основной целью которого является создание платформы, которая будет оказывать помощь в развитии новых фондов и заниматься продвижением существующих.",
+    "finished": false,
+    "startDate": "29.07.2022",
+    "finishedDate": "",
+    "url": "",
+    "registrationFormUrl": "https://gifted-base-520.notion.site/acc0aa9186634ffca6bf2312c5bee132",
+    "departments": [
+      { "name": "Frontend", "stack": ["React", "Redux", "Sass"] },
+      { "name": "Backend", "stack": ["Python", "FastApi", "PostgreSQL", "pydantic"] },
+      { "name": "UI/UX", "stack": [""] },
+      { "name": "Тестировщик ПО", "stack": [""] },
+      { "name": "Project manager", "stack": [""] },
+      { "name": "DevOps", "stack": [""] }
+    ],
+    "imageUrl": "",
+    "fond": "",
+    "participants": "",
+    "todo": [
+      "Разработка дизайна веб-сайта",
+      "Frontend разработка",
+      "Backend разработка",
+      "Деплой сервисов"
+    ],
+    "WhatYouGet": [
+      "Опыт работы в команде",
+      "Прокачка хардов и софтов",
+      "Опыт создания продукта от прототипа до реализации и выката в продакшен",
+      "Крутой проект в своё портфолио"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Terra Android",
+    "description": "Приложение для участников бизнес-клуба Terra. Целью приложения является объеденить сообщество численностью более 20.000 участников в одной социальной сети.",
+    "finished": false,
+    "startDate": "",
+    "finishedDate": "",
+    "url": "https://apps.apple.com/ru/app/terra-club-2-0/id1644618137?l=en",
+    "registrationFormUrl": "",
+    "departments": [
+      {
+        "name": "Android",
+        "stack": [
+          "Android",
+          "Kotlin",
+          "Clean architecture",
+          "Dagger2",
+          "Retrofit",
+          "MVVM",
+          "Firebase",
+          "Coroutine"
+        ]
+      },
+      { "name": "Backend", "stack": [""] },
+      { "name": "UI/UX", "stack": [""] },
+      { "name": "Project manager", "stack": [""] },
+      { "name": "Тестировщик ПО", "stack": [""] },
+      { "name": "DevOps", "stack": [""] }
+    ],
+    "imageUrl": "",
+    "fond": "",
+    "participants": "",
+    "todo": ["Android разработка", "Backend разработка", "Деплой сервисов"],
+    "WhatYouGet": [
+      "Опыт работы в команде",
+      "Прокачка хардов и софтов",
+      "Опыт создания продукта от прототипа до реализации и выката в продакшен",
+      "Крутой проект в своё портфолио"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Terra IOS",
+    "description": "Приложение для участников бизнес-клуба Terra. Целью приложения является объеденить сообщество численностью более 20.000 участников в одной социальной сети.",
+    "finished": false,
+    "startDate": "",
+    "finishedDate": "",
+    "url": "https://apps.apple.com/ru/app/terra-club-2-0/id1644618137?l=en",
+    "registrationFormUrl": "",
+    "departments": [
+      {
+        "name": "IOS",
+        "stack": [
+          "Swift",
+          "MVC",
+          "MapKit",
+          "FSCalendar",
+          "UserDefaults",
+          "Auto Layout",
+          "Firebase",
+          "UIKit"
+        ]
+      },
+      { "name": "Backend", "stack": [""] },
+      { "name": "UI/UX", "stack": [""] },
+      { "name": "Project manager", "stack": [""] },
+      { "name": "Тестировщик ПО", "stack": [""] },
+      { "name": "DevOps", "stack": [""] }
+    ],
+    "imageUrl": "",
+    "fond": "",
+    "participants": "",
+    "todo": ["IOS разработка", "Backend разработка", "Деплой сервисов"],
+    "WhatYouGet": [
+      "Опыт работы в команде",
+      "Прокачка хардов и софтов",
+      "Опыт создания продукта от прототипа до реализации и выката в продакшен",
+      "Крутой проект в своё портфолио"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Диакония",
+    "description": "Основной целью проекта является, помочь вернуться в общество социально исключённым людям. Миссией проекта является улучшение качества жизни уязвимых слоев населения, объединение усилий общественных сил в решении социальных проблем общества.",
+    "finished": false,
+    "startDate": "16.09.2022",
+    "finishedDate": "",
+    "url": "https://apps.apple.com/ru/app/terra-club-2-0/id1644618137?l=en",
+    "registrationFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSd_KfUjPexwtAHSuxDswyKUkmHTW-Nt1tJwRFwmzPJK3j9P0g/viewform",
+    "departments": [
+      {
+        "name": "Frontend",
+        "stack": [""]
+      }
+    ],
+    "imageUrl": "",
+    "fond": "",
+    "participants": "",
+    "todo": [
+      "Разработка дизайна веб-сайта",
+      "Frontend разработка",
+      "Backend разработка",
+      "Деплой сервисов"
+    ],
+    "WhatYouGet": [
+      "Опыт работы в команде",
+      "Прокачка хардов и софтов",
+      "Опыт создания продукта от прототипа до реализации и выката в продакшен",
+      "Крутой проект в своё портфолио"
+    ]
+  }
+]

@@ -1,4 +1,5 @@
 import React, { FC, useState, useCallback } from 'react';
+import { ArrowDown, ArrowUp } from './Icon';
 import {
   CardButton,
   Card,
@@ -7,19 +8,35 @@ import {
   CardDepartments,
   CardDepartment,
   Stack,
-  Test
+  StackItem
 } from './style';
 
-interface ProjectProps {
-  date: string;
-  project: string;
-  departments: { name: string; stack: string[] }[];
+export interface ProjectProps {
+  project: {
+    id: number;
+    title: string;
+    description: string;
+    finished: boolean; // не используется
+    startDate: string;
+    finishedDate: string; // не используется
+    url: string; // не используется
+    registrationFormUrl: string;
+    departments: {
+      name: string;
+      stack: string[];
+    }[];
+    imageUrl: string; // не используется
+    fond: string; // не используется
+    participants: string; // не используется
+    todo: string[]; // не используется
+    WhatYouGet: string[]; // не используется
+  };
 }
 
-const Project: FC<ProjectProps> = ({ date, project, departments }) => {
+const Project: FC<ProjectProps> = ({ project }) => {
   const [toggle, setToggle] = useState('');
 
-  const test = useCallback(
+  const handleSetToggle = useCallback(
     (name: string) => (toggle === name ? setToggle('') : setToggle(name)),
     [setToggle, toggle]
   );
@@ -30,29 +47,33 @@ const Project: FC<ProjectProps> = ({ date, project, departments }) => {
         setToggle('');
       }}
     >
-      <CardDate>{date}</CardDate>
-      <CardTitle>{project}</CardTitle>
+      <CardDate>{project.startDate}</CardDate>
+      <CardTitle>«{project.title}»</CardTitle>
       <CardDepartments>
-        {departments.map((department) => (
+        {project.departments.map((department) => (
           <CardDepartment
             key={department.name}
             dep={department.name}
             toggle={toggle}
             onClick={(e) => {
               e.stopPropagation();
-              test(department.name);
+              handleSetToggle(department.name);
             }}
           >
-            <p>{department.name}</p>
+            <p>
+              {department.name}
+              {toggle === department.name ? <ArrowUp /> : <ArrowDown />}
+            </p>
+
             <Stack>
               {toggle === department.name
-                ? department.stack.map((stack) => <Test>{stack}</Test>)
+                ? department.stack.map((stack) => <StackItem key={stack}>{stack}</StackItem>)
                 : ''}
             </Stack>
           </CardDepartment>
         ))}
       </CardDepartments>
-      <CardButton>Записаться</CardButton>
+      <CardButton to={`/projects/${project.id}`}>Записаться</CardButton>
     </Card>
   );
 };

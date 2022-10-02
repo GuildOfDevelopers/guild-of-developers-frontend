@@ -36,7 +36,7 @@ const MobileHeader: FC = () => {
               <NavBarLink wip="true" to="#">
                 Архив проектов
               </NavBarLink>
-              <NavBarLink wip="true" to="#">
+              <NavBarLink wip="false" to="/guildMembers">
                 Гильдийцы
               </NavBarLink>
             </Navbar>

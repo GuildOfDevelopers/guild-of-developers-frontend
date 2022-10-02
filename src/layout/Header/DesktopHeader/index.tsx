@@ -11,7 +11,7 @@ const DesktopHeader: FC = () => {
           <NavBarLink wip="true" to="#">
             Как это устроено?
           </NavBarLink>
-          <NavBarLink wip="true" to="#">
+          <NavBarLink wip="true" to="">
             О Гильдии
           </NavBarLink>
           <NavBarLink wip="false" to="/currentProjects">
@@ -24,7 +24,7 @@ const DesktopHeader: FC = () => {
           <NavBarLink wip="true" to="#">
             Архив проектов
           </NavBarLink>
-          <NavBarLink wip="true" to="#">
+          <NavBarLink wip="false" to="/guildMembers">
             Гильдийцы
           </NavBarLink>
         </Navbar>

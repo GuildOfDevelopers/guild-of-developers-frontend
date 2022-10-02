@@ -13,6 +13,7 @@ export const Card = styled.li`
 
 // ASIDE
 export const AsideContent = styled.div``;
+
 export const Photo = styled.div`
   width: 98px;
   aspect-ratio: 1/1;
@@ -79,13 +80,7 @@ export const MemberStack = styled.div`
   }
 `;
 
-export const Department = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-`;
-
-export const Stack = styled.ul`
+export const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -170,6 +165,7 @@ export const TimeInGuild = styled.div`
     font-feature-settings: 'pnum' on, 'lnum' on;
   }
 `;
+
 export const MoreInfo = styled.div`
   position: relative;
 

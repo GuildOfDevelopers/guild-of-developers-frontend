@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Card = styled.li`
   padding: 25px;
@@ -107,7 +107,7 @@ export const Item = styled.li`
   font-size: var(--fs-250);
   line-height: var(--line-height-250);
 
-  cursor: pointer;
+  /* cursor: pointer;
 
   transition: all 0.3s;
 
@@ -121,7 +121,7 @@ export const Item = styled.li`
     font-weight: var(--fw-700);
     color: var(--color-white);
     background-color: var(--color-grey);
-  }
+  } */
 `;
 
 // MAIN - 3
@@ -162,6 +162,7 @@ export const TimeInGuild = styled.div`
   font-weight: var(--fw-400);
   font-size: var(--fs-350);
   line-height: var(--line-height-350);
+
   span {
     font-weight: var(--fw-600);
     font-size: var(--fs-250);
@@ -170,9 +171,44 @@ export const TimeInGuild = styled.div`
   }
 `;
 export const MoreInfo = styled.div`
+  position: relative;
+
+  cursor: pointer;
+
   font-weight: var(--fw-300);
   font-size: var(--fs-300);
   line-height: var(--line-height-300);
-  img {
-  }
+
+  // TODO: временно - только для еще не готовых ссылок
+  ${({ wip }: { wip: string }) => {
+    return (
+      wip === 'true' &&
+      css`
+        &:hover,
+        &:focus-visible {
+          &::after {
+            content: 'Скоро';
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            /* min-width: 130px; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 25px;
+            background-color: var(--color-grey-2);
+            color: var(--color-black);
+            font-size: var(--fs-350);
+            font-weight: var(--fw-700);
+            line-height: var(--line-height-350);
+            text-align: center;
+          }
+        }
+      `
+    );
+  }}
 `;

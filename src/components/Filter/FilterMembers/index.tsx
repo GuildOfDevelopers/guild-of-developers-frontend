@@ -44,7 +44,9 @@ const FilterMembers: FC = () => {
   return (
     <Wrapper>
       <TopFilter>
-        <FilterButtons className="active">Поиск</FilterButtons>
+        <FilterButtons wip="true" className="active">
+          Поиск
+        </FilterButtons>
 
         <Menu>
           <Menu.Button>

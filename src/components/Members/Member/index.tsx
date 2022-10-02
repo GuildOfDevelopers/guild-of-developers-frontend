@@ -80,7 +80,7 @@ const Member: FC<MemberProps> = ({ member }) => {
             в&nbsp;Гильдии
             <span>{member.timeInGuild}</span>
           </TimeInGuild>
-          <MoreInfo>Подробнее</MoreInfo>
+          <MoreInfo wip="true">Подробнее</MoreInfo>
         </MemberProjects>
       </MainContent>
     </Card>

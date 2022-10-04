@@ -4,7 +4,7 @@ import MobileHeader from './MobileHeader';
 import DesktopHeader from './DesktopHeader';
 
 const Header: FC = () => {
-  const isDesktop = useMediaQuery('(min-width: 768px)');
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
   return <>{isDesktop ? <DesktopHeader /> : <MobileHeader />}</>;
 };
 

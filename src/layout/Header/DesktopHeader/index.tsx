@@ -1,32 +1,38 @@
 import React, { FC } from 'react';
 import NavBarButton from '../NavBarButton';
 import { Container } from '../../../lib/styled/container';
-import { NavBarLink, NavBarLogo, StyledHeader, Navbar } from './style';
+import { NavBarLink, NavBarLogo, StyledHeader, Navbar, LogoDiv, LeftDiv, RightDiv } from './style';
 
 const DesktopHeader: FC = () => {
   return (
     <StyledHeader>
       <Container>
         <Navbar>
-          <NavBarLink wip="true" to="#">
-            Как это устроено?
-          </NavBarLink>
-          <NavBarLink wip="true" to="">
-            О Гильдии
-          </NavBarLink>
-          <NavBarLink wip="false" to="/currentProjects">
-            <NavBarButton>Найти проект</NavBarButton>
-          </NavBarLink>
-          <NavBarLogo to="/">GoD</NavBarLogo>
-          <NavBarLink wip="true" to="#">
-            <NavBarButton>Войти</NavBarButton>
-          </NavBarLink>
-          <NavBarLink wip="true" to="#">
-            Архив проектов
-          </NavBarLink>
-          <NavBarLink wip="false" to="/guildMembers">
-            Гильдийцы
-          </NavBarLink>
+          <LeftDiv>
+            <NavBarLink wip="true" to="#">
+              Как это устроено?
+            </NavBarLink>
+            <NavBarLink wip="true" to="">
+              О Гильдии
+            </NavBarLink>
+            <NavBarLink wip="false" to="/currentProjects">
+              <NavBarButton>Найти проект</NavBarButton>
+            </NavBarLink>
+          </LeftDiv>
+          <LogoDiv>
+            <NavBarLogo to="/">GoD</NavBarLogo>
+          </LogoDiv>
+          <RightDiv>
+            <NavBarLink wip="true" to="#">
+              <NavBarButton>Войти</NavBarButton>
+            </NavBarLink>
+            <NavBarLink wip="true" to="#">
+              Архив проектов
+            </NavBarLink>
+            <NavBarLink wip="false" to="/guildMembers">
+              Гильдийцы
+            </NavBarLink>
+          </RightDiv>
         </Navbar>
       </Container>
     </StyledHeader>

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
+import { useLocation } from 'react-router-dom';
 
 export const StyledHeader = styled.header`
   background-color: var(--color-white-2);
@@ -71,7 +72,6 @@ export const NavBarLink = styled(Link)`
             right: 0;
             bottom: 0;
 
-            /* min-width: 130px; */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -94,14 +94,32 @@ export const NavBarLogo = styled(Link)`
   font-weight: var(--fw-700);
   line-height: var(--line-height-700);
   position: relative;
-  &::after {
-    content: '';
-    position: absolute;
-    width: 16px;
-    border-bottom: 1.5px solid var(--color-black);
-    border-radius: 50px;
-    background-color: var(--color-black);
-    bottom: 0;
-    left: 23px;
-  }
+  ${() => {
+    const location = useLocation();
+    return (
+      location.pathname === '/' &&
+      css`
+        &::after {
+          content: '';
+          position: absolute;
+          width: 16px;
+          border-bottom: 1.5px solid var(--color-black);
+          border-radius: 50px;
+          background-color: var(--color-black);
+          bottom: 0;
+          left: 28px;
+        }
+        @media (min-width: 1024px) {
+          &::after {
+            left: 23px;
+          }
+        }
+        @media (max-width: 767px) {
+          &::after {
+            left: 23px;
+          }
+        }
+      `
+    );
+  }}
 `;

@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
+import { useLocation } from 'react-router-dom';
 
 export const StyledHeader = styled.header`
   background-color: var(--color-white-2);
 `;
 
 export const Navbar = styled.nav`
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -59,7 +61,6 @@ export const NavBarLink = styled(Link)`
             right: 0;
             bottom: 0;
 
-            /* min-width: 130px; */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -77,19 +78,49 @@ export const NavBarLink = styled(Link)`
   }}
 `;
 
+export const LogoDiv = styled.div`
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: 0;
+`;
+
+export const LeftDiv = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  z-index: 1;
+`;
+
+export const RightDiv = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 40px;
+`;
+
 export const NavBarLogo = styled(Link)`
   font-size: var(--fs-700);
   font-weight: var(--fw-700);
   line-height: var(--line-height-700);
   position: relative;
-  &::after {
-    content: '';
-    position: absolute;
-    width: 16px;
-    border-bottom: 1.5px solid var(--color-black);
-    border-radius: 50px;
-    background-color: var(--color-black);
-    bottom: 0;
-    left: 28px;
-  }
+  ${() => {
+    const location = useLocation();
+    return (
+      location.pathname === '/' &&
+      css`
+        &::after {
+          content: '';
+          position: absolute;
+          width: 16px;
+          border-bottom: 1.5px solid var(--color-black);
+          border-radius: 50px;
+          background-color: var(--color-black);
+          bottom: 0;
+          left: 28px;
+        }
+      `
+    );
+  }}
 `;

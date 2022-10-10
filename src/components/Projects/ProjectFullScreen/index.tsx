@@ -26,7 +26,7 @@ import { ProjectProps } from '../Project';
 import { useGetProjectsQuery } from '../../../store/projectsSlice';
 
 const ProjectFullScreen: FC = () => {
-  const { data, isLoading } = useGetProjectsQuery();
+  const { data } = useGetProjectsQuery();
   const { projectId } = useParams<{ projectId?: string }>();
   const [project, setProject] = useState<ProjectProps['project']>();
 
@@ -37,10 +37,6 @@ const ProjectFullScreen: FC = () => {
 
   if (!data) {
     return null;
-  }
-
-  if (isLoading) {
-    return <div>Загрузка...</div>;
   }
 
   return (

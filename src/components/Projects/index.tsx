@@ -46,7 +46,19 @@ const ProjectsWithFilter: FC<ProjectsWithFilterProps> = ({ data }) => {
 };
 
 const Projects: FC<ProjectsProps> = ({ page }) => {
-  const { data } = useGetProjectsQuery();
+  const { data, isLoading } = useGetProjectsQuery();
+
+  if (isLoading) {
+    return (
+      <Section>
+        <Container>
+          <Wrapper>
+            <Title>Загрузка...</Title>;
+          </Wrapper>
+        </Container>
+      </Section>
+    );
+  }
 
   return (
     <Section>

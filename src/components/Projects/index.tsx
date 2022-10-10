@@ -3,19 +3,27 @@ import { Container } from '../../lib/styled/container';
 import Filter from '../Filter';
 import Project from './Project';
 import { Grid, Section, Title, Wrapper } from './style';
-// TODO: mockData перенести в ReduxToolkit
-import mockCards from '../../mockCards.json';
+import { ProjectResponce } from '../../store/type';
+import { useGetProjectsQuery } from '../../store/projectsSlice';
 
 interface ProjectsProps {
   page: string;
 }
 
-const ProjectsWithoutFilter: FC = () => {
+interface ProjectsWithoutFilterProps {
+  data: ProjectResponce | undefined;
+}
+
+interface ProjectsWithFilterProps {
+  data: ProjectResponce | undefined;
+}
+
+const ProjectsWithoutFilter: FC<ProjectsWithoutFilterProps> = ({ data }) => {
   return (
     <Wrapper>
       <Title>Наши проекты</Title>
       <Grid>
-        {mockCards.map((project) => (
+        {data?.map((project) => (
           <Project key={project.id} project={project} />
         ))}
       </Grid>
@@ -23,13 +31,13 @@ const ProjectsWithoutFilter: FC = () => {
   );
 };
 
-const ProjectsWithFilter: FC = () => {
+const ProjectsWithFilter: FC<ProjectsWithFilterProps> = ({ data }) => {
   return (
     <Wrapper>
       <Title>Проекты</Title>
       <Filter page="projects" />
       <Grid>
-        {mockCards.map((project) => (
+        {data?.map((project) => (
           <Project key={project.id} project={project} />
         ))}
       </Grid>
@@ -38,11 +46,13 @@ const ProjectsWithFilter: FC = () => {
 };
 
 const Projects: FC<ProjectsProps> = ({ page }) => {
+  const { data } = useGetProjectsQuery();
+
   return (
     <Section>
       <Container>
-        {page === 'home' && <ProjectsWithoutFilter />}
-        {page === 'projects' && <ProjectsWithFilter />}
+        {page === 'home' && <ProjectsWithoutFilter data={data} />}
+        {page === 'projects' && <ProjectsWithFilter data={data} />}
       </Container>
     </Section>
   );

@@ -3,9 +3,11 @@ import { Container } from '../../lib/styled/container';
 import { Section, Wrapper, Title, Grid } from './style';
 import Filter from '../Filter';
 import Member from './Member';
-import mockMembers from '../../mockMembers.json';
+import { useGetMembersQuery } from '../../store/membersSlice';
 
 const Members: FC = () => {
+  const { data } = useGetMembersQuery('');
+
   return (
     <Section>
       <Container>
@@ -13,7 +15,7 @@ const Members: FC = () => {
           <Title>Наши гильдийцы</Title>
           <Filter page="guildMembers" />
           <Grid>
-            {mockMembers.map((member) => (
+            {data?.map((member) => (
               <Member key={member.id} member={member} />
             ))}
           </Grid>

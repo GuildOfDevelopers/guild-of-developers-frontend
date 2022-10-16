@@ -1,20 +1,19 @@
 import React, { FC } from 'react';
 import {
-  AsideContent,
   Card,
-  Department,
-  Item,
+  AsideContent,
+  Photo,
   MainContent,
   MemberInfo,
-  MemberProjects,
-  MemberStack,
-  MoreInfo,
   Name,
   NickName,
-  Photo,
+  MemberStack,
+  List,
+  Item,
+  MemberProjects,
   ProjectsCount,
-  Stack,
-  TimeInGuild
+  TimeInGuild,
+  MoreInfo
 } from './style';
 import { PhotoPlaceholder, StarIcon } from './icon';
 
@@ -31,57 +30,95 @@ interface MemberProps {
     img: string;
   };
 }
+interface ImageProps {
+  img: string;
+}
+interface InfoProps {
+  name: string;
+  surname: string;
+  nickname: string;
+}
+interface StackProps {
+  department: string[];
+  stack: string[];
+}
+interface ProjectsProps {
+  projectsCount: number;
+  timeInGuild: string;
+}
+
+const Image: FC<ImageProps> = ({ img }) => {
+  return (
+    <>
+      {img !== '' ? (
+        <Photo>
+          <img src={img} alt="Фотография участника" />
+        </Photo>
+      ) : (
+        <Photo>
+          <PhotoPlaceholder />
+        </Photo>
+      )}
+    </>
+  );
+};
+
+const Info: FC<InfoProps> = ({ name, surname, nickname }) => {
+  return (
+    <MemberInfo>
+      <Name>
+        {surname} {name} <StarIcon />
+      </Name>
+      <NickName>@{nickname}</NickName>
+    </MemberInfo>
+  );
+};
+
+const Stack: FC<StackProps> = ({ department, stack }) => {
+  return (
+    <MemberStack>
+      <h4>Должность</h4>
+      <List>
+        {department.map((item) => (
+          <Item key={item}>{item}</Item>
+        ))}
+      </List>
+      <h4>Стек</h4>
+      <List>
+        {stack.map((item) => (
+          <Item key={item}>{item}</Item>
+        ))}
+      </List>
+    </MemberStack>
+  );
+};
+
+const Projects: FC<ProjectsProps> = ({ projectsCount, timeInGuild }) => {
+  return (
+    <MemberProjects>
+      <ProjectsCount>
+        Участие <br /> в&nbsp;проектах
+        <span>{projectsCount}</span>
+      </ProjectsCount>
+      <TimeInGuild>
+        Состоит <br /> в&nbsp;Гильдии
+        <span>{timeInGuild}</span>
+      </TimeInGuild>
+      <MoreInfo wip="true">Подробнее</MoreInfo>
+    </MemberProjects>
+  );
+};
 
 const Member: FC<MemberProps> = ({ member }) => {
   return (
     <Card>
       <AsideContent>
-        {member.img !== '' ? (
-          <Photo>
-            <img src={member.img} alt="Фотография участника" />
-          </Photo>
-        ) : (
-          <Photo>
-            <PhotoPlaceholder />
-          </Photo>
-        )}
+        <Image img={member.img} />
       </AsideContent>
       <MainContent>
-        <MemberInfo>
-          <Name>
-            {member.surname} {member.name} <StarIcon />
-          </Name>
-          <NickName>@{member.nickname}</NickName>
-        </MemberInfo>
-        <MemberStack>
-          <h4>Должность</h4>
-          <Department>
-            {member.department.map((department) => (
-              <Item>{department}</Item>
-            ))}
-          </Department>
-          <h4>Стек</h4>
-          <Stack>
-            {member.stack.map((stack) => (
-              <Item>{stack}</Item>
-            ))}
-          </Stack>
-        </MemberStack>
-        <MemberProjects>
-          <ProjectsCount>
-            Участие
-            <br />
-            в&nbsp;проектах
-            <span>{member.projectsCount}</span>
-          </ProjectsCount>
-          <TimeInGuild>
-            Состоит
-            <br />
-            в&nbsp;Гильдии
-            <span>{member.timeInGuild}</span>
-          </TimeInGuild>
-          <MoreInfo wip="true">Подробнее</MoreInfo>
-        </MemberProjects>
+        <Info name={member.name} surname={member.surname} nickname={member.nickname} />
+        <Stack department={member.department} stack={member.stack} />
+        <Projects projectsCount={member.projectsCount} timeInGuild={member.timeInGuild} />
       </MainContent>
     </Card>
   );

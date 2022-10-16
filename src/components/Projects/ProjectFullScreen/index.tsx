@@ -26,7 +26,7 @@ import { ProjectProps } from '../Project';
 import { useGetProjectsQuery } from '../../../store/projectsSlice';
 
 const ProjectFullScreen: FC = () => {
-  const { data } = useGetProjectsQuery();
+  const { data } = useGetProjectsQuery('');
   const { projectId } = useParams<{ projectId?: string }>();
   const [project, setProject] = useState<ProjectProps['project']>();
 
@@ -34,10 +34,6 @@ const ProjectFullScreen: FC = () => {
     const card = data?.find((item) => item.id === Number(projectId));
     setProject(card);
   }, [projectId, data]);
-
-  if (!data) {
-    return null;
-  }
 
   return (
     <Section>
@@ -99,7 +95,7 @@ const ProjectFullScreen: FC = () => {
                     <Back /> <PaginationLeft>К предыдущему проекту</PaginationLeft>
                   </PaginationControl>
                 )}
-                {Number(projectId) < data?.length - 1 && (
+                {data && Number(projectId) < data.length - 1 && (
                   <PaginationControl to={`/projects/${Number(projectId) + 1}`}>
                     <PaginationRight>К следующему проекту</PaginationRight> <Forward />
                   </PaginationControl>

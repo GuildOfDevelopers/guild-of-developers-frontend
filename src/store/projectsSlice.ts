@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import type { ProjectResponce } from './type';
+import type { ProjectResponce } from './types';
 
 export const projectsApi = createApi({
   reducerPath: 'projectsApi',
@@ -16,7 +16,7 @@ export const projectsApi = createApi({
     }
   }),
   endpoints: (builder) => ({
-    getProjects: builder.query<ProjectResponce, void>({
+    getProjects: builder.query<ProjectResponce, string>({
       query: () => `projects`
     })
   })

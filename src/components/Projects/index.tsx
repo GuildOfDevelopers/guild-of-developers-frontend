@@ -3,7 +3,7 @@ import { Container } from '../../lib/styled/container';
 import Filter from '../Filter';
 import Project from './Project';
 import { Grid, Section, Title, Wrapper } from './style';
-import { ProjectResponce } from '../../store/type';
+import { ProjectResponce } from '../../store/types';
 import { useGetProjectsQuery } from '../../store/projectsSlice';
 
 interface ProjectsProps {
@@ -46,7 +46,7 @@ const ProjectsWithFilter: FC<ProjectsWithFilterProps> = ({ data }) => {
 };
 
 const Projects: FC<ProjectsProps> = ({ page }) => {
-  const { data, isLoading } = useGetProjectsQuery();
+  const { data, isLoading, isError } = useGetProjectsQuery('');
 
   if (isLoading) {
     return (
@@ -54,6 +54,18 @@ const Projects: FC<ProjectsProps> = ({ page }) => {
         <Container>
           <Wrapper>
             <Title>Загрузка...</Title>;
+          </Wrapper>
+        </Container>
+      </Section>
+    );
+  }
+
+  if (isError) {
+    return (
+      <Section>
+        <Container>
+          <Wrapper>
+            <Title>Ошибка</Title>;
           </Wrapper>
         </Container>
       </Section>

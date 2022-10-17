@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
+import LoginForm from '../components/LoginForm';
 
 const Login: FC = () => {
-  return <p style={{ textAlign: 'center' }}>Login</p>;
+  return <LoginForm />;
 };
 
 export default Login;

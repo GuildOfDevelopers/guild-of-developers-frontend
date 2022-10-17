@@ -23,7 +23,7 @@ const DesktopHeader: FC = () => {
             <NavBarLogo to="/">GoD</NavBarLogo>
           </LogoDiv>
           <RightDiv>
-            <NavBarLink wip="true" to="#">
+            <NavBarLink wip="false" to="/login">
               <NavBarButton>Войти</NavBarButton>
             </NavBarLink>
             <NavBarLink wip="true" to="#">

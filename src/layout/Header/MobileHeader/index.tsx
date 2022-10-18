@@ -21,7 +21,7 @@ const MobileHeader: FC = () => {
               animate={{ maxHeight: '274px', opacity: 1 }}
               exit={{ maxHeight: 0, opacity: 0 }}
             >
-              <NavBarLink wip="true" to="#">
+              <NavBarLink wip="false" to="/login">
                 <NavBarButton>Войти</NavBarButton>
               </NavBarLink>
               <NavBarLink wip="false" to="/currentProjects">

@@ -1,8 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import type { MembersResponce } from './types';
+import type { MembersResponce, ProjectResponce } from './types';
 
-export const membersApi = createApi({
-  reducerPath: 'membersApi',
+export const dataApi = createApi({
+  reducerPath: 'dataApi',
   baseQuery: fetchBaseQuery({
     baseUrl: 'http://135.181.198.180:65145/',
     prepareHeaders: (headers) => {
@@ -17,8 +17,11 @@ export const membersApi = createApi({
   endpoints: (builder) => ({
     getMembers: builder.query<MembersResponce, string>({
       query: () => `members`
+    }),
+    getProjects: builder.query<ProjectResponce, string>({
+      query: () => `projects`
     })
   })
 });
 
-export const { useGetMembersQuery } = membersApi;
+export const { useGetMembersQuery, useGetProjectsQuery } = dataApi;

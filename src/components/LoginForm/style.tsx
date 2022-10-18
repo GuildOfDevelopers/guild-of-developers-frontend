@@ -10,6 +10,6 @@ export const Wrapper = styled.form`
   max-width: 600px;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 `;

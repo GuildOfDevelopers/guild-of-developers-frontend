@@ -4,7 +4,7 @@ import Filter from '../Filter';
 import Project from './Project';
 import { Grid, Section, Title, Wrapper } from './style';
 import { ProjectResponce } from '../../store/types';
-import { useGetProjectsQuery } from '../../store/projectsSlice';
+import { useGetProjectsQuery } from '../../store/dataSlice';
 
 interface ProjectsProps {
   page: string;

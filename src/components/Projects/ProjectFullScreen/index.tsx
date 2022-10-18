@@ -23,7 +23,7 @@ import {
   PaginationRight
 } from './style';
 import { ProjectProps } from '../Project';
-import { useGetProjectsQuery } from '../../../store/projectsSlice';
+import { useGetProjectsQuery } from '../../../store/dataSlice';
 
 const ProjectFullScreen: FC = () => {
   const { data } = useGetProjectsQuery('');

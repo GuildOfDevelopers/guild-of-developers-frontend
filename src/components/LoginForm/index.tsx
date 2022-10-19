@@ -18,11 +18,17 @@ async function postData(url = '', data = {}) {
 
 const LoginForm: FC = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const handleTelegramResponse = (response: any) => {
+  const handleTelegramResponse = (response: {
+    auth_date: number;
+    first_name: string;
+    hash: string;
+    id: number;
+    photo_url: string;
+    username: string;
+  }) =>
     postData('https://guild-of-developers.ru/login/telegram', response).then((data) =>
       console.log(data)
     );
-  };
 
   return (
     <Section>

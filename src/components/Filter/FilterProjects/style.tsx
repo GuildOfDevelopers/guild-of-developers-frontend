@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -6,15 +6,15 @@ export const Wrapper = styled.div`
   padding-bottom: 40px;
   position: relative;
 
-  [id^='headlessui-menu-button'] {
+  .filter__button {
     padding: 5px 22px;
     border-radius: 15px;
   }
 
-  .filter-open[id^='headlessui-menu-items'] {
+  .filter__items {
     position: absolute;
     left: 0;
-    bottom: -140px;
+    top: 100%;
     width: 100%;
     padding: 30px 25px;
     border-radius: 15px;
@@ -39,7 +39,7 @@ export const Wrapper = styled.div`
 
 export const LeftFilter = styled.div``;
 
-export const FilterButtons = styled.button`
+export const FilterButton = styled.button`
   padding: 5px 22px;
   border-radius: 15px;
   font-weight: var(--fw-400);
@@ -49,9 +49,14 @@ export const FilterButtons = styled.button`
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
     font-weight 0.3s ease-in-out;
 
-  &.active {
-    font-weight: var(--fw-700);
-    color: var(--color-white);
-    background-color: var(--color-grey);
-  }
+  ${({ active }: { active: boolean }) => {
+    return (
+      active &&
+      css`
+        font-weight: var(--fw-700);
+        color: var(--color-white);
+        background-color: var(--color-grey);
+      `
+    );
+  }}
 `;

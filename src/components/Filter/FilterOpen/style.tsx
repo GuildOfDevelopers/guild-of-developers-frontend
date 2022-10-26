@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
-  .filter {
-    position: relative;
+  & [data-headlessui-state] {
     width: 256px;
+    position: relative;
   }
 
-  .filter [id^='headlessui-menu-button'] {
+  & [id^='headlessui-menu-button'] {
     position: relative;
-    width: 256px;
+    width: 100%;
     padding: 9px 19px;
     border-radius: 7px;
     background-color: var(--color-grey-3);
@@ -34,20 +34,21 @@ export const Form = styled.form`
       border-right: 6px solid transparent;
       transition: all 0.3s ease-in-out;
     }
-
-    &[data-headlessui-state='open'] {
-      font-weight: var(--fw-600);
-    }
-
-    &[data-headlessui-state='open']::before {
-      border-top: none;
-      border-bottom: 9px solid var(--color-black);
-    }
   }
 
-  .filter [id^='headlessui-menu-items'] {
+  & [data-headlessui-state='open'] [id^='headlessui-menu-button'] {
+    font-weight: var(--fw-600);
+  }
+
+  & [data-headlessui-state='open'] [id^='headlessui-menu-button']::before {
+    border-top: none;
+    border-bottom: 9px solid var(--color-black);
+  }
+
+  & [id^='headlessui-menu-items'] {
     position: absolute;
     padding: 30px 32px;
+    z-index: 1;
     width: 100%;
     left: 0;
     top: 50px;
@@ -71,6 +72,7 @@ export const FormName = styled.h3`
 export const FormWrapper = styled.div`
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   gap: 25px;
 `;
 

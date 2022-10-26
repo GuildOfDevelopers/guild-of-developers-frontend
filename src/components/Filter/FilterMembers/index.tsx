@@ -44,16 +44,14 @@ const FilterMembers: FC = () => {
   return (
     <Wrapper>
       <TopFilter>
-        <FilterButtons wip="true" className="active">
-          Поиск
-        </FilterButtons>
+        <FilterButtons wip={true}>Поиск</FilterButtons>
 
-        <Menu>
-          <Menu.Button>
+        <Menu as="div" className="filter">
+          <Menu.Button className="filter__button">
             <IconFilter />
           </Menu.Button>
 
-          <Menu.Items className="filter-open">
+          <Menu.Items className="filter__items">
             <FilterOpen />
           </Menu.Items>
         </Menu>
@@ -63,7 +61,7 @@ const FilterMembers: FC = () => {
         {menu.map((item) => (
           <BottomFilterButton
             key={item.id}
-            className={currentMenu === item.id ? 'active' : ''}
+            active={currentMenu === item.id ? true : false}
             onClick={() => (currentMenu === item.id ? setCurrentMenu(-1) : setCurrentMenu(item.id))}
           >
             {item.title}

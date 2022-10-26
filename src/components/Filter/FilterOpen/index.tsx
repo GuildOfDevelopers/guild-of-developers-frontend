@@ -48,7 +48,7 @@ const FilterOpen: FC = () => {
     },
     {
       id: 1,
-      title: 'Стек',
+      title: 'Стек технологий',
       type: 'checkbox',
       list: [
         {
@@ -123,7 +123,7 @@ const FilterOpen: FC = () => {
 
       <FormWrapper>
         {selects.map((item) => (
-          <Menu key={item.id} as="div" className="filter">
+          <Menu key={item.id} as="div">
             <Menu.Button>{item.title}</Menu.Button>
 
             <Menu.Items>

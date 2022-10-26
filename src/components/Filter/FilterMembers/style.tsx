@@ -3,15 +3,15 @@ import styled, { css } from 'styled-components';
 export const Wrapper = styled.div`
   padding-bottom: 40px;
 
-  [id^='headlessui-menu-button'] {
+  .filter__button {
     padding: 5px 22px;
     border-radius: 15px;
   }
 
-  .filter-open[id^='headlessui-menu-items'] {
+  .filter__items {
     position: absolute;
     left: 0;
-    bottom: -140px;
+    top: 100%;
     width: 100%;
     padding: 30px 25px;
     border-radius: 15px;
@@ -63,10 +63,15 @@ export const BottomFilterButton = styled.button`
   line-break: 19px;
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 
-  &.active {
-    color: var(--color-white);
-    background-color: var(--color-grey);
-  }
+  ${({ active }: { active: boolean }) => {
+    return (
+      active &&
+      css`
+        color: var(--color-white);
+        background-color: var(--color-grey);
+      `
+    );
+  }}
 `;
 
 export const FilterButtons = styled.button`
@@ -74,23 +79,18 @@ export const FilterButtons = styled.button`
 
   padding: 5px 22px;
   border-radius: 15px;
-  font-weight: var(--fw-400);
   font-size: var(--fs-500);
   line-height: var(--line-height-500);
+  font-weight: var(--fw-700);
+  color: var(--color-white);
+  background-color: var(--color-grey);
 
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
     font-weight 0.3s ease-in-out;
 
-  &.active {
-    font-weight: var(--fw-700);
-    color: var(--color-white);
-    background-color: var(--color-grey);
-  }
-
-  // TODO: временно - только для еще не готовых ссылок
-  ${({ wip }: { wip: string }) => {
+  ${({ wip }: { wip: boolean }) => {
     return (
-      wip === 'true' &&
+      wip &&
       css`
         &:hover,
         &:focus-visible {
@@ -107,7 +107,7 @@ export const FilterButtons = styled.button`
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 15px;
+            border-radius: 25px;
             background-color: var(--color-grey-2);
             color: var(--color-black);
             font-size: var(--fs-350);

@@ -32,7 +32,9 @@ const Global = createGlobalStyle`
     --fs-300: 12px; // дата в карточках + footer ссылки
     --fs-350: 14px; // header кнопки + ссылки
     --fs-400: 14px; // текст в hero
+    --fs-450: 16px; // label в RegistartionForm
     --fs-500: 17px; // заголовок + кнопка в карточке
+    --fs-550: 20px; // кнопка далее в RegistrationForm
     --fs-600: 26px; // заголовки секций + в hero цифр в овале
     --fs-700: 30px; // логотип
 
@@ -42,6 +44,7 @@ const Global = createGlobalStyle`
     --line-height-350: 16px; // header кнопки + ссылки
     --line-height-400: 20px; // мелкий текст в hero
     --line-height-500: 20px; // заголовок + кнопка в карточке
+    --line-height-550: 26px; // кнопка далее в RegistrationForm
     --line-height-600: 32px; // заголовки секций + в hero цифр в овале
     --line-height-700: 35px; // логотип
 

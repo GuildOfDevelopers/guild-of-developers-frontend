@@ -1,6 +1,17 @@
 import React, { FC } from 'react';
 import { Container } from '../../lib/styled/container';
-import { Section, Title, RegForm, Fildset, NextButton, Label, LabelText, InputText } from './style';
+import {
+  Section,
+  Title,
+  RegForm,
+  Fildset,
+  NextButton,
+  Label,
+  LabelText,
+  InputText,
+  Textarea,
+  InputPassword
+} from './style';
 
 const RegistrationForm: FC = () => {
   return (
@@ -41,11 +52,31 @@ const RegistrationForm: FC = () => {
             </Label>
           </Fildset>
 
-          <Fildset>dfddfd</Fildset>
+          <Fildset>
+            <Label>
+              <LabelText>GitHub/GitLab/Behance</LabelText>
+              <InputText name="git" placeholder="Укажите ссылку" />
+            </Label>
 
-          <Fildset>dfddfd</Fildset>
+            <Label>
+              <LabelText>Ссылка на портфолио</LabelText>
+              <InputText name="portfolio" placeholder="Укажите ссылку" />
+            </Label>
+          </Fildset>
 
-          <Fildset>dfddfd</Fildset>
+          <Fildset>
+            <Label fill>
+              <LabelText>О себе</LabelText>
+              <Textarea name="text" placeholder="Начните вводить...."></Textarea>
+            </Label>
+          </Fildset>
+
+          <Fildset>
+            <Label>
+              <LabelText>Пароль*</LabelText>
+              {/* <InputPassword name="pass" placeholder="Введите" /> */}
+            </Label>
+          </Fildset>
 
           <NextButton>Далее</NextButton>
         </RegForm>

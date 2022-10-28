@@ -1,14 +1,14 @@
 import React, { FC } from 'react';
 import { Label } from './style';
 
-type Props = {
+interface Props {
   type: string;
   list: {
     name: string;
     value: string;
     val: boolean;
   }[];
-};
+}
 
 const DropdownList: FC<Props> = ({ type, list }) => {
   return (

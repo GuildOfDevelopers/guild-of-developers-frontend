@@ -60,7 +60,7 @@ export const SearchButtonFilter = styled.button`
     font-weight 0.3s ease-in-out;
 
   // TODO: временно - только для еще не готовых ссылок
-  ${({ wip }: { wip: boolean }) => {
+  ${({ wip }: { wip?: boolean }) => {
     return (
       wip &&
       css`

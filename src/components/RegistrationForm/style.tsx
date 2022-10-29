@@ -65,9 +65,9 @@ export const Label = styled.label`
   position: relative;
   flex-grow: 1;
 
-  ${({ fill }: { fill?: boolean }) => {
+  ${({ wfill }: { wfill?: boolean }) => {
     return (
-      fill &&
+      wfill &&
       css`
         width: 100%;
       `
@@ -150,6 +150,10 @@ export const ButtonEye = styled.button.attrs({
   position: absolute;
   bottom: 13px;
   right: 16px;
+
+  & svg {
+    fill: var(--color-grey);
+  }
 `;
 
 export const TextPassword = styled.p`

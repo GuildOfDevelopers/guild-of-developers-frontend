@@ -47,7 +47,7 @@ const ProjectsWithFilter: FC<ProjectsWithFilterProps> = ({ data }) => {
 };
 
 const Projects: FC<ProjectsProps> = ({ page }) => {
-  const { isLoading, error, data, isFetching } = useQuery(['project'], getProjects);
+  const { isLoading, error, data } = useQuery(['project'], getProjects);
 
   if (isLoading) {
     return (

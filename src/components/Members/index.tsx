@@ -7,7 +7,7 @@ import Member from './Member';
 import { getMembers } from '../../api/index';
 
 const Members: FC = () => {
-  const { isLoading, error, data, isFetching } = useQuery(['members'], getMembers);
+  const { isLoading, error, data } = useQuery(['members'], getMembers);
 
   if (isLoading) return <div>Загрузка...</div>;
   if (error) return <div>Ошибка</div>;

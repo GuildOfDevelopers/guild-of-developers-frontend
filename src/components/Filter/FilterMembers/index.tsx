@@ -1,6 +1,14 @@
 import React, { FC } from 'react';
 import { Menu } from '@headlessui/react';
-import { Wrapper, TopFilter, BottomFilter, BottomFilterButton, FilterButtons } from './style';
+import {
+  Wrapper,
+  TopFilter,
+  BottomFilter,
+  BottomFilterButton,
+  SearchButtonFilter,
+  MenuButton,
+  MenuItems
+} from './style';
 import FilterOpen from '../FilterOpen';
 import { IconFilter } from './Icon';
 
@@ -44,18 +52,16 @@ const FilterMembers: FC = () => {
   return (
     <Wrapper>
       <TopFilter>
-        <FilterButtons wip="true" className="active">
-          Поиск
-        </FilterButtons>
+        <SearchButtonFilter wip>Поиск</SearchButtonFilter>
 
         <Menu>
-          <Menu.Button>
+          <MenuButton>
             <IconFilter />
-          </Menu.Button>
+          </MenuButton>
 
-          <Menu.Items className="filter-open">
+          <MenuItems>
             <FilterOpen />
-          </Menu.Items>
+          </MenuItems>
         </Menu>
       </TopFilter>
 
@@ -63,7 +69,7 @@ const FilterMembers: FC = () => {
         {menu.map((item) => (
           <BottomFilterButton
             key={item.id}
-            className={currentMenu === item.id ? 'active' : ''}
+            active={currentMenu === item.id}
             onClick={() => (currentMenu === item.id ? setCurrentMenu(-1) : setCurrentMenu(item.id))}
           >
             {item.title}

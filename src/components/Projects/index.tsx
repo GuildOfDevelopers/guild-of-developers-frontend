@@ -1,10 +1,11 @@
 import React, { FC } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import { Container } from '../../lib/styled/container';
 import Filter from '../Filter';
 import Project from './Project';
 import { Grid, Section, Title, Wrapper } from './style';
-import { ProjectResponce } from '../../store/types';
-import { useGetProjectsQuery } from '../../store/projectsSlice';
+import { ProjectResponce } from '../../api/types';
+import { getProjects } from '../../api';
 
 interface ProjectsProps {
   page: string;
@@ -46,7 +47,7 @@ const ProjectsWithFilter: FC<ProjectsWithFilterProps> = ({ data }) => {
 };
 
 const Projects: FC<ProjectsProps> = ({ page }) => {
-  const { data, isLoading, isError } = useGetProjectsQuery('');
+  const { isLoading, error, data, isFetching } = useQuery(['project'], getProjects);
 
   if (isLoading) {
     return (
@@ -60,7 +61,7 @@ const Projects: FC<ProjectsProps> = ({ page }) => {
     );
   }
 
-  if (isError) {
+  if (error) {
     return (
       <Section>
         <Container>

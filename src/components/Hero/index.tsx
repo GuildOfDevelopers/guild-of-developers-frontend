@@ -14,6 +14,7 @@ import {
   MembersAmount,
   MembersName
 } from './style';
+const token = '54LjlkjasdlkfjlKJLKJlak4kKjjl10u5k2jlkfNLKJlkfjlkasdjflkjasl13f';
 
 interface Member {
   amount: number;

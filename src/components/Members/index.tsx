@@ -1,12 +1,16 @@
 import React, { FC } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import { Container } from '../../lib/styled/container';
 import { Section, Wrapper, Title, Grid } from './style';
 import Filter from '../Filter';
 import Member from './Member';
-import { useGetMembersQuery } from '../../store/membersSlice';
+import { getMembers } from '../../api/index';
 
 const Members: FC = () => {
-  const { data } = useGetMembersQuery('');
+  const { isLoading, error, data, isFetching } = useQuery(['members'], getMembers);
+
+  if (isLoading) return <div>Загрузка...</div>;
+  if (error) return <div>Ошибка</div>;
 
   return (
     <Section>
@@ -15,7 +19,7 @@ const Members: FC = () => {
           <Title>Наши гильдийцы</Title>
           <Filter page="guildMembers" />
           <Grid>
-            {data?.map((member) => (
+            {data?.map((member: any) => (
               <Member key={member.id} member={member} />
             ))}
           </Grid>

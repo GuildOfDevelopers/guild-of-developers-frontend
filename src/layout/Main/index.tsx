@@ -9,6 +9,7 @@ import Home from '../../pages/Home';
 import HowItWorks from '../../pages/howItWorks';
 import Login from '../../pages/login';
 import NotFound404 from '../../pages/notFound404';
+import Registration from '../../pages/registration';
 
 const Main: FC = () => {
   return (
@@ -16,6 +17,7 @@ const Main: FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/registration" element={<Registration />} />
         <Route path="/currentProjects" element={<CurrentProjects />} />
         <Route path="/doneProjects" element={<DoneProjects />} />
         <Route path="/aboutGuild" element={<AboutGuild />} />

@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const Section = styled.section`
+  background-color: var(--color-white);
+`;
+
 export const Title = styled.h1`
   font-size: var(--fs-600);
   font-weight: var(--fw-700);
@@ -10,6 +14,7 @@ export const Title = styled.h1`
 `;
 
 export const Wrapper = styled.form`
+  position: relative;
   max-width: 792px;
   padding: 64px 100px;
   margin: 0 auto 128px;
@@ -66,7 +71,7 @@ export const PhotoImg = styled.img`
   height: 100%;
   width: 100%;
   border-radius: 50%;
-  z-index: 5;
+  z-index: 1;
 `;
 
 interface ButtonsBoxProps {
@@ -146,4 +151,22 @@ export const CoverImg = styled.img`
   width: 100%;
   height: 185px;
   border-radius: 15px;
+`;
+
+export const CropDiv = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 80px;
+  z-index: 100;
+`;
+
+export const CropControls = styled.div`
+  position: absolute;
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+  padding: 16;
+  z-index: 101;
 `;

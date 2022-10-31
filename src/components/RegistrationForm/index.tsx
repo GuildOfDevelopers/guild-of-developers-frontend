@@ -19,48 +19,51 @@ import {
 import { Menu } from '@headlessui/react';
 import DropdownList from '../DropdownList';
 import { IconVisible, IconHide } from './Icon';
+import { useRegistrationStore } from '../../zustand-store';
 
 const RegistrationForm: FC = () => {
   const [visiblePassword, setVisiblePassword] = React.useState(false);
   const [visibleConfirmPassword, setVisibleConfirmPassword] = React.useState(false);
 
-  const departments = [
-    {
-      name: 'direction[]',
-      value: 'Backend',
-      val: false
-    },
-    {
-      name: 'direction[]',
-      value: 'Frontend',
-      val: false
-    },
-    {
-      name: 'direction[]',
-      value: 'UI/UX',
-      val: false
-    },
-    {
-      name: 'direction[]',
-      value: 'Тестировщик ПО',
-      val: false
-    },
-    {
-      name: 'direction[]',
-      value: 'Project-менеджер',
-      val: false
-    },
-    {
-      name: 'direction[]',
-      value: 'Контроллёр',
-      val: false
-    },
-    {
-      name: 'direction[]',
-      value: 'Data Scientist',
-      val: false
-    }
-  ];
+  const { departments } = useRegistrationStore();
+
+  // const departments = [
+  //   {
+  //     name: 'direction[]',
+  //     value: 'Backend',
+  //     val: false
+  //   },
+  //   {
+  //     name: 'direction[]',
+  //     value: 'Frontend',
+  //     val: false
+  //   },
+  //   {
+  //     name: 'direction[]',
+  //     value: 'UI/UX',
+  //     val: false
+  //   },
+  //   {
+  //     name: 'direction[]',
+  //     value: 'Тестировщик ПО',
+  //     val: false
+  //   },
+  //   {
+  //     name: 'direction[]',
+  //     value: 'Project-менеджер',
+  //     val: false
+  //   },
+  //   {
+  //     name: 'direction[]',
+  //     value: 'Контроллёр',
+  //     val: false
+  //   },
+  //   {
+  //     name: 'direction[]',
+  //     value: 'Data Scientist',
+  //     val: false
+  //   }
+  // ];
 
   const stack = [
     {
@@ -137,12 +140,12 @@ const RegistrationForm: FC = () => {
                 <MenuButton>Выберете</MenuButton>
 
                 <MenuItems>
-                  <DropdownList type="checkbox" list={departments} />
+                  <DropdownList type="checkbox" name="department" />
                 </MenuItems>
               </Menu>
             </Label>
 
-            <Label wfill>
+            {/* <Label wfill>
               <LabelText>Стек (один или несколько)</LabelText>
               <Menu>
                 <MenuButton>
@@ -153,7 +156,7 @@ const RegistrationForm: FC = () => {
                   <DropdownList type="checkbox" list={stack} />
                 </MenuItems>
               </Menu>
-            </Label>
+            </Label> */}
 
             <Label>
               <LabelText>GitHub/GitLab/Behance</LabelText>

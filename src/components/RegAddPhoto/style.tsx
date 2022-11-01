@@ -104,14 +104,13 @@ export const PhotoImg = styled.img`
 interface ButtonsBoxProps {
   paddingBlock: string;
   deskGap: string;
-  mobGap: string;
 }
 
 export const ButtonsBox = styled.div<ButtonsBoxProps>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: ${(props) => props.mobGap};
+  gap: 24px;
   @media (min-width: 768px) {
     flex-direction: row;
     align-items: flex-start;

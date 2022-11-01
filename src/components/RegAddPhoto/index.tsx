@@ -157,7 +157,7 @@ const RegAddPhoto: FC = () => {
                 <PhotoBlanc />
               )}
             </PhotoBox>
-            <ButtonsBox deskGap="21px" mobGap="24px" paddingBlock="21px">
+            <ButtonsBox deskGap="21px" paddingBlock="21px">
               <LeftPartBox>
                 <FileInput
                   type="file"
@@ -220,7 +220,7 @@ const RegAddPhoto: FC = () => {
                 <PhotoBlancMin />
               )}
             </PhotoBox>
-            <ButtonsBox deskGap="18px" mobGap="24px" paddingBlock="24px">
+            <ButtonsBox deskGap="18px" paddingBlock="24px">
               <FileInput
                 type="file"
                 accept="image/*"

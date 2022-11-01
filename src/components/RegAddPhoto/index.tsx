@@ -27,15 +27,15 @@ import { PhotoBlanc, PhotoBlancMin } from './svg';
 
 const RegAddPhoto: FC = () => {
   // Состояние где будет храниться оригинальное фото
-  const [photo, setPhoto] = useState<string>('');
+  const [photo, setPhoto] = useState('');
 
   // Состояние где будет храниться изменённое фото
-  const [croppedPhoto, setCroppedPhoto] = useState<string>('');
+  const [croppedPhoto, setCroppedPhoto] = useState('');
 
   // у обложки аналогично с фото
 
-  const [cover, setCover] = useState<string>('');
-  const [croppedCover, setCroppedCover] = useState<string>('');
+  const [cover, setCover] = useState('');
+  const [croppedCover, setCroppedCover] = useState('');
 
   const hiddenPhotoInput = React.useRef<HTMLInputElement>(null);
   const hiddenCoverInput = React.useRef<HTMLInputElement>(null);
@@ -93,6 +93,7 @@ const RegAddPhoto: FC = () => {
   const handleChangePhoto = (event: React.FormEvent<HTMLInputElement>) => {
     const uploadedPhotos = (event.target as HTMLInputElement).files;
     if (uploadedPhotos) {
+      setCroppedPhoto('');
       setPhoto(URL.createObjectURL(uploadedPhotos[0]));
     }
   };
@@ -100,6 +101,7 @@ const RegAddPhoto: FC = () => {
   const handleChangeCover = (event: React.FormEvent<HTMLInputElement>) => {
     const uploadedCovers = (event.target as HTMLInputElement).files;
     if (uploadedCovers) {
+      setCroppedCover('');
       setCover(URL.createObjectURL(uploadedCovers[0]));
     }
   };
@@ -122,7 +124,6 @@ const RegAddPhoto: FC = () => {
     }
   };
 
-  // TODO: настроить изменения миниатюры
   const handlePhotoMin = (event: React.FormEvent<HTMLButtonElement>) => {
     event.preventDefault();
     if (photo) {
@@ -147,7 +148,7 @@ const RegAddPhoto: FC = () => {
         <Wrapper onSubmit={handleSumbit}>
           <SubTitle>Фотография</SubTitle>
           <PhotoDiv>
-            <PhotoBox maxWidth="161px" height="161px">
+            <PhotoBox minWidth="161px" height="161px" border="4px solid var(--color-black)">
               {croppedPhoto ? (
                 <PhotoImg src={croppedPhoto} alt="аватар" />
               ) : photo ? (
@@ -156,7 +157,7 @@ const RegAddPhoto: FC = () => {
                 <PhotoBlanc />
               )}
             </PhotoBox>
-            <ButtonsBox gap="21px" paddingBlock="21px">
+            <ButtonsBox deskGap="21px" mobGap="24px" paddingBlock="21px">
               <LeftPartBox>
                 <FileInput
                   type="file"
@@ -203,7 +204,14 @@ const RegAddPhoto: FC = () => {
                 <CoverImg src={cover} alt="Обложка" />
               ) : null}
             </CoverBox>
-            <PhotoBox maxWidth="90px" height="90px" marginTop="-22.5px" marginLeft="55px">
+            <PhotoBox
+              minWidth="90px"
+              marginDesk="-22.5px 0 0 55px"
+              maxWidth="90px"
+              height="90px"
+              marginMob="-22.5px auto 32px"
+              border="2px solid var(--color-black)"
+            >
               {croppedPhoto ? (
                 <PhotoImg src={croppedPhoto} alt="аватар" />
               ) : photo ? (
@@ -212,7 +220,7 @@ const RegAddPhoto: FC = () => {
                 <PhotoBlancMin />
               )}
             </PhotoBox>
-            <ButtonsBox gap="18px" paddingBlock="24px">
+            <ButtonsBox deskGap="18px" mobGap="24px" paddingBlock="24px">
               <FileInput
                 type="file"
                 accept="image/*"

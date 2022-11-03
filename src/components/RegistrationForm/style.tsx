@@ -3,29 +3,39 @@ import { Menu } from '@headlessui/react';
 
 export const Section = styled.section`
   background-color: var(--color-white);
+  padding-top: 81px;
+  padding-bottom: 64px;
+
+  @media (min-width: 768px) {
+    padding-top: 105px;
+    padding-bottom: 128px;
+  }
 `;
 
 export const Title = styled.h2`
-  margin-top: 105px;
-  margin-bottom: 39px;
+  margin-bottom: 32px;
   text-align: center;
   font-weight: var(--fw-700);
-  font-size: var(--fs-700);
+  font-size: var(--fs-600);
   line-height: var(--line-height-700);
   color: var(--color-black);
+
+  @media (min-width: 768px) {
+    margin-bottom: 39px;
+    font-size: var(--fs-700);
+  }
 `;
 
 export const RegForm = styled.form`
   max-width: 792px;
-  margin: 0 auto 128px;
-  padding: 20px 20px 64px;
+  margin: 0 auto;
+  padding: 24px 24px 31px;
   background-color: var(--color-white-2);
   border-radius: 20px;
   text-align: center;
 
   @media (min-width: 768px) {
-    padding-left: 100px;
-    padding-right: 100px;
+    padding: 20px 100px 64px;
   }
 `;
 
@@ -39,8 +49,18 @@ export const Fieldset = styled.fieldset`
   justify-content: space-between;
   gap: 24px;
 
+  &:nth-child(1) {
+    padding-top: 0;
+  }
+
   &:nth-child(4) {
     border: none;
+  }
+
+  @media (min-width: 768px) {
+    &:nth-child(1) {
+      padding-top: 44px;
+    }
   }
 `;
 
@@ -48,15 +68,21 @@ export const NextButton = styled.button.attrs({
   type: 'button'
 })`
   padding: 8px 58px;
+  width: 100%;
   border-radius: 25px;
   font-size: var(--fs-550);
   line-height: var(--line-height-550);
   font-weight: var(--fw-700);
   color: var(--color-white);
   background-color: var(--color-grey);
+
+  @media (min-width: 768px) {
+    width: initial;
+  }
 `;
 
 export const Label = styled.label`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -65,14 +91,18 @@ export const Label = styled.label`
   position: relative;
   flex-grow: 1;
 
-  ${({ wfill }: { wfill?: boolean }) => {
-    return (
-      wfill &&
-      css`
-        width: 100%;
-      `
-    );
-  }}
+  @media (min-width: 768px) {
+    width: initial;
+
+    ${({ wfill }: { wfill?: boolean }) => {
+      return (
+        wfill &&
+        css`
+          width: 100%;
+        `
+      );
+    }}
+  }
 `;
 
 export const LabelText = styled.span`
@@ -104,7 +134,7 @@ export const InputText = styled.input.attrs({
 
 export const Textarea = styled.textarea`
   width: 100%;
-  height: 90px;
+  height: 134px;
   padding: 12px 24px;
   border: 2px solid var(--color-grey);
   border-radius: 15px;
@@ -120,6 +150,10 @@ export const Textarea = styled.textarea`
 
   &:focus {
     outline: none;
+  }
+
+  @media (min-width: 768px) {
+    height: 90px;
   }
 `;
 

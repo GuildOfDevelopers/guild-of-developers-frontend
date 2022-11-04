@@ -251,7 +251,12 @@ const RegAddPhoto: FC = () => {
               </>
             )}
           </CoverDiv>
-          <BlackBtn margin="0 auto" display="block" type="submit">
+          <BlackBtn
+            margin="0 auto"
+            display="block"
+            type="submit"
+            onClick={(e) => e.preventDefault()}
+          >
             Зарегистрироваться
           </BlackBtn>
         </Wrapper>

@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { Menu } from '@headlessui/react';
+import { Link } from 'react-router-dom';
 
 export const Section = styled.section`
   background-color: var(--color-white);
@@ -64,9 +65,7 @@ export const Fieldset = styled.fieldset`
   }
 `;
 
-export const NextButton = styled.button.attrs({
-  type: 'button'
-})`
+export const NextButton = styled(Link)`
   padding: 8px 58px;
   width: 100%;
   border-radius: 25px;

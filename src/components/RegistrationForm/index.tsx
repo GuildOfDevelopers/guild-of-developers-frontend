@@ -207,8 +207,7 @@ const RegistrationForm: FC = () => {
               символы
             </TextPassword>
           </Fieldset>
-
-          <NextButton>Далее</NextButton>
+          <NextButton to="/registration/addPhoto">Далее</NextButton>
         </RegForm>
       </Container>
     </Section>

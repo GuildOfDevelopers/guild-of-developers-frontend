@@ -19,13 +19,13 @@ const Main: FC = () => {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registration" element={<Registration />} />
+        <Route path="/registration/addPhoto" element={<RegAddPhoto />} />
         <Route path="/currentProjects" element={<CurrentProjects />} />
         <Route path="/doneProjects" element={<DoneProjects />} />
         <Route path="/aboutGuild" element={<AboutGuild />} />
         <Route path="/guildMembers" element={<GuildMembers />} />
         <Route path="/howItWorks" element={<HowItWorks />} />
         <Route path="/projects/:projectId" element={<ProjectFullScreen />} />
-        <Route path="/register/addPhoto" element={<RegAddPhoto />} />
 
         <Route path="*" element={<NotFound404 />} />
       </Routes>

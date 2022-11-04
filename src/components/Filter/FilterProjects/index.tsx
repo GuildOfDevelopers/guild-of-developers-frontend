@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Menu } from '@headlessui/react';
-import { Wrapper, LeftFilter, FilterButtons } from './style';
+import { Wrapper, LeftFilter, FilterButtons, MenuButton, MenuItems } from './style';
 import FilterOpen from '../FilterOpen';
 import { IconFilter } from './Icon';
 
@@ -23,7 +23,7 @@ const FilterProjects: FC = () => {
         {menu.map((item) => (
           <FilterButtons
             key={item.id}
-            className={currentMenu === item.id ? 'active' : ''}
+            active={currentMenu === item.id}
             onClick={() => setCurrentMenu(item.id)}
           >
             {item.title}
@@ -32,13 +32,13 @@ const FilterProjects: FC = () => {
       </LeftFilter>
 
       <Menu>
-        <Menu.Button>
+        <MenuButton>
           <IconFilter />
-        </Menu.Button>
+        </MenuButton>
 
-        <Menu.Items className="filter-open">
+        <MenuItems>
           <FilterOpen />
-        </Menu.Items>
+        </MenuItems>
       </Menu>
     </Wrapper>
   );

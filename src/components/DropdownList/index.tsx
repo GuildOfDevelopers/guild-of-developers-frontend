@@ -1,34 +1,21 @@
 import React, { FC } from 'react';
-import { Label } from './style';
-import { useRegistrationStore } from '../../zustand-store';
+import RegDropdownList from './RegDropdownList';
+import FilterDropdownList from './FilterDropdownList';
 
 interface Props {
-  type: string;
+  page: 'registrationForm' | 'filter';
+  type: 'checkbox' | 'radio';
   name: 'department' | 'stack' | 'date';
-  // list: {
-  //   name: string;
-  //   isCheck: boolean;
-  // }[];
+  departmentName?: string;
 }
 
-const DropdownList: FC<Props> = ({ type, name }) => {
-  const { departments } = useRegistrationStore();
-  const list: { name: string; isCheck: boolean }[] = [];
-
-  switch (name) {
-    case 'department':
-      list.push(...departments);
-      break;
-  }
-
+const DropdownList: FC<Props> = ({ page, type, name, departmentName }) => {
   return (
     <>
-      {list.map((i, index) => (
-        <Label key={index}>
-          <input type={type} value={i.name} checked={i.isCheck} />
-          <span>{i.name}</span>
-        </Label>
-      ))}
+      {page === 'registrationForm' && (
+        <RegDropdownList type={type} name={name} departmentName={departmentName} />
+      )}
+      {page === 'filter' && <FilterDropdownList type={type} name={name} />}
     </>
   );
 };

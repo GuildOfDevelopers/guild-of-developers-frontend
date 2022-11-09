@@ -3,30 +3,21 @@ import { Menu } from '@headlessui/react';
 import { Wrapper, LeftFilter, FilterButtons, MenuButton, MenuItems } from './style';
 import FilterOpen from '../FilterOpen';
 import { IconFilter } from './Icon';
+import { useFilterStore } from '../../../zustand-store';
 
 const FilterProjects: FC = () => {
-  const [currentMenu, setCurrentMenu] = React.useState(0);
-  const menu = [
-    {
-      id: 0,
-      title: 'Текущие'
-    },
-    {
-      id: 1,
-      title: 'Выполненные'
-    }
-  ];
+  const { projectsType, changeProjectsType } = useFilterStore();
 
   return (
     <Wrapper>
       <LeftFilter>
-        {menu.map((item) => (
+        {projectsType.map((item, i) => (
           <FilterButtons
-            key={item.id}
-            active={currentMenu === item.id}
-            onClick={() => setCurrentMenu(item.id)}
+            key={i}
+            active={item.isCheck}
+            onClick={() => changeProjectsType(item.name)}
           >
-            {item.title}
+            {item.name}
           </FilterButtons>
         ))}
       </LeftFilter>

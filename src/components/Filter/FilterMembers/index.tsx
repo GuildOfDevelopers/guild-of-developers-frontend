@@ -11,8 +11,10 @@ import {
 } from './style';
 import FilterOpen from '../FilterOpen';
 import { IconFilter } from './Icon';
+import { useFilterStore } from '../../../zustand-store';
 
 const FilterMembers: FC = () => {
+  const { departments, changeDeparments } = useFilterStore();
   const [currentMenu, setCurrentMenu] = React.useState(-1);
   const menu = [
     {
@@ -66,13 +68,13 @@ const FilterMembers: FC = () => {
       </TopFilter>
 
       <BottomFilter>
-        {menu.map((item) => (
+        {departments.map((item, i) => (
           <BottomFilterButton
-            key={item.id}
-            active={currentMenu === item.id}
-            onClick={() => (currentMenu === item.id ? setCurrentMenu(-1) : setCurrentMenu(item.id))}
+            key={i}
+            active={item.isCheck}
+            onClick={() => changeDeparments(item.name)}
           >
-            {item.title}
+            {item.name}
           </BottomFilterButton>
         ))}
       </BottomFilter>

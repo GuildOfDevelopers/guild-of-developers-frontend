@@ -61,3 +61,9 @@ export const Label = styled.label`
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Cg fill='%23333'%3E%3Ccircle r='6' cx='50%25' cy='50%25' fill='%23000000'/%3E%3C/g%3E%3C/svg%3E");
   }
 `;
+
+export const Warning = styled.span`
+  font-size: var(--fs-300);
+  font-weight: var(--fw-600);
+  line-height: var(--line-height-400);
+`;

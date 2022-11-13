@@ -11,6 +11,7 @@ import HowItWorks from '../../pages/howItWorks';
 import Login from '../../pages/login';
 import NotFound404 from '../../pages/notFound404';
 import Registration from '../../pages/registration';
+import Profile from '../../pages/profile';
 
 const Main: FC = () => {
   return (
@@ -26,6 +27,7 @@ const Main: FC = () => {
         <Route path="/guildMembers" element={<GuildMembers />} />
         <Route path="/howItWorks" element={<HowItWorks />} />
         <Route path="/projects/:projectId" element={<ProjectFullScreen />} />
+        <Route path="/profile" element={<Profile />} />
 
         <Route path="*" element={<NotFound404 />} />
       </Routes>

@@ -18,6 +18,7 @@ const Global = createGlobalStyle`
     --color-grey: #2d2d2d;
     --color-grey-2: #c3c3c3;
     --color-grey-3: #d9d9d9;
+    --color-grey-4: #a7a7a7;
 
     // font-weight
     --fw-300: 300;
@@ -35,6 +36,7 @@ const Global = createGlobalStyle`
     --fs-450: 16px; // label в RegistartionForm
     --fs-500: 17px; // заголовок + кнопка в карточке
     --fs-550: 20px; // кнопка далее в RegistrationForm
+    --fs-570: 24px;
     --fs-600: 26px; // заголовки секций + в hero цифр в овале
     --fs-700: 30px; // логотип
 

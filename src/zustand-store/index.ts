@@ -70,6 +70,27 @@ interface IFilterStore {
   changeProjectsType: (nameType: string) => void;
 }
 
+interface IProjectStore {
+  name: string;
+  data: string;
+  description: string;
+  role: string;
+  departments: {
+    name: string;
+    isCheck: boolean;
+  }[];
+  projectLink: string;
+  cover: string;
+  croppedCover: string;
+  coverCrop: boolean;
+  changeDepartments: (nameDepartment: string) => void;
+  changeInput: (name: string, value: string) => void;
+  checkedDepartments: () => {
+    name: string;
+    isCheck: boolean;
+  }[];
+}
+
 const useRegistrationStore = create<IRegistrationStore>((set, get) => ({
   name: '',
   lastName: '',
@@ -383,4 +404,65 @@ const useFilterStore = create<IFilterStore>((set, get) => ({
   }
 }));
 
-export { useRegistrationStore, useFilterStore };
+const useProjectStore = create<IProjectStore>((set, get) => ({
+  name: '',
+  data: '',
+  description: '',
+  role: '',
+  departments: [
+    {
+      name: 'Backend',
+      isCheck: false
+    },
+    {
+      name: 'Frontend',
+      isCheck: false
+    },
+    {
+      name: 'UI/UX',
+      isCheck: false
+    },
+    {
+      name: 'Тестировщик ПО',
+      isCheck: false
+    },
+    {
+      name: 'Project-менеджер',
+      isCheck: false
+    },
+    {
+      name: 'Безопасность',
+      isCheck: false
+    },
+    {
+      name: 'Контроллёр',
+      isCheck: false
+    },
+    {
+      name: 'Data Scientist',
+      isCheck: false
+    }
+  ],
+  projectLink: '',
+  cover: '',
+  croppedCover: '',
+  coverCrop: false,
+  changeInput(name, value) {
+    set({ [name]: value });
+  },
+  checkedDepartments() {
+    return get().departments.filter((item) => item.isCheck);
+  },
+  changeDepartments(nameDepartment) {
+    const departments = get().departments.map((item) => {
+      if (item.name === nameDepartment) {
+        const newItem = { ...item, isCheck: !item.isCheck };
+        return newItem;
+      }
+      return item;
+    });
+    set({ departments });
+  }
+}));
+
+export { useRegistrationStore, useFilterStore, useProjectStore };

@@ -10,4 +10,5 @@ export const Container = styled.div`
 
   width: min(var(--max-width), 100% - (var(--space) * 2));
   margin-inline: auto;
+  position: relative;
 `;

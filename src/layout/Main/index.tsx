@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import ProjectFullScreen from '../../components/Projects/ProjectFullScreen';
 import RegAddPhoto from '../../components/RegAddPhoto';
 import AboutGuild from '../../pages/aboutGuild';
+import AddProject from '../../pages/addProject';
 import CurrentProjects from '../../pages/currentProjects';
 import DoneProjects from '../../pages/doneProjects';
 import GuildMembers from '../../pages/guildMembers';
@@ -26,6 +27,7 @@ const Main: FC = () => {
         <Route path="/guildMembers" element={<GuildMembers />} />
         <Route path="/howItWorks" element={<HowItWorks />} />
         <Route path="/projects/:projectId" element={<ProjectFullScreen />} />
+        <Route path="/profile/projectAdd" element={<AddProject />} />
 
         <Route path="*" element={<NotFound404 />} />
       </Routes>

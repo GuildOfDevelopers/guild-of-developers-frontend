@@ -176,6 +176,8 @@ export const RatingPointsValue = styled.p`
   font-size: var(--fs-800);
   font-weight: var(--fw-700);
   line-height: var(--line-height-700);
+  font-variant-numeric: lining-nums;
+  font-feature-settings: 'lnum';
 `;
 
 export const RatingStar = styled.div``;
@@ -287,6 +289,8 @@ export const DescrItemText = styled.p`
   font-size: var(--fs-450);
   font-weight: var(--fw-700);
   line-height: var(--line-height-400);
+  font-variant-numeric: lining-nums;
+  font-feature-settings: 'lnum';
 
   @media (min-width: 768px) {
     font-size: var(--fs-570);
@@ -298,6 +302,8 @@ export const DescrItemLink = styled.a`
   font-size: var(--fs-450);
   font-weight: var(--fw-700);
   line-height: var(--line-height-400);
+  font-variant-numeric: lining-nums;
+  font-feature-settings: 'lnum';
 
   @media (min-width: 768px) {
     font-size: var(--fs-570);

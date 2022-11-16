@@ -30,6 +30,8 @@ export const CardDate = styled.p`
   font-weight: var(--fw-400);
   line-height: var(--line-height-370);
   color: var(--color-black);
+  font-variant-numeric: lining-nums;
+  font-feature-settings: 'lnum';
 `;
 
 export const CardTitle = styled.h3`

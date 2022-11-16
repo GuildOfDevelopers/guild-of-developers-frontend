@@ -19,6 +19,7 @@ const Global = createGlobalStyle`
     --color-grey-2: #c3c3c3;
     --color-grey-3: #d9d9d9;
     --color-grey-4: #a7a7a7;
+    --color-grey-5: #797979;
 
     // font-weight
     --fw-300: 300;
@@ -39,11 +40,13 @@ const Global = createGlobalStyle`
     --fs-570: 24px;
     --fs-600: 26px; // заголовки секций + в hero цифр в овале
     --fs-700: 30px; // логотип
+    --fs-800: 40px;
 
     // line-height (MOBILE)
     --line-height-250: 19px; // напрвления в карточках
     --line-height-300: 14px; // дата в карточках + footer ссылки
     --line-height-350: 16px; // header кнопки + ссылки
+    --line-height-370: 18px;
     --line-height-400: 20px; // мелкий текст в hero
     --line-height-500: 20px; // заголовок + кнопка в карточке
     --line-height-550: 26px; // кнопка далее в RegistrationForm

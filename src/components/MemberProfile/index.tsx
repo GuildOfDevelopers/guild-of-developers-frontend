@@ -1,21 +1,43 @@
 import React, { FC } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Container } from '../../lib/styled/container';
 import {
   Section,
   BackgroundImg,
   Info,
+  InfoChange,
   Avatar,
   Member,
   MemberWrapper,
   MemberName,
   MemberStar,
   MemberUserName,
+  Rating,
+  RatingPoints,
+  RatingPointsValue,
+  RatingStar,
+  RatingStarList,
+  RatingStarItem,
+  RatingCaption,
+  RatingInfo,
   Descr,
   DescrText,
   DescrList,
   DescrItem,
   DescrItemText,
-  DescrItemLink
+  DescrItemLink,
+  Skills,
+  SkillsItem,
+  SkillsDepartment,
+  SkillsStackList,
+  SkillsStackItem,
+  Projects,
+  Portfolio,
+  ProfileTitle,
+  HorizontalLine,
+  OtherMembers
 } from './style';
 import {
   StarIcon,
@@ -26,12 +48,29 @@ import {
   PhoneIcon,
   TelegramIcon
 } from './icon';
+import MemberItem from '../UI/Member';
+import ProjectClosed from '../UI/ProjectClosed';
+import ProjectPortfolio from '../UI/ProjectPortfolio';
+import { getMembers } from '../../api/index';
 
-const MemberProfile: FC = () => {
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+interface IProps {
+  owner: boolean;
+}
+
+const MemberProfile: FC<IProps> = ({ owner }) => {
+  const { isLoading, error, data } = useQuery(['members'], getMembers);
+  if (isLoading) return <div>Загрузка...</div>;
+  if (error) return <div>Ошибка</div>;
+
   return (
     <Section>
       <Container>
         <BackgroundImg src="#" />
+
         <Info>
           <Avatar src="#" />
 
@@ -45,7 +84,35 @@ const MemberProfile: FC = () => {
 
             <MemberUserName>@iv.iv</MemberUserName>
           </Member>
+
+          {owner && <InfoChange>Изменить данные</InfoChange>}
         </Info>
+
+        {owner && (
+          <Rating>
+            <RatingPoints>
+              <RatingPointsValue>123</RatingPointsValue>
+              <RatingCaption>балла</RatingCaption>
+            </RatingPoints>
+            <RatingStar>
+              <RatingStarList>
+                <RatingStarItem>
+                  <StarIcon />
+                </RatingStarItem>
+                <RatingStarItem>
+                  <StarIcon />
+                </RatingStarItem>
+                <RatingStarItem>
+                  <StarIcon />
+                </RatingStarItem>
+              </RatingStarList>
+
+              <RatingCaption>ранг</RatingCaption>
+            </RatingStar>
+
+            <RatingInfo>Как повысить рейтинг?</RatingInfo>
+          </Rating>
+        )}
 
         <Descr>
           <DescrText>
@@ -92,6 +159,132 @@ const MemberProfile: FC = () => {
             </DescrItem>
           </DescrList>
         </Descr>
+
+        <Skills>
+          <SkillsItem>
+            <SkillsDepartment>Backend</SkillsDepartment>
+
+            <SkillsStackList>
+              <SkillsStackItem>Python</SkillsStackItem>
+              <SkillsStackItem>FastApi</SkillsStackItem>
+              <SkillsStackItem>FastApi</SkillsStackItem>
+              <SkillsStackItem>Python</SkillsStackItem>
+              <SkillsStackItem>FastApi</SkillsStackItem>
+            </SkillsStackList>
+          </SkillsItem>
+
+          <SkillsItem>
+            <SkillsDepartment>Frontend</SkillsDepartment>
+
+            <SkillsStackList>
+              <SkillsStackItem>Python</SkillsStackItem>
+              <SkillsStackItem>FastApi</SkillsStackItem>
+              <SkillsStackItem>FastApi</SkillsStackItem>
+              <SkillsStackItem>Python</SkillsStackItem>
+              <SkillsStackItem>FastApi</SkillsStackItem>
+            </SkillsStackList>
+          </SkillsItem>
+        </Skills>
+
+        <Projects>
+          <ProfileTitle>Проекты GoD</ProfileTitle>
+
+          <Swiper
+            modules={[Pagination]}
+            pagination={{ clickable: true }}
+            breakpoints={{
+              768: {
+                spaceBetween: 22,
+                slidesPerView: 3
+              }
+            }}
+          >
+            <SwiperSlide>
+              <ProjectClosed />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ProjectClosed />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ProjectClosed />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ProjectClosed />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ProjectClosed />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ProjectClosed />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ProjectClosed />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ProjectClosed />
+            </SwiperSlide>
+          </Swiper>
+        </Projects>
+
+        <Portfolio>
+          <ProfileTitle>Портфолио</ProfileTitle>
+
+          <Swiper
+            modules={[Pagination]}
+            pagination={{ clickable: true }}
+            breakpoints={{
+              768: {
+                spaceBetween: 26,
+                slidesPerView: 2
+              }
+            }}
+          >
+            <SwiperSlide>
+              <ProjectPortfolio />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ProjectPortfolio />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ProjectPortfolio />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ProjectPortfolio />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ProjectPortfolio />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ProjectPortfolio />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ProjectPortfolio />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ProjectPortfolio />
+            </SwiperSlide>
+          </Swiper>
+        </Portfolio>
+
+        <HorizontalLine />
+
+        <OtherMembers>
+          <ProfileTitle>Другие гильдийцы</ProfileTitle>
+          <Swiper
+            breakpoints={{
+              768: {
+                spaceBetween: 24,
+                slidesPerView: 2
+              }
+            }}
+          >
+            {data?.map((member: any) => (
+              <SwiperSlide key={member.id}>
+                <MemberItem member={member} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </OtherMembers>
       </Container>
     </Section>
   );

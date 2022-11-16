@@ -13,7 +13,7 @@ export const StarIcon = () => {
 
 export const MailIcon = () => {
   return (
-    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="40" height="40" viewBox="2 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M35 8.75L20 22.5L5 8.75"
         stroke="black"
@@ -48,7 +48,7 @@ export const MailIcon = () => {
 
 export const MapPinIcon = () => {
   return (
-    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="40" height="40" viewBox="6 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M20 21.25C22.7614 21.25 25 19.0114 25 16.25C25 13.4886 22.7614 11.25 20 11.25C17.2386 11.25 15 13.4886 15 16.25C15 19.0114 17.2386 21.25 20 21.25Z"
         stroke="black"
@@ -111,7 +111,7 @@ export const GithubIcon = () => {
 
 export const FlagIcon = () => {
   return (
-    <svg width="27" height="25" viewBox="0 0 27 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="40" height="40" viewBox="0 0 40 25" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M2 23V2H25L19 9.5L25 17H2"
         stroke="black"
@@ -125,7 +125,7 @@ export const FlagIcon = () => {
 
 export const PhoneIcon = () => {
   return (
-    <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M10.4531 16.5003C11.7394 19.1566 13.8873 21.299 16.5469 22.5784C16.7431 22.6713 16.96 22.7115 17.1765 22.6951C17.3929 22.6786 17.6013 22.6061 17.7812 22.4847L21.6875 19.8753C21.8601 19.7582 22.0595 19.6868 22.2672 19.6677C22.4748 19.6486 22.6839 19.6824 22.875 19.7659L30.1875 22.9065C30.4374 23.0106 30.6462 23.1939 30.7817 23.4282C30.9173 23.6625 30.972 23.9349 30.9375 24.2034C30.7057 26.0124 29.8228 27.6749 28.4538 28.8799C27.0849 30.085 25.3238 30.7499 23.5 30.7503C17.8641 30.7503 12.4591 28.5115 8.47398 24.5263C4.48883 20.5412 2.25 15.1361 2.25 9.5003C2.25041 7.67654 2.91534 5.91542 4.12035 4.54648C5.32537 3.17753 6.98791 2.29456 8.79688 2.0628C9.06537 2.02831 9.33776 2.08304 9.5721 2.21856C9.80644 2.35408 9.98973 2.56287 10.0937 2.8128L13.2344 10.1409C13.316 10.329 13.3502 10.5342 13.3339 10.7386C13.3175 10.9429 13.2512 11.1401 13.1406 11.3128L10.5312 15.2815C10.4151 15.461 10.3469 15.6674 10.3332 15.8807C10.3195 16.0941 10.3608 16.3074 10.4531 16.5003V16.5003Z"
         stroke="black"

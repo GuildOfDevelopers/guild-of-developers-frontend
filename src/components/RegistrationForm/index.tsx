@@ -110,7 +110,7 @@ const RegistrationForm: FC = () => {
                 <MenuButton>
                   {checkedDepartments()
                     .map((item) => item.name)
-                    .join(', ') || 'Выберете'}
+                    .join(', ') || 'Выберите'}
                 </MenuButton>
 
                 <MenuItems>
@@ -127,7 +127,7 @@ const RegistrationForm: FC = () => {
                     {item.stack
                       .filter((i) => i.isCheck)
                       .map((i) => i.name)
-                      .join(', ') || 'Выберете'}
+                      .join(', ') || 'Выберите'}
                   </MenuButton>
 
                   <MenuItems>

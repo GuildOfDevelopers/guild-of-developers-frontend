@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Container } from '../../lib/styled/container';
-import { Telegram, VK } from './Icon';
+import { Telegram, VK, LogoIcon } from './Icon';
 import {
   FooterA,
   Wrapper,
@@ -10,7 +10,6 @@ import {
   Logo,
   StyledFooter,
   IconDiv,
-  LogoMobile,
   SocialLink
 } from './style';
 
@@ -19,12 +18,15 @@ const Footer: FC = () => {
     <StyledFooter>
       <Container>
         <Wrapper>
-          <LogoMobile>GoD</LogoMobile>
+          <Logo>
+            <LogoIcon />
+          </Logo>
+
           <Social>
             <FooterLink to={'#'}>Политика конфиденциальности</FooterLink>
             <FooterText>@2022, Guild of Developers</FooterText>
           </Social>
-          <Logo>GoD</Logo>
+
           <Social>
             <FooterA href="mailto:guild.of.developers@gmail.com">
               guild.of.developers@gmail.com

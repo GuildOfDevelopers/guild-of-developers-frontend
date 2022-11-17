@@ -7,7 +7,7 @@ export const StyledButton = styled.button`
   align-items: center;
   justify-content: center;
   border-radius: 25px;
-  background-color: var(--color-grey);
+  background: var(--gradient-1);
   color: var(--color-white);
   font-size: var(--fs-350);
   font-weight: var(--fw-700);

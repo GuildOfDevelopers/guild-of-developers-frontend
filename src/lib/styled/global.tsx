@@ -21,6 +21,13 @@ const Global = createGlobalStyle`
     --color-grey-4: #a7a7a7;
     --color-grey-5: #797979;
 
+    //цвета макета в цвете
+    --color-fon: #0C182C;
+    --color-grey1: #d0d0d0;
+
+    // gradient
+    --gradient-1: linear-gradient(101.08deg, #26c0f1 9.94%, #6f35ce 86.57%);
+
     // font-weight
     --fw-300: 300;
     --fw-400: 400;

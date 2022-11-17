@@ -1,13 +1,11 @@
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
-import { useLocation } from 'react-router-dom';
 
 export const StyledHeader = styled.header`
-  background-color: var(--color-white-2);
+  background-color: var(--color-fon);
 `;
 
 export const Navbar = styled.nav`
-  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,7 +17,7 @@ export const NavBarLink = styled(Link)`
 
   // TODO: Решить проблему с центрированеим лого
   /* min-width: 130px; */
-
+  color: var(--color-white);
   font-size: var(--fs-350);
   font-weight: var(--fw-400);
   line-height: var(--line-height-350);
@@ -46,7 +44,7 @@ export const NavBarLink = styled(Link)`
   }
 
   // TODO: временно - только для еще не готовых ссылок
-  ${({ wip }: { wip: string }) => {
+  ${({ wip }: { wip?: string }) => {
     return (
       wip === 'true' &&
       css`
@@ -78,14 +76,7 @@ export const NavBarLink = styled(Link)`
   }}
 `;
 
-export const LogoDiv = styled.div`
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  z-index: 0;
-`;
+export const LogoDiv = styled.div``;
 
 export const LeftDiv = styled.div`
   display: flex;
@@ -100,27 +91,4 @@ export const RightDiv = styled.div`
   gap: 40px;
 `;
 
-export const NavBarLogo = styled(Link)`
-  font-size: var(--fs-700);
-  font-weight: var(--fw-700);
-  line-height: var(--line-height-700);
-  position: relative;
-  ${() => {
-    const location = useLocation();
-    return (
-      location.pathname === '/' &&
-      css`
-        &::after {
-          content: '';
-          position: absolute;
-          width: 16px;
-          border-bottom: 1.5px solid var(--color-black);
-          border-radius: 50px;
-          background-color: var(--color-black);
-          bottom: 0;
-          left: 28px;
-        }
-      `
-    );
-  }}
-`;
+export const NavBarLogo = styled(Link)``;

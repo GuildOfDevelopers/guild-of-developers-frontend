@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const StyledFooter = styled.footer`
-  background-color: var(--color-white-2);
+  background-color: var(--color-fon);
 `;
 
 export const Wrapper = styled.div`
@@ -48,10 +48,11 @@ export const FooterLink = styled(Link)`
   font-weight: var(--fw-300);
   font-size: var(--fs-300);
   line-height: var(--line-height-300);
+  color: var(--color-grey1);
 
   @media (min-width: 1024px) {
     padding: 0 25px 0 0;
-    border-right: 1px solid var(--color-black);
+    border-right: 1px solid var(--color-grey1);
   }
 `;
 
@@ -59,34 +60,20 @@ export const FooterText = styled.span`
   font-weight: var(--fw-300);
   font-size: var(--fs-300);
   line-height: var(--line-height-300);
+  color: var(--color-grey1);
 `;
 
-export const Logo = styled.p`
-  position: absolute;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  font-size: var(--fs-700);
-  font-weight: var(--fw-700);
-  line-height: var(--line-height-700);
-
+export const Logo = styled.div`
   @media (min-width: 1024px) {
-    display: flex;
-  }
-`;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 
-export const LogoMobile = styled.p`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  font-size: var(--fs-700);
-  font-weight: var(--fw-700);
-  line-height: var(--line-height-700);
-
-  @media (min-width: 1024px) {
-    display: none;
+    svg {
+      width: 95px;
+      height: 48px;
+    }
   }
 `;
 
@@ -94,6 +81,7 @@ export const FooterA = styled.a`
   font-weight: var(--fw-300);
   font-size: var(--fs-300);
   line-height: var(--line-height-300);
+  color: var(--color-grey1);
 `;
 
 export const SocialLink = styled.a`
@@ -115,6 +103,7 @@ export const SocialLink = styled.a`
 export const IconDiv = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
   margin: 8px 0 0 0;
 
   @media (min-width: 1024px) {

@@ -19,78 +19,27 @@ import {
 import { Menu } from '@headlessui/react';
 import DropdownList from '../DropdownList';
 import { IconVisible, IconHide } from './Icon';
+import { useRegistrationStore } from '../../zustand-store';
 
 const RegistrationForm: FC = () => {
   const [visiblePassword, setVisiblePassword] = React.useState(false);
   const [visibleConfirmPassword, setVisibleConfirmPassword] = React.useState(false);
 
-  const departments = [
-    {
-      name: 'direction[]',
-      value: 'Backend',
-      val: false
-    },
-    {
-      name: 'direction[]',
-      value: 'Frontend',
-      val: false
-    },
-    {
-      name: 'direction[]',
-      value: 'UI/UX',
-      val: false
-    },
-    {
-      name: 'direction[]',
-      value: 'Тестировщик ПО',
-      val: false
-    },
-    {
-      name: 'direction[]',
-      value: 'Project-менеджер',
-      val: false
-    },
-    {
-      name: 'direction[]',
-      value: 'Контроллёр',
-      val: false
-    },
-    {
-      name: 'direction[]',
-      value: 'Data Scientist',
-      val: false
-    }
-  ];
-
-  const stack = [
-    {
-      name: 'stack[]',
-      value: 'Python',
-      val: false
-    },
-    {
-      name: 'stack[]',
-      value: 'FastApi',
-      val: false
-    },
-    {
-      name: 'stack[]',
-      value: 'PostgreSQL',
-      val: false
-    },
-    {
-      name: 'stack[]',
-      value: 'Тестировщик ПО',
-      val: false
-    },
-    {
-      name: 'stack[]',
-      value: 'pydantic',
-      val: false
-    }
-  ];
-
-  const [currentDepartments, setCurrentDepartments] = React.useState([]);
+  const {
+    name,
+    lastName,
+    nickname,
+    city,
+    telegram,
+    email,
+    git,
+    portfolio,
+    text,
+    password,
+    confirmPassword,
+    changeInput,
+    checkedDepartments
+  } = useRegistrationStore();
 
   return (
     <Section>
@@ -101,32 +50,56 @@ const RegistrationForm: FC = () => {
           <Fieldset>
             <Label>
               <LabelText>Имя*</LabelText>
-              <InputText name="name" placeholder="Введите" />
+              <InputText
+                value={name}
+                placeholder="Введите"
+                onChange={(e) => changeInput('name', e.target.value)}
+              />
             </Label>
 
             <Label>
               <LabelText>Фамилия*</LabelText>
-              <InputText name="lastname" placeholder="Введите" />
+              <InputText
+                value={lastName}
+                placeholder="Введите"
+                onChange={(e) => changeInput('lastName', e.target.value)}
+              />
             </Label>
 
             <Label>
               <LabelText>Никнейм*</LabelText>
-              <InputText name="nickname" placeholder="Введите" />
+              <InputText
+                value={nickname}
+                placeholder="Введите"
+                onChange={(e) => changeInput('nickname', e.target.value)}
+              />
             </Label>
 
             <Label>
               <LabelText>Город проживания*</LabelText>
-              <InputText name="city" placeholder="Введите" />
+              <InputText
+                value={city}
+                placeholder="Введите"
+                onChange={(e) => changeInput('city', e.target.value)}
+              />
             </Label>
 
             <Label>
               <LabelText>Telegram*</LabelText>
-              <InputText name="telegram" placeholder="Введите через @" />
+              <InputText
+                value={telegram}
+                placeholder="Введите через @"
+                onChange={(e) => changeInput('telegram', e.target.value)}
+              />
             </Label>
 
             <Label>
               <LabelText>Email*</LabelText>
-              <InputText name="email" placeholder="Введите" />
+              <InputText
+                value={email}
+                placeholder="Введите"
+                onChange={(e) => changeInput('email', e.target.value)}
+              />
             </Label>
           </Fieldset>
 
@@ -134,42 +107,68 @@ const RegistrationForm: FC = () => {
             <Label wfill>
               <LabelText>Направление (одно или несколько)</LabelText>
               <Menu>
-                <MenuButton>Выберете</MenuButton>
-
-                <MenuItems>
-                  <DropdownList type="checkbox" list={departments} />
-                </MenuItems>
-              </Menu>
-            </Label>
-
-            <Label wfill>
-              <LabelText>Стек (один или несколько)</LabelText>
-              <Menu>
                 <MenuButton>
-                  {currentDepartments.length !== 0 ? currentDepartments.join(', ') : 'Выберете'}
+                  {checkedDepartments()
+                    .map((item) => item.name)
+                    .join(', ') || 'Выберете'}
                 </MenuButton>
 
                 <MenuItems>
-                  <DropdownList type="checkbox" list={stack} />
+                  <DropdownList page="registrationForm" type="checkbox" name="department" />
                 </MenuItems>
               </Menu>
             </Label>
 
+            {checkedDepartments().map((item, j) => (
+              <Label key={j} wfill>
+                <LabelText>{item.name} Стек (один или несколько)</LabelText>
+                <Menu>
+                  <MenuButton>
+                    {item.stack
+                      .filter((i) => i.isCheck)
+                      .map((i) => i.name)
+                      .join(', ') || 'Выберете'}
+                  </MenuButton>
+
+                  <MenuItems>
+                    <DropdownList
+                      page="registrationForm"
+                      type="checkbox"
+                      name="stack"
+                      departmentName={item.name}
+                    />
+                  </MenuItems>
+                </Menu>
+              </Label>
+            ))}
+
             <Label>
               <LabelText>GitHub/GitLab/Behance</LabelText>
-              <InputText name="git" placeholder="Укажите ссылку" />
+              <InputText
+                value={git}
+                placeholder="Укажите ссылку"
+                onChange={(e) => changeInput('git', e.target.value)}
+              />
             </Label>
 
             <Label>
               <LabelText>Ссылка на портфолио</LabelText>
-              <InputText name="portfolio" placeholder="Укажите ссылку" />
+              <InputText
+                value={portfolio}
+                placeholder="Укажите ссылку"
+                onChange={(e) => changeInput('portfolio', e.target.value)}
+              />
             </Label>
           </Fieldset>
 
           <Fieldset>
             <Label>
               <LabelText>О себе</LabelText>
-              <Textarea name="text" placeholder="Начните вводить...."></Textarea>
+              <Textarea
+                value={text}
+                placeholder="Начните вводить...."
+                onChange={(e) => changeInput('text', e.target.value)}
+              ></Textarea>
             </Label>
           </Fieldset>
 
@@ -178,9 +177,10 @@ const RegistrationForm: FC = () => {
               <LabelText>Пароль*</LabelText>
 
               <InputPassword
-                name="password"
+                value={password}
                 type={visiblePassword ? 'text' : 'password'}
                 placeholder="Введите"
+                onChange={(e) => changeInput('password', e.target.value)}
               />
 
               <ButtonEye onClick={() => setVisiblePassword(!visiblePassword)}>
@@ -191,9 +191,10 @@ const RegistrationForm: FC = () => {
 
             <Label>
               <InputPassword
-                name="confirm_password"
+                value={confirmPassword}
                 type={visibleConfirmPassword ? 'text' : 'password'}
                 placeholder="Введите еще раз"
+                onChange={(e) => changeInput('confirmPassword', e.target.value)}
               />
 
               <ButtonEye onClick={() => setVisibleConfirmPassword(!visibleConfirmPassword)}>

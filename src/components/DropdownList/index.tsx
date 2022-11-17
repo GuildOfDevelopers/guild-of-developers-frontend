@@ -1,24 +1,21 @@
 import React, { FC } from 'react';
-import { Label } from './style';
+import RegDropdownList from './RegDropdownList';
+import FilterDropdownList from './FilterDropdownList';
 
 interface Props {
-  type: string;
-  list: {
-    name: string;
-    value: string;
-    val: boolean;
-  }[];
+  page: 'registrationForm' | 'filter';
+  type: 'checkbox' | 'radio';
+  name: 'department' | 'stack' | 'date';
+  departmentName?: string;
 }
 
-const DropdownList: FC<Props> = ({ type, list }) => {
+const DropdownList: FC<Props> = ({ page, type, name, departmentName }) => {
   return (
     <>
-      {list.map((i, index) => (
-        <Label key={index}>
-          <input type={type} name={i.name} value={i.value} />
-          <span>{i.value}</span>
-        </Label>
-      ))}
+      {page === 'registrationForm' && (
+        <RegDropdownList type={type} name={name} departmentName={departmentName} />
+      )}
+      {page === 'filter' && <FilterDropdownList type={type} name={name} />}
     </>
   );
 };

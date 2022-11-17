@@ -94,6 +94,7 @@ export const MenuItems = styled(Menu.Items)`
   position: absolute;
   padding: 30px 32px;
   width: 100%;
+  max-height: 400px;
   left: 0;
   top: 50px;
   display: flex;
@@ -101,4 +102,5 @@ export const MenuItems = styled(Menu.Items)`
   gap: 17px;
   background-color: var(--color-grey-3);
   border-radius: 7px;
+  overflow-y: auto;
 `;

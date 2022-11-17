@@ -11,8 +11,8 @@ export const LogoIcon = () => {
       />
       <g filter="url(#filter0_d_1597_4729)">
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M28.4416 28.9672C34.0861 28.9672 38.6619 24.3914 38.6619 18.7469C38.6619 13.1024 34.0861 8.52661 28.4416 8.52661C22.7971 8.52661 18.2213 13.1024 18.2213 18.7469C18.2213 24.3914 22.7971 28.9672 28.4416 28.9672ZM28.4694 25.5645C32.7819 25.5645 36.2778 22.0686 36.2778 17.7561C36.2778 13.4437 32.7819 9.94779 28.4694 9.94779C24.157 9.94779 20.6611 13.4437 20.6611 17.7561C20.6611 22.0686 24.157 25.5645 28.4694 25.5645Z"
           fill="url(#paint0_linear_1597_4729)"
         />
@@ -25,9 +25,9 @@ export const LogoIcon = () => {
           width="32.4406"
           height="32.4407"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -54,11 +54,11 @@ export const LogoIcon = () => {
           y2="31.2448"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#26C0F1" />
-          <stop offset="1" stop-color="#6F35CE" />
+          <stop stopColor="#26C0F1" />
+          <stop offset="1" stopColor="#6F35CE" />
         </linearGradient>
       </defs>
-      <path d="M19 35H38" stroke="white" stroke-width="2" stroke-linecap="round" />
+      <path d="M19 35H38" stroke="white" strokeWidth="2" strokeLinecap="round" />
     </svg>
   );
 };
@@ -76,8 +76,8 @@ export const LogoIconMobile = () => {
       />
       <g filter="url(#filter0_d_1597_1834)">
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M47.9016 47.9999C57.4081 47.9999 65.1147 40.4176 65.1147 31.0644C65.1147 21.7112 57.4081 14.1289 47.9016 14.1289C38.3951 14.1289 30.6885 21.7112 30.6885 31.0644C30.6885 40.4176 38.3951 47.9999 47.9016 47.9999ZM47.9483 42.3614C55.2113 42.3614 61.0991 36.5686 61.0991 29.4227C61.0991 22.2768 55.2113 16.4839 47.9483 16.4839C40.6852 16.4839 34.7974 22.2768 34.7974 29.4227C34.7974 36.5686 40.6852 42.3614 47.9483 42.3614Z"
           fill="url(#paint0_linear_1597_1834)"
         />
@@ -90,9 +90,9 @@ export const LogoIconMobile = () => {
           width="46.4263"
           height="45.8711"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -119,8 +119,8 @@ export const LogoIconMobile = () => {
           y2="51.7741"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#26C0F1" />
-          <stop offset="1" stop-color="#6F35CE" />
+          <stop stopColor="#26C0F1" />
+          <stop offset="1" stopColor="#6F35CE" />
         </linearGradient>
       </defs>
     </svg>

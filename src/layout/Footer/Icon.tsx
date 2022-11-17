@@ -13,8 +13,8 @@ export const VK = () => {
   return (
     <svg width="22" height="14" viewBox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M21.4954 0.948C21.6475 0.402 21.4954 0 20.7666 0H18.3604C17.7481 0 17.4658 0.347 17.3127 0.73C17.3127 0.73 16.089 3.926 14.3556 6.002C13.7946 6.604 13.5398 6.795 13.2336 6.795C13.0806 6.795 12.8505 6.604 12.8505 6.057V0.948C12.8505 0.292 12.6818 0 12.1722 0H8.38824C8.006 0 7.77592 0.304 7.77592 0.593C7.77592 1.214 8.64307 1.358 8.73198 3.106V6.904C8.73198 7.737 8.59174 7.888 8.28558 7.888C7.46976 7.888 5.48522 4.677 4.30733 1.003C4.07908 0.288 3.84809 0 3.23302 0H0.824983C0.137497 0 0 0.347 0 0.73C0 1.412 0.815816 4.8 3.7995 9.281C5.78863 12.341 8.58899 14 11.14 14C12.6699 14 12.8587 13.632 12.8587 12.997V10.684C12.8587 9.947 13.0036 9.8 13.4885 9.8C13.846 9.8 14.4574 9.992 15.8855 11.467C17.5171 13.216 17.7857 14 18.7042 14H21.1104C21.7979 14 22.1425 13.632 21.9445 12.904C21.7264 12.18 20.9472 11.129 19.9142 9.882C19.3532 9.172 18.5117 8.407 18.256 8.024C17.8994 7.533 18.0011 7.314 18.256 6.877C18.256 6.877 21.1892 2.451 21.4945 0.948H21.4954Z"
         fill="#26C0F1"
       />
@@ -35,8 +35,8 @@ export const LogoIcon = () => {
       />
       <g filter="url(#filter0_d_1597_3256)">
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M47.4026 48.7051C56.8102 48.7051 64.4365 41.0787 64.4365 31.6712C64.4365 22.2636 56.8102 14.6372 47.4026 14.6372C37.995 14.6372 30.3687 22.2636 30.3687 31.6712C30.3687 41.0787 37.995 48.7051 47.4026 48.7051ZM47.4492 43.0338C54.6366 43.0338 60.4632 37.2073 60.4632 30.0198C60.4632 22.8324 54.6366 17.0058 47.4492 17.0058C40.2617 17.0058 34.4351 22.8324 34.4351 30.0198C34.4351 37.2073 40.2617 43.0338 47.4492 43.0338Z"
           fill="white"
         />
@@ -49,9 +49,9 @@ export const LogoIcon = () => {
           width="46.0679"
           height="46.0679"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -78,8 +78,8 @@ export const LogoIcon = () => {
           y2="-32.143"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#26C0F1" />
-          <stop offset="0.990321" stop-color="#6F35CE" />
+          <stop stopColor="#26C0F1" />
+          <stop offset="0.990321" stopColor="#6F35CE" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_1597_3256"
@@ -89,8 +89,8 @@ export const LogoIcon = () => {
           y2="-37.3914"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#26C0F1" />
-          <stop offset="0.953478" stop-color="#6F35CE" />
+          <stop stopColor="#26C0F1" />
+          <stop offset="0.953478" stopColor="#6F35CE" />
         </linearGradient>
       </defs>
     </svg>

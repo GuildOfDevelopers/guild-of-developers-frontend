@@ -72,7 +72,7 @@ interface IFilterStore {
 
 interface IProjectStore {
   name: string;
-  data: string;
+  date: string;
   description: string;
   role: string;
   departments: {
@@ -80,9 +80,6 @@ interface IProjectStore {
     isCheck: boolean;
   }[];
   projectLink: string;
-  cover: string;
-  croppedCover: string;
-  coverCrop: boolean;
   changeDepartments: (nameDepartment: string) => void;
   changeInput: (name: string, value: string) => void;
   checkedDepartments: () => {
@@ -406,7 +403,7 @@ const useFilterStore = create<IFilterStore>((set, get) => ({
 
 const useProjectStore = create<IProjectStore>((set, get) => ({
   name: '',
-  data: '',
+  date: '',
   description: '',
   role: '',
   departments: [
@@ -444,9 +441,7 @@ const useProjectStore = create<IProjectStore>((set, get) => ({
     }
   ],
   projectLink: '',
-  cover: '',
-  croppedCover: '',
-  coverCrop: false,
+
   changeInput(name, value) {
     set({ [name]: value });
   },

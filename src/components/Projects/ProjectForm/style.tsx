@@ -3,6 +3,7 @@ import { Menu } from '@headlessui/react';
 
 export const Section = styled.section`
   background-color: var(--color-white);
+  position: relative;
 `;
 
 export const Title = styled.h1`
@@ -21,18 +22,15 @@ export const Title = styled.h1`
 export const BackBox = styled.div`
   position: absolute;
   top: -15px;
-  left: 0;
 
   @media (min-width: 768px) {
     top: 10px;
-    left: 0;
-  }
 
-  a {
-    @media (min-width: 768px) {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
   }
 `;
 

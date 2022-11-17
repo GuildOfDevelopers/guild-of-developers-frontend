@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import ProjectFullScreen from '../../components/Projects/ProjectFullScreen';
+import RegAddPhoto from '../../components/RegAddPhoto';
 import AboutGuild from '../../pages/aboutGuild';
 import CurrentProjects from '../../pages/currentProjects';
 import DoneProjects from '../../pages/doneProjects';
@@ -9,6 +10,8 @@ import Home from '../../pages/Home';
 import HowItWorks from '../../pages/howItWorks';
 import Login from '../../pages/login';
 import NotFound404 from '../../pages/notFound404';
+import Registration from '../../pages/registration';
+import Profile from '../../pages/profile';
 
 const Main: FC = () => {
   return (
@@ -16,12 +19,15 @@ const Main: FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/registration" element={<Registration />} />
+        <Route path="/registration/addPhoto" element={<RegAddPhoto />} />
         <Route path="/currentProjects" element={<CurrentProjects />} />
         <Route path="/doneProjects" element={<DoneProjects />} />
         <Route path="/aboutGuild" element={<AboutGuild />} />
         <Route path="/guildMembers" element={<GuildMembers />} />
         <Route path="/howItWorks" element={<HowItWorks />} />
         <Route path="/projects/:projectId" element={<ProjectFullScreen />} />
+        <Route path="/profile" element={<Profile />} />
 
         <Route path="*" element={<NotFound404 />} />
       </Routes>

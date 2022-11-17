@@ -1,4 +1,5 @@
 import React, { FC, useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import { useParams } from 'react-router-dom';
 import { Container } from '../../../lib/styled/container';
 import { Arrow, Back, Forward } from './icon';
@@ -23,15 +24,15 @@ import {
   PaginationRight
 } from './style';
 import { ProjectProps } from '../Project';
-import { useGetProjectsQuery } from '../../../store/dataSlice';
+import { getProjects } from '../../../api';
 
 const ProjectFullScreen: FC = () => {
-  const { data } = useGetProjectsQuery('');
+  const { data } = useQuery(['project'], getProjects);
   const { projectId } = useParams<{ projectId?: string }>();
   const [project, setProject] = useState<ProjectProps['project']>();
 
   useEffect(() => {
-    const card = data?.find((item) => item.id === Number(projectId));
+    const card = data?.find((item: any) => item.id === Number(projectId));
     setProject(card);
   }, [projectId, data]);
 

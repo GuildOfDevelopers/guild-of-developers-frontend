@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const Card = styled.li`
+export const Card = styled.div`
   padding: 25px;
   border-radius: 20px;
 

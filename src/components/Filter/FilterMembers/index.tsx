@@ -1,10 +1,20 @@
 import React, { FC } from 'react';
 import { Menu } from '@headlessui/react';
-import { Wrapper, TopFilter, BottomFilter, BottomFilterButton, FilterButtons } from './style';
+import {
+  Wrapper,
+  TopFilter,
+  BottomFilter,
+  BottomFilterButton,
+  SearchButtonFilter,
+  MenuButton,
+  MenuItems
+} from './style';
 import FilterOpen from '../FilterOpen';
 import { IconFilter } from './Icon';
+import { useFilterStore } from '../../../zustand-store';
 
 const FilterMembers: FC = () => {
+  const { departments, changeDeparments } = useFilterStore();
   const [currentMenu, setCurrentMenu] = React.useState(-1);
   const menu = [
     {
@@ -44,29 +54,27 @@ const FilterMembers: FC = () => {
   return (
     <Wrapper>
       <TopFilter>
-        <FilterButtons wip="true" className="active">
-          Поиск
-        </FilterButtons>
+        <SearchButtonFilter wip>Поиск</SearchButtonFilter>
 
         <Menu>
-          <Menu.Button>
+          <MenuButton>
             <IconFilter />
-          </Menu.Button>
+          </MenuButton>
 
-          <Menu.Items className="filter-open">
+          <MenuItems>
             <FilterOpen />
-          </Menu.Items>
+          </MenuItems>
         </Menu>
       </TopFilter>
 
       <BottomFilter>
-        {menu.map((item) => (
+        {departments.map((item, i) => (
           <BottomFilterButton
-            key={item.id}
-            className={currentMenu === item.id ? 'active' : ''}
-            onClick={() => (currentMenu === item.id ? setCurrentMenu(-1) : setCurrentMenu(item.id))}
+            key={i}
+            active={item.isCheck}
+            onClick={() => changeDeparments(item.name)}
           >
-            {item.title}
+            {item.name}
           </BottomFilterButton>
         ))}
       </BottomFilter>

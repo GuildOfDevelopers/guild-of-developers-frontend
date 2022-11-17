@@ -3,7 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Container } from '../../lib/styled/container';
 import { Section, Wrapper, Title, Grid } from './style';
 import Filter from '../Filter';
-import Member from './Member';
+import Member from '../UI/Member';
 import { getMembers } from '../../api/index';
 
 const Members: FC = () => {

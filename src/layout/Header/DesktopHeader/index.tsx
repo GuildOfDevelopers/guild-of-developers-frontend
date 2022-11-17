@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
 import NavBarButton from '../NavBarButton';
 import { Container } from '../../../lib/styled/container';
-import { NavBarLink, NavBarLogo, StyledHeader, Navbar, LogoDiv, LeftDiv, RightDiv } from './style';
+import { NavBarLink, StyledHeader, Navbar, LogoDiv, LeftDiv, RightDiv } from './style';
+import { LogoIcon } from '../Icon';
 
 const DesktopHeader: FC = () => {
   return (
@@ -20,7 +21,9 @@ const DesktopHeader: FC = () => {
             </NavBarLink>
           </LeftDiv>
           <LogoDiv>
-            <NavBarLogo to="/">GoD</NavBarLogo>
+            <NavBarLink to="/">
+              <LogoIcon />
+            </NavBarLink>
           </LogoDiv>
           <RightDiv>
             <NavBarLink wip="false" to="/login">

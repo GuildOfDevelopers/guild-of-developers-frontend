@@ -4,8 +4,8 @@ import styled, { css } from 'styled-components';
 import { useLocation } from 'react-router-dom';
 
 export const StyledHeader = styled.header`
-  background-color: var(--color-white-2);
-  padding-block: 20px;
+  background-color: var(--color-fon);
+  padding-block: 16px;
 `;
 
 export const MenuHeader = styled.div`
@@ -16,16 +16,17 @@ export const MenuHeader = styled.div`
 
 export const Navbar = styled(motion.nav)`
   position: absolute;
-  top: 55px;
+  top: 79px;
   left: 0;
   bottom: 0;
   right: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 32px;
   padding-top: 37px;
-  background-color: var(--color-white-2);
+  padding-bottom: 200px;
+  background-color: var(--color-fon);
   transition: max-height 0.1s ease-out;
   z-index: 100;
 `;
@@ -35,9 +36,14 @@ export const NavBarLink = styled(Link)`
   font-weight: var(--fw-400);
   line-height: var(--line-height-350);
   text-align: center;
+  color: var(--color-white);
 
   &:first-child {
     text-align: start;
+  }
+
+  &:nth-child(2) {
+    margin-bottom: 32px;
   }
 
   &:last-child {

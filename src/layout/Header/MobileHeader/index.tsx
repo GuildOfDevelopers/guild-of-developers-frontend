@@ -4,6 +4,7 @@ import MenuToggle from '../MenuToggle';
 import NavBarButton from '../NavBarButton';
 import { Container } from '../../../lib/styled/container';
 import { NavBarLink, NavBarLogo, StyledHeader, Navbar, MenuHeader } from './style';
+import { LogoIconMobile } from '../Icon';
 
 const MobileHeader: FC = () => {
   const [isOpen, setOpen] = useState(false);
@@ -12,13 +13,15 @@ const MobileHeader: FC = () => {
       <Container>
         <MenuHeader>
           <MenuToggle isOpen={isOpen} toggle={() => setOpen(!isOpen)} />
-          <NavBarLogo to="/">GoD</NavBarLogo>
+          <NavBarLogo to="/">
+            <LogoIconMobile />
+          </NavBarLogo>
         </MenuHeader>
         <AnimatePresence>
           {isOpen && (
             <Navbar
               initial={{ maxHeight: 0, opacity: 0 }}
-              animate={{ maxHeight: '274px', opacity: 1 }}
+              animate={{ maxHeight: 'min-content', opacity: 1 }}
               exit={{ maxHeight: 0, opacity: 0 }}
             >
               <NavBarLink wip="false" to="/login">

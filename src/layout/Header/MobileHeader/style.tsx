@@ -25,7 +25,6 @@ export const Navbar = styled(motion.nav)`
   align-items: center;
   gap: 32px;
   padding-top: 37px;
-  padding-bottom: 200px;
   background-color: var(--color-fon);
   transition: max-height 0.1s ease-out;
   z-index: 100;

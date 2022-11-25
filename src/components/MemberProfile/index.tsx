@@ -56,6 +56,7 @@ import { getMembers } from '../../api/index';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { Link } from 'react-router-dom';
 
 interface IProps {
   owner: boolean;
@@ -72,7 +73,9 @@ const MemberProfile: FC<IProps> = ({ owner }) => {
         <BackgroundImg src="#" />
 
         <Info>
-          <Avatar src="#" />
+          <Link to="photo">
+            <Avatar src="#" />
+          </Link>
 
           <Member>
             <MemberWrapper>
@@ -85,7 +88,11 @@ const MemberProfile: FC<IProps> = ({ owner }) => {
             <MemberUserName>@iv.iv</MemberUserName>
           </Member>
 
-          {owner && <InfoChange>Изменить данные</InfoChange>}
+          {owner && (
+            <InfoChange>
+              <Link to="edit">Изменить данные</Link>
+            </InfoChange>
+          )}
         </Info>
 
         {owner && (

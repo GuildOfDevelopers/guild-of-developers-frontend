@@ -15,6 +15,8 @@ import NotFound404 from '../../pages/notFound404';
 import Registration from '../../pages/registration';
 import EditProject from '../../pages/editProject';
 import Profile from '../../pages/profile';
+import EditProfile from '../../pages/profileEdit';
+import EditProfilePhoto from '../../pages/profilePhotoEdit';
 
 const Main: FC = () => {
   return (
@@ -34,6 +36,8 @@ const Main: FC = () => {
         <Route path="/profile/projects" element={<EditPortfolio />} />
         <Route path="/profile/projects/:projectId" element={<EditProject />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/profile/edit" element={<EditProfile />} />
+        <Route path="/profile/photo" element={<EditProfilePhoto />} />
 
         <Route path="*" element={<NotFound404 />} />
       </Routes>

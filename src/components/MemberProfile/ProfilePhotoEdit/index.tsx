@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-shadow */
-import React, { useCallback, useState, FC } from 'react';
-import Cropper from 'react-easy-crop';
+import React, { FC, useState, useCallback } from 'react';
+import getCroppedImg from '../../../services/canvasUtils';
+import { Container } from '../../../lib/styled/container';
 import { Point, Area } from 'react-easy-crop/types';
-import { Container } from '../../lib/styled/container';
-import getCroppedImg from '../../services/canvasUtils';
+import Cropper from 'react-easy-crop';
 import {
+  Wrapper,
   CropControls,
   CropDiv,
   Section,
-  Wrapper,
   Title,
   SubTitle,
   PhotoDiv,
@@ -25,8 +25,9 @@ import {
   CoverImg
 } from './style';
 import { PhotoBlanc, PhotoBlancMin } from './svg';
+import { useNavigate, Link } from 'react-router-dom';
 
-const RegAddPhoto: FC = () => {
+const ProfilePhotoEdit: FC = () => {
   // Состояние где будет храниться оригинальное фото
   const [photo, setPhoto] = useState('');
 
@@ -46,6 +47,7 @@ const RegAddPhoto: FC = () => {
   const [croppedArea, setCroppedArea] = useState<Area>();
   const [photoCrop, setPhotoCrop] = useState(false);
   const [coverCrop, setCoverCrop] = useState(false);
+  const navigate = useNavigate();
 
   const onCropComplete = useCallback((croppedArea: Area, croppedAreaPixels: Area) => {
     setCroppedArea(croppedAreaPixels);
@@ -140,8 +142,9 @@ const RegAddPhoto: FC = () => {
   };
 
   // TODO: вместе с другими данными отправлять на сервер
-  const handleSumbit = () => {};
-
+  const handleSumbit = () => {
+    navigate('/profile');
+  };
   return (
     <Section>
       <Container>
@@ -252,18 +255,18 @@ const RegAddPhoto: FC = () => {
               </>
             )}
           </CoverDiv>
-          <BlackBtn
-            margin="0 auto"
-            display="block"
-            type="submit"
-            onClick={(e) => e.preventDefault()}
-          >
-            Зарегистрироваться
-          </BlackBtn>
+          <ButtonsBox justifyContent="center">
+            <WhiteBtn>
+              <Link to="/profile">Назад</Link>
+            </WhiteBtn>
+            <BlackBtn type="submit" onClick={handleSumbit}>
+              Сохранить
+            </BlackBtn>
+          </ButtonsBox>
         </Wrapper>
       </Container>
     </Section>
   );
 };
 
-export default RegAddPhoto;
+export default ProfilePhotoEdit;

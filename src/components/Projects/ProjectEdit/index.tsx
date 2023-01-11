@@ -11,8 +11,7 @@ const EditProject: FC = () => {
   const { projectId } = useParams<{ projectId?: string }>();
   const [project, setProject] = useState<ProjectProps['project']>();
 
-  const { name, date, description, role, changeInput, checkedDepartments, projectLink } =
-    useProjectStore();
+  const { date, role, changeInput, checkedDepartments, projectLink } = useProjectStore();
 
   useEffect(() => {
     const result = data?.find((item: any) => item.id === Number(projectId));

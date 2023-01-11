@@ -21,7 +21,7 @@ const MobileHeader: FC = () => {
           {isOpen && (
             <Navbar
               initial={{ maxHeight: 0, opacity: 0 }}
-              animate={{ maxHeight: 'min-content', opacity: 1 }}
+              animate={{ maxHeight: 'calc(100% - 80px)', opacity: 1 }}
               exit={{ maxHeight: 0, opacity: 0 }}
             >
               <NavBarLink wip="false" to="/login">
